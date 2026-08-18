@@ -1,7 +1,7 @@
 # Figure ↔ Code Correspondence Audit Pack (WRR manuscript)
 
 **Repo:** https://github.com/Coucou2016/20260522-LSG-WRR
-**Manuscript:** https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/docs/paper/manuscript.md
+**Manuscript:** https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/docs/paper/manuscript.md
 **Generating code:** `scripts/make_figures.py` (all figures)
 **Captions:** `docs/paper/_build_html.py` (`FIGURES` list)
 
@@ -33,7 +33,7 @@ Burnett, plotted from HF cell-center coordinates on equal-aspect easting and
 northing axes. Cell counts *n* are given in the panel titles, and points are
 subsampled for display on the largest meshes.
 
-![Figure 1](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig01_study_domains.png)
+![Figure 1](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig01_study_domains.png)
 
 **Generating code** (`fig_study_domains`):
 
@@ -61,11 +61,11 @@ def fig_study_domains(out_dir, skips):
 (a) the LF simulation with the HF reference and (b) the LSG-Max H-LSG prediction
 with HF. Blue = hits, red = misses, gold = false alarms, grey = dry in both.
 
-![Figure 2a (Carlisle)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig02_extent_hit_miss_carlisle_E1.png)
+![Figure 2a (Carlisle)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig02_extent_hit_miss_carlisle_E1.png)
 
-![Figure 2b (Chowilla)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig02_extent_hit_miss_chowilla_E1.png)
+![Figure 2b (Chowilla)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig02_extent_hit_miss_chowilla_E1.png)
 
-![Figure 2c (Burnett)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig02_extent_hit_miss_burnett_E1.png)
+![Figure 2c (Burnett)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig02_extent_hit_miss_burnett_E1.png)
 
 **Generating code** (`fig_extent_hit_miss` + `_extent_category`):
 
@@ -96,11 +96,11 @@ each panel uses an **independent** color scale spanning its own
 99th-percentile absolute error. Positive = overprediction, negative =
 underprediction.
 
-![Figure 3a (Carlisle)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig03_peak_depth_error_carlisle_E1.png)
+![Figure 3a (Carlisle)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig03_peak_depth_error_carlisle_E1.png)
 
-![Figure 3b (Chowilla)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig03_peak_depth_error_chowilla_E1.png)
+![Figure 3b (Chowilla)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig03_peak_depth_error_chowilla_E1.png)
 
-![Figure 3c (Burnett)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig03_peak_depth_error_burnett_E1.png)
+![Figure 3c (Burnett)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig03_peak_depth_error_burnett_E1.png)
 
 **Generating code** (`fig_peak_depth_error`):
 
@@ -120,11 +120,11 @@ for ax, title, err, tag in ((axes[0], "LF − HF", err_lf, "(a)"),
 **Caption:** Event E1 LSG-Max H-LSG inundation probability *P*(*h* ≥ 0.03 m),
 reconstructed from the probabilistic WSE pathway conditional on the EXT gate.
 
-![Figure 4a (Carlisle)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig04_pwet_carlisle_E1.png)
+![Figure 4a (Carlisle)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig04_pwet_carlisle_E1.png)
 
-![Figure 4b (Chowilla)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig04_pwet_chowilla_E1.png)
+![Figure 4b (Chowilla)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig04_pwet_chowilla_E1.png)
 
-![Figure 4c (Burnett)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig04_pwet_burnett_E1.png)
+![Figure 4c (Burnett)](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig04_pwet_burnett_E1.png)
 
 **Generating code** (`fig_pwet_maps`):
 
@@ -141,7 +141,7 @@ cbar.set_label(f"P(h ≥ {DEPTH_TAU_M:g} m)")   # single panel, no (a) label
 **Caption:** CSI and depth RMSE (m) on the Group 1 training wet-domain scoring
 mask for LF-only, LSG-Max H-LSG, and (Carlisle only) LSG-TS across the three cases.
 
-![Figure 5](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig05_cross_case_csi_rmse_wet_train.png)
+![Figure 5](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig05_cross_case_csi_rmse_wet_train.png)
 
 **Generating code** (`fig_cross_case`):
 
@@ -170,7 +170,7 @@ for ax, metric, ylab, ylim in ((axes[0], csi, "CSI (−)", (0.7, 1.02)),
 the training wet domain. Panels: (a) Carlisle LSG-Max, (b) Carlisle LSG-TS,
 (c) Chowilla LSG-Max, (d) Burnett LSG-Max.
 
-![Figure 6](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig06_error_budget_o1o4.png)
+![Figure 6](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig06_error_budget_o1o4.png)
 
 **Generating code** (`fig_error_budget`):
 
@@ -200,7 +200,7 @@ for ax, (case, variant, rows), tag in zip(...):
 native global model with residual H-LSG for the three cases; the Carlisle H-LSG
 bar is the SGPR-enabled run (0.094 m).
 
-![Figure 7](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig07_global_vs_hlsg_ab.png)
+![Figure 7](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig07_global_vs_hlsg_ab.png)
 
 **Generating code** (`fig_global_vs_hlsg`):
 
@@ -229,7 +229,7 @@ Carlisle reliability diagram before/after. (b) spatial distribution of the
 coverage before/after. (d) CRPS (m) before/after for all three cases on a
 logarithmic axis.
 
-![Figure 8](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig08_uq_calibration_crps_scale.png)
+![Figure 8](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig08_uq_calibration_crps_scale.png)
 
 **Generating code** (`fig_uq_calibration`):
 
@@ -259,7 +259,7 @@ ax.set_ylabel("CRPS (m, log scale)")
 global model, residual-response *k*-means zoning, and wet-correlation zoning:
 (a) wet-domain CSI and (b) wet-domain depth RMSE (m).
 
-![Figure 9](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/master/outputs/figures/fig09_zoning_wet_correlation_ab.png)
+![Figure 9](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig09_zoning_wet_correlation_ab.png)
 
 **Generating code** (`fig_zoning_sensitivity`):
 
