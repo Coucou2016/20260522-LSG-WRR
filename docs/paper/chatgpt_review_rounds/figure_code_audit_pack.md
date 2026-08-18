@@ -132,6 +132,7 @@ reconstructed from the probabilistic WSE pathway conditional on the EXT gate.
 sc = _scatter_field(ax, b["xy"], b["pwet"], cmap=PALETTE["inundation"],
                     vmin=0.0, vmax=1.0, s=s)
 cbar.set_label(f"P(h ≥ {DEPTH_TAU_M:g} m)")   # single panel, no (a) label
+ax.set_title(f"{case} · {b['eid']} · LSG-Max P(wet)", fontsize=9)   # shortened title
 ```
 
 ---
@@ -149,9 +150,15 @@ mask for LF-only, LSG-Max H-LSG, and (Carlisle only) LSG-TS across the three cas
 variants = ("lf_only", "lsg_max", "lsg_ts")
 # LSG-TS is only evaluated for Carlisle; Chowilla/Burnett use max-only time
 # reduction, so LSG-TS duplicates LSG-Max and is skipped.
-for ax, metric, ylab, ylim in ((axes[0], csi, "CSI (−)", (0.7, 1.02)),
+for ax, metric, ylab, ylim in ((axes[0], csi, "CSI (−)", (0, 1.02)),
                                (axes[1], rmse, "RMSE (m)", None)):
     ...
+    for xi, val in zip(x + (i - 1) * width, vals):
+        if not np.isfinite(val):
+            ax.text(xi, ax.get_ylim()[0] if ylim is None else ylim[0] + 0.01, "—", ha="center", fontsize=7)
+        else:
+            ax.text(xi, val + 0.015, f"{val:.3f}", ha="center", va="bottom", fontsize=6)
+    # CSI axis now spans 0–1 (no truncated baseline); numeric labels added on bars
 ```
 
 **Data** (`wet_train` protocol):
@@ -205,10 +212,16 @@ bar is the SGPR-enabled run (0.094 m).
 **Generating code** (`fig_global_vs_hlsg`):
 
 ```python
-for ax, metric_idx, ylab, ylim in ((axes[0], 2, "CSI (−)", (0.9, 1.01)),
+for ax, metric_idx, ylab, ylim in ((axes[0], 2, "CSI (−)", (0, 1.01)),
                                    (axes[1], 3, "RMSE (m)", None)):
     labels_order = ["Global", "H-LSG"]
     ...
+    for xi, val, ok in zip(x + (i - 1) * width, vals_a, finite_mask):
+        if not ok:
+            ax.plot(xi, 0.0, marker="x", color="0.5", markersize=5)
+        else:
+            ax.text(xi, val + 0.012, f"{val:.3f}", ha="center", va="bottom", fontsize=6)
+    # CSI axis spans 0–1 (no truncated baseline)
 ```
 
 **Data** (`wet_train`, LSG-Max):
@@ -237,6 +250,7 @@ logarithmic axis.
 # (a) reliability: pred vs obs frequency, 1:1 ideal line
 # (b) fringe map: fringe = (p >= 0.5) & (p < 0.95)
 # (c) coverage: before/after bars for coverage_90 and coverage_90_active
+ax.set_title("Carlisle LSG-Max coverage")   # panel (c) now names Carlisle
 # (d) CRPS: log scale, bottom = 1e-2
 ax.set_yscale("log")
 ax.set_ylim(1e-2, 5.0)
@@ -269,7 +283,8 @@ rows = [("Residual k-means", chowilla_hlsg, PALETTE["hlsg"]),
         ("Global (none)", chowilla_global, PALETTE["global"])]
 for xi, c, v in zip(x, colors, csi_vals):
     axes[0].bar(xi, v, width=0.55, color=c)
-axes[0].set_ylim(0.9, 1.01)
+    axes[0].text(xi, v + 0.012, f"{v:.3f}", ha="center", va="bottom", fontsize=6)
+axes[0].set_ylim(0, 1.01)   # full 0–1 scale, numeric labels on bars
 ```
 
 **Data** (`wet_train`, LSG-Max):
