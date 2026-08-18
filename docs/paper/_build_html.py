@@ -117,9 +117,12 @@ FIGURES = [
         "(0.094 m), not the legacy non-SGPR residual run.",
     ),
     (
+        # Internal file IDs (fig08/fig09) reflect generation order in make_figures.py;
+        # display numbering follows section order, so zoning (Section 4.4) is Figure 8
+        # and UQ calibration (Section 4.6) is Figure 9.
         "fig8",
         "fig08_uq_calibration_crps_scale.svg",
-        "Figure 8. CRPS-based variance calibration and its spatial diagnostics. "
+        "Figure 9. CRPS-based variance calibration and its spatial diagnostics. "
         "(a) Carlisle LSG-Max H-LSG reliability diagram before and after variance calibration. "
         "(b) Spatial distribution of Carlisle cells with 0.5 ≤ *P*(*h* ≥ τ) < 0.95 relative to the "
         "HF wet–dry pattern. (c) Carlisle all-cell and active-cell 90% coverage before and after "
@@ -130,7 +133,7 @@ FIGURES = [
     (
         "fig9",
         "fig09_zoning_wet_correlation_ab.svg",
-        "Figure 9. Chowilla Group 1 maximum-surface zoning sensitivity comparing the global model, "
+        "Figure 8. Chowilla Group 1 maximum-surface zoning sensitivity comparing the global model, "
         "residual-response *k*-means zoning, and wet-correlation zoning: (a) wet-domain CSI and "
         "(b) wet-domain depth RMSE (m).",
     ),

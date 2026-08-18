@@ -239,7 +239,7 @@ for ax, metric_idx, ylab, ylim in ((axes[0], 2, "CSI (−)", (0, 1.01)),
 
 ---
 
-## Figure 8 — UQ calibration
+## Figure 9 — UQ calibration
 
 **Caption:** CRPS-based variance calibration and spatial diagnostics. (a)
 Carlisle reliability diagram before/after. (b) spatial distribution of the
@@ -247,7 +247,7 @@ Carlisle reliability diagram before/after. (b) spatial distribution of the
 active-cell 90% coverage before/after. (d) CRPS (m) before/after for all three
 cases on a logarithmic axis.
 
-![Figure 8](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig08_uq_calibration_crps_scale.png)
+![Figure 9](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig08_uq_calibration_crps_scale.png)
 
 **Generating code** (`fig_uq_calibration`):
 
@@ -274,13 +274,13 @@ ax.set_ylabel("CRPS (m, log scale)")
 
 ---
 
-## Figure 9 — Chowilla zoning-method sensitivity
+## Figure 8 — Chowilla zoning-method sensitivity
 
 **Caption:** Chowilla Group 1 maximum-surface zoning sensitivity comparing the
 global model, residual-response *k*-means zoning, and wet-correlation zoning:
 (a) wet-domain CSI and (b) wet-domain depth RMSE (m).
 
-![Figure 9](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig09_zoning_wet_correlation_ab.png)
+![Figure 8](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig09_zoning_wet_correlation_ab.png)
 
 **Generating code** (`fig_zoning_sensitivity`):
 

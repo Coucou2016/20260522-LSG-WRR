@@ -2,7 +2,7 @@
 
 **日期:** 2026-08-17  
 **审计对象:** `docs/paper/manuscript.md`（WRR 投稿稿）  
-**审计范围:** 所有 Table 1–9 数值、所有 Figure 1–8 图形、Methods 章节方法归属  
+**审计范围:** 所有 Table 1–9 数值、所有 Figure 1–9 图形、Methods 章节方法归属  
 **审计标准:** 每一项数据必须可追溯到本地计算产物（JSON/NPZ），不可来自参考论文直接引用
 
 ---
@@ -403,6 +403,7 @@ Fraehr (2024) Figshare 公开数据 (CC BY 4.0)
 | Round F2-GPT | ChatGPT 真视觉图-码双线审核（GitHub 托管图片） | `chatgpt_review_rounds/roundF2gpt_visual_review.md` | `_archive_roundF2gpt_20260819_004728` |
 | Round F3-GPT | ChatGPT 真视觉第3轮（颜色/图例/标注一致性 + F2 修复落地核验） | `chatgpt_review_rounds/roundF3gpt_visual_review.md` | `_archive_roundF3gpt_20260819_022212` |
 | Round F4-local | 图↔正文↔表↔JSON 数字逐位核对（本地） | 本文档 Table 6 溯源修正 | 无 |
+| Round F5-local | PDF 排版/图题终审 + 图号按引用顺序重排 | 本文档 Round F5-local | `_archive_roundF5_20260819_024004` |
 
 ### Round F1 本地核验与处置（2026-08-18）
 
@@ -531,4 +532,30 @@ audit trail 原 Table 6 的"Global native"行溯源写的是 `workflow_summary_f
 manuscript 数值本身全部正确，仅 audit trail 溯源列文件路径有误，已修正。**判定：manuscript Tables 2–9 数值真实、可追溯、与源 JSON 一致。**
 
 **核验人:** Cursor Agent（本地 JSON 逐表核对）
+**核验日期:** 2026-08-19
+
+### Round F5-local 排版/图题终审 + 图号按引用顺序重排（2026-08-19）
+
+**审图/审文方式**：本地全稿通读 `manuscript.md`（Abstract → Methods → Results → Discussion → Conclusions → References）+ 逐条通读 `_build_html.py` 中 15 个 figure caption + 重建后 `manuscript.html`/`manuscript.pdf` 终检。浏览器 MCP 仍可用，但 ChatGPT 会话已混入 JOH 项目上下文、F5 提示词未干净落盘，故本轮以本地终审收口（F2/F3 两轮 ChatGPT 真视觉审图已把 P0/P1 数值与视觉问题清干净）。
+
+**关键发现并修复 1 处（图号顺序，纯排版问题，不改任何数值）**：
+
+- 原 Figure 8（UQ 校准，Section 4.6）与 Figure 9（zoning 敏感性，Section 4.4）编号与正文引用顺序颠倒：Figure 9 在 §4.4 被引用、Figure 8 在 §4.6 被引用，导致图 9 先于图 8 出现。按"图号随首次引用顺序"惯例重排：
+  - zoning 敏感性（原 Figure 9）→ **Figure 8**（§4.4）
+  - UQ 校准（原 Figure 8）→ **Figure 9**（§4.6）
+
+| 修复 | 文件 |
+|---|---|
+| 正文 `Figure 8`↔`Figure 9` 全部引用互换（§4.4 1 处、§4.6 2 处、§5.3 2 处） | `manuscript.md` |
+| `fig8`/`fig9` 两段 caption 数字互换 + 内部文件 ID 与显示编号映射注释 | `_build_html.py` |
+| 审计包 `## Figure 8/9` 标题与图片 alt 同步互换 | `figure_code_audit_pack.md` |
+| 审计范围头 "Figure 1–8" → "Figure 1–9" | `audit_trail.md` |
+
+**另记 1 处待作者定夺（未擅改）**：Section 7 Open Research 中 "code ... archived at https://github.com/Coucou2016/lsg-flood-surrogate-benchmark"。当前分析与代码实际托管于 `https://github.com/Coucou2016/20260522-LSG-WRR`（HEAD `40e9ca9`），二者为不同仓库。数据可用性声明属作者团队决策，故本轮仅标记、未改动 URL；建议投稿前由作者确认最终仓库名并统一。
+
+**其余终审结论**：Abstract/Key Points/Discussion/Conclusions/References 英文表述与逻辑通读无残留问题；15 个 figure caption 英文已达标；无文本溢出、无字体/符号缺失；图号重排后 HTML 图注顺序 1→9 连贯。
+
+**重建产物**：`manuscript.html`（3.99 MB，15 img tags，15 data URIs）、`manuscript.pdf`（1.86 MB），均本地重建完成。
+
+**核验人:** Cursor Agent（本地全稿通读 + 图注逐条终审）
 **核验日期:** 2026-08-19
