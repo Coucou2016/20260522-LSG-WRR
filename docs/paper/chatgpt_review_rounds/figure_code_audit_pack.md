@@ -187,7 +187,7 @@ for ax, (case, variant, rows), tag in zip(...):
 
 | Case / variant | O1 | O2 | O3 | O4 |
 |---|---|---|---|---|
-| Carlisle LSG-Max | 0.048 | 0.053 | 0.068 | 0.095 |
+| Carlisle LSG-Max | 0.048 | 0.052 | 0.068 | 0.094 |
 | Carlisle LSG-TS | 0.018 | 0.033 | 0.240 | 0.102 |
 | Chowilla LSG-Max | 0.021 | 0.034 | 0.701 | 0.093 |
 | Burnett LSG-Max | 0.074 | 0.083 | 0.668 | 0.387 |

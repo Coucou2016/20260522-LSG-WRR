@@ -104,7 +104,9 @@ FIGURES = [
         "fig06_error_budget_o1o4.svg",
         "Figure 6. O1–O4 depth RMSE (m) for the Group 1 train and test splits, scored on the "
         "training wet domain. Panels: (a) Carlisle LSG-Max H-LSG, (b) Carlisle LSG-TS H-LSG, "
-        "(c) Chowilla LSG-Max H-LSG, (d) Burnett LSG-Max H-LSG.",
+        "(c) Chowilla LSG-Max H-LSG, (d) Burnett LSG-Max H-LSG. Each panel uses an independent "
+        "y-axis limit so that the small O1/O2 bars remain visible alongside the larger O3 values; "
+        "bars should not be compared across panels by height.",
     ),
     (
         "fig7",

@@ -146,7 +146,7 @@ The primary maximum-surface workflows were run with Python 3.12 using NumPy, Sci
 
 ### 4.1. Baseline Spatial Performance
 
-Figure 1 places the three HF domains on common easting and northing axes. Because a digital elevation model (DEM) raster is not included in the public geometry package used for these plots, the domains are plotted using HF cell centers. The three cases differ substantially in size and geometry, from the compact Carlisle domain to the elongated Burnett river corridor.
+Figure 1 places the three HF domains on equal-aspect easting and northing coordinate axes. Because a digital elevation model (DEM) raster is not included in the public geometry package used for these plots, the domains are plotted using HF cell centers. The three cases differ substantially in size and geometry, from the compact Carlisle domain to the elongated Burnett river corridor.
 
 The extent maps in Figure 2 compare LF and LSG-Max predictions with HF at the 0.03 m threshold. Burnett shows the largest reduction in misses and false alarms after the LSG correction. Carlisle has relatively strong LF extent agreement before upscaling, so the visual change is smaller. Chowilla shows a different pattern: extent disagreement is concentrated outside the training wet-domain mask, consistent with the large difference between wet-domain and all-cell scores reported in Section 4.5.
 

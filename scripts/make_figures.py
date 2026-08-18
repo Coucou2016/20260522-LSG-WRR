@@ -173,7 +173,7 @@ def fig_cross_case(out_dir: Path, skips: list[str]) -> list[Path]:
     fig, axes = plt.subplots(1, 2, figsize=figsize_double(3.0))
 
     for ax, metric, ylab, ylim in (
-        (axes[0], csi, "CSI (−)", (0.7, 1.02)),
+        (axes[0], csi, "CSI (−)", (0, 1.02)),
         (axes[1], rmse, "RMSE (m)", None),
     ):
         for i, v in enumerate(variants):
@@ -189,6 +189,8 @@ def fig_cross_case(out_dir: Path, skips: list[str]) -> list[Path]:
             for xi, val in zip(x + (i - 1) * width, vals):
                 if not np.isfinite(val):
                     ax.text(xi, ax.get_ylim()[0] if ylim is None else ylim[0] + 0.01, "—", ha="center", fontsize=7)
+                else:
+                    ax.text(xi, val + 0.015, f"{val:.3f}", ha="center", va="bottom", fontsize=6)
         ax.set_xticks(x, case_labels)
         ax.set_ylabel(ylab)
         if ylim is not None:
@@ -328,7 +330,7 @@ def fig_global_vs_hlsg(out_dir: Path, skips: list[str]) -> list[Path]:
     }
 
     for ax, metric_idx, ylab, ylim in (
-        (axes[0], 2, "CSI (−)", (0.9, 1.01)),
+        (axes[0], 2, "CSI (−)", (0, 1.01)),
         (axes[1], 3, "RMSE (m)", None),
     ):
         x = np.arange(len(cases), dtype=float)
@@ -355,6 +357,8 @@ def fig_global_vs_hlsg(out_dir: Path, skips: list[str]) -> list[Path]:
             for xi, val, ok in zip(x + (i - 1) * width, vals_a, finite_mask):
                 if not ok:
                     ax.plot(xi, 0.0, marker="x", color="0.5", markersize=5)
+                else:
+                    ax.text(xi, val + 0.012, f"{val:.3f}", ha="center", va="bottom", fontsize=6)
         ax.set_xticks(x, cases)
         ax.set_ylabel(ylab)
         if ylim is not None:
@@ -528,7 +532,7 @@ def fig_uq_calibration(out_dir: Path, skips: list[str]) -> list[Path]:
     ax.set_ylabel("Empirical coverage (−)")
     ax.set_ylim(0.8, 1.02)
     ax.legend(loc="lower right", fontsize=7)
-    ax.set_title("Coverage")
+    ax.set_title("Carlisle LSG-Max coverage")
     add_panel_label(ax, "(c)")
 
     # (d) CRPS before/after + other cases after-only
@@ -929,7 +933,7 @@ def fig_pwet_maps(out_dir: Path, skips: list[str]) -> list[Path]:
         )
         cbar = fig.colorbar(sc, ax=ax, fraction=0.046, pad=0.04)
         cbar.set_label(f"P(h ≥ {DEPTH_TAU_M:g} m)", fontsize=8)
-        ax.set_title(f"{case} · event {b['eid']} · LSG-Max inundation probability", fontsize=9)
+        ax.set_title(f"{case} · {b['eid']} · LSG-Max P(wet)", fontsize=9)
         written.extend(save_pub(fig, out_dir / f"{stem}_{b['eid']}"))
         plt.close(fig)
     return written
@@ -1032,14 +1036,16 @@ def fig_zoning_sensitivity(out_dir: Path, skips: list[str]) -> list[Path]:
     x = np.arange(len(labels), dtype=float)
     for xi, c, v in zip(x, colors, csi_vals):
         axes[0].bar(xi, v, width=0.55, color=c)
+        axes[0].text(xi, v + 0.012, f"{v:.3f}", ha="center", va="bottom", fontsize=6)
     axes[0].set_xticks(x, labels, rotation=15)
     axes[0].set_ylabel("CSI (−)")
-    axes[0].set_ylim(0.9, 1.01)
+    axes[0].set_ylim(0, 1.01)
     axes[0].set_title("Chowilla LSG-Max CSI")
     add_panel_label(axes[0], "(a)")
 
     for xi, c, v in zip(x, colors, rmse_vals):
         axes[1].bar(xi, v, width=0.55, color=c)
+        axes[1].text(xi, v + 0.006, f"{v:.3f}", ha="center", va="bottom", fontsize=6)
     axes[1].set_xticks(x, labels, rotation=15)
     axes[1].set_ylabel("RMSE (m)")
     axes[1].set_title("Chowilla LSG-Max RMSE")
