@@ -132,10 +132,10 @@ def fig_cross_case(out_dir: Path, skips: list[str]) -> list[Path]:
     variants = ("lf_only", "lsg_max", "lsg_ts")
     colors = {
         "lf_only": PALETTE["lf"],
-        "lsg_max": PALETTE["lsg_max"],
+        "lsg_max": PALETTE["hlsg"],
         "lsg_ts": PALETTE["lsg_ts"],
     }
-    display = {"lf_only": "LF-only", "lsg_max": "LSG-Max", "lsg_ts": "LSG-TS"}
+    display = {"lf_only": "LF-only", "lsg_max": "LSG-Max H-LSG", "lsg_ts": "LSG-TS"}
 
     csi = {v: [] for v in variants}
     rmse = {v: [] for v in variants}
@@ -181,27 +181,29 @@ def fig_cross_case(out_dir: Path, skips: list[str]) -> list[Path]:
             _bar_values(
                 ax,
                 x + (i - 1) * width,
-                np.nan_to_num(vals, nan=0.0),
+                vals,
                 width=width,
                 color=colors[v],
                 label=display[v],
             )
             for xi, val in zip(x + (i - 1) * width, vals):
                 if not np.isfinite(val):
-                    ax.text(xi, ax.get_ylim()[0] if ylim is None else ylim[0] + 0.01, "—", ha="center", fontsize=7)
+                    ax.text(xi, 0.01, "N/A", ha="center", va="bottom", fontsize=7)
                 else:
-                    ax.text(xi, val + 0.015, f"{val:.3f}", ha="center", va="bottom", fontsize=6)
+                    ax.text(xi, val + 0.015, f"{val:.3f}", ha="center", va="bottom", fontsize=7)
         ax.set_xticks(x, case_labels)
         ax.set_ylabel(ylab)
         if ylim is not None:
             ax.set_ylim(*ylim)
         ax.set_xlabel("Case")
 
-    axes[0].legend(loc="lower right", ncol=1)
+    handles, labels = axes[0].get_legend_handles_labels()
     add_panel_label(axes[0], "(a)")
     add_panel_label(axes[1], "(b)")
-    fig.suptitle(f"Cross-case skill on the {MASK_LABEL}", y=1.02)
-    fig.tight_layout()
+    fig.suptitle(f"Cross-case skill on the {MASK_LABEL}", y=1.04)
+    fig.tight_layout(rect=(0, 0.07, 1, 1))
+    fig.legend(handles, labels, loc="lower center", bbox_to_anchor=(0.5, 0.01),
+               ncol=3, fontsize=7)
     paths = save_pub(fig, out_dir / "fig05_cross_case_csi_rmse_wet_train")
     plt.close(fig)
     return paths
@@ -358,21 +360,23 @@ def fig_global_vs_hlsg(out_dir: Path, skips: list[str]) -> list[Path]:
                 if not ok:
                     ax.plot(xi, 0.0, marker="x", color="0.5", markersize=5)
                 else:
-                    ax.text(xi, val + 0.012, f"{val:.3f}", ha="center", va="bottom", fontsize=6)
+                    ax.text(xi, val + 0.012, f"{val:.3f}", ha="center", va="bottom", fontsize=7)
         ax.set_xticks(x, cases)
         ax.set_ylabel(ylab)
         if ylim is not None:
             ax.set_ylim(*ylim)
         ax.set_xlabel("Case")
 
-    axes[0].legend(loc="lower right")
+    handles, labels = axes[0].get_legend_handles_labels()
     add_panel_label(axes[0], "(a)")
     add_panel_label(axes[1], "(b)")
     fig.suptitle(
         f"Global vs residual H-LSG (LSG-Max) · {MASK_LABEL}",
-        y=1.02,
+        y=1.04,
     )
-    fig.tight_layout()
+    fig.tight_layout(rect=(0, 0.07, 1, 1))
+    fig.legend(handles, labels, loc="lower center", bbox_to_anchor=(0.5, 0.01),
+               ncol=2, fontsize=7)
     paths = save_pub(fig, out_dir / "fig07_global_vs_hlsg_ab")
     plt.close(fig)
     return paths
@@ -456,7 +460,7 @@ def _plot_reliability_fringe_map(ax, skips: list[str]) -> None:
         Line2D([0], [0], marker="s", ls="", color="#E66101", ms=3.5,
                label="Fringe false alarm"),
     ]
-    ax.legend(handles=handles, loc="lower left", fontsize=6,
+    ax.legend(handles=handles, loc="upper right", fontsize=6,
               borderaxespad=0.4, handletextpad=0.4, labelspacing=0.3)
 
 
@@ -519,6 +523,9 @@ def fig_uq_calibration(out_dir: Path, skips: list[str]) -> list[Path]:
             color=PALETTE["global"],
             label="Before",
         )
+        for xi, val in zip(x - width / 2, before_vals):
+            if np.isfinite(val):
+                ax.text(xi, val + 0.015, f"{val:.3f}", ha="center", va="bottom", fontsize=7)
     _bar_values(
         ax,
         x + width / 2,
@@ -527,11 +534,14 @@ def fig_uq_calibration(out_dir: Path, skips: list[str]) -> list[Path]:
         color=PALETTE["sgpr"],
         label="After",
     )
-    ax.axhline(0.9, color="0.4", ls=":", lw=0.8)
+    for xi, val in zip(x + width / 2, after_vals):
+        if np.isfinite(val):
+            ax.text(xi, val + 0.015, f"{val:.3f}", ha="center", va="bottom", fontsize=7)
+    ax.axhline(0.9, color="0.4", ls=":", lw=0.8, zorder=0)
     ax.set_xticks(x, labels, rotation=15)
     ax.set_ylabel("Empirical coverage (−)")
-    ax.set_ylim(0.8, 1.02)
-    ax.legend(loc="lower right", fontsize=7)
+    ax.set_ylim(0, 1.02)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.22), ncol=2, fontsize=7)
     ax.set_title("Carlisle LSG-Max coverage")
     add_panel_label(ax, "(c)")
 
@@ -611,8 +621,8 @@ def fig_uq_calibration(out_dir: Path, skips: list[str]) -> list[Path]:
     )
     for xi, vb, va in zip(x, before_a, after_a):
         if np.isfinite(vb):
-            ax.text(xi - width / 2, vb * 1.06, f"{vb:.3f}", ha="center", va="bottom", fontsize=6)
-        ax.text(xi + width / 2, va * 1.06, f"{va:.3f}", ha="center", va="bottom", fontsize=6)
+            ax.text(xi - width / 2, vb * 1.06, f"{vb:.3f}", ha="center", va="bottom", fontsize=7)
+        ax.text(xi + width / 2, va * 1.06, f"{va:.3f}", ha="center", va="bottom", fontsize=7)
     ax.set_xticks(x, names)
     ax.set_yscale("log")
     ax.set_ylim(log_floor, 5.0)
@@ -623,7 +633,7 @@ def fig_uq_calibration(out_dir: Path, skips: list[str]) -> list[Path]:
     add_panel_label(ax, "(d)")
 
     fig.suptitle("UQ calibration via global CRPS variance scale", y=1.03)
-    fig.tight_layout()
+    fig.tight_layout(rect=(0, 0.12, 1, 1))
     paths = save_pub(fig, out_dir / "fig08_uq_calibration_crps_scale")
     plt.close(fig)
     return paths
@@ -789,7 +799,7 @@ def fig_study_domains(out_dir: Path, skips: list[str]) -> list[Path]:
         ax.set_title(f"{b['case']} · n={b['n']:,}", fontsize=8)
         ax.set_xlabel("Easting (m)")
         ax.set_ylabel("Northing (m)")
-        add_panel_label(ax, tag, x=-0.05, y=1.06)
+        add_panel_label(ax, tag, x=-0.12, y=1.06)
         if ax is not axes[0]:
             ax.set_ylabel("")
     fig.suptitle(
@@ -835,19 +845,20 @@ def fig_extent_hit_miss(out_dir: Path, skips: list[str]) -> list[Path]:
         for ax, (title, field), tag in zip(axes, panels, ["(a)", "(b)"]):
             if not np.isfinite(field).any():
                 ax.set_title(f"{title} · 缺数据")
-                add_panel_label(ax, tag, x=-0.05, y=1.06)
+                add_panel_label(ax, tag, x=-0.12, y=1.06)
                 continue
             cat = _extent_category(b["hf"], field, DEPTH_TAU_M)
             _scatter_categories(ax, b["xy"], cat, s=s)
             ax.set_title(title, fontsize=8)
-            add_panel_label(ax, tag, x=-0.05, y=1.06)
+            add_panel_label(ax, tag, x=-0.12, y=1.06)
             if ax is not axes[0]:
                 ax.set_ylabel("")
                 ax.tick_params(labelleft=False)
-        axes[0].legend(handles=legend_elements, loc="upper right", fontsize=6, frameon=True)
+        fig.legend(handles=legend_elements, loc="outside lower center", ncol=4,
+                   fontsize=7, frameon=True)
         fig.suptitle(
             f"{case} · event {b['eid']} · inundation-extent classification (τ={DEPTH_TAU_M:g} m)",
-            y=1.02,
+            y=1.05,
         )
         out = f"{stem}_{b['eid']}" if case == "Burnett" else f"{stem}_{b['eid']}"
         written.extend(save_pub(fig, out_dir / out))
@@ -882,7 +893,7 @@ def fig_peak_depth_error(out_dir: Path, skips: list[str]) -> list[Path]:
         ):
             if err is None:
                 ax.set_title(f"{title} · 缺数据")
-                add_panel_label(ax, tag, x=-0.05, y=1.06)
+                add_panel_label(ax, tag, x=-0.12, y=1.06)
                 continue
             fin = np.abs(err[np.isfinite(err)])
             lim = float(np.nanpercentile(fin, 99)) or 1.0
@@ -893,13 +904,13 @@ def fig_peak_depth_error(out_dir: Path, skips: list[str]) -> list[Path]:
             cbar.ax.tick_params(labelsize=6)
             cbar.set_label("depth error (m)", fontsize=7)
             ax.set_title(title, fontsize=8)
-            add_panel_label(ax, tag, x=-0.05, y=1.06)
+            add_panel_label(ax, tag, x=-0.12, y=1.06)
             if ax is not axes[0]:
                 ax.set_ylabel("")
                 ax.tick_params(labelleft=False)
         fig.suptitle(
             f"{case} · event {b['eid']} · peak-depth error relative to HF (independent color scales)",
-            y=1.02,
+            y=1.05,
         )
         written.extend(save_pub(fig, out_dir / f"{stem}_{b['eid']}"))
         plt.close(fig)
@@ -1036,7 +1047,7 @@ def fig_zoning_sensitivity(out_dir: Path, skips: list[str]) -> list[Path]:
     x = np.arange(len(labels), dtype=float)
     for xi, c, v in zip(x, colors, csi_vals):
         axes[0].bar(xi, v, width=0.55, color=c)
-        axes[0].text(xi, v + 0.012, f"{v:.3f}", ha="center", va="bottom", fontsize=6)
+        axes[0].text(xi, v + 0.012, f"{v:.3f}", ha="center", va="bottom", fontsize=7)
     axes[0].set_xticks(x, labels, rotation=15)
     axes[0].set_ylabel("CSI (−)")
     axes[0].set_ylim(0, 1.01)
@@ -1045,7 +1056,7 @@ def fig_zoning_sensitivity(out_dir: Path, skips: list[str]) -> list[Path]:
 
     for xi, c, v in zip(x, colors, rmse_vals):
         axes[1].bar(xi, v, width=0.55, color=c)
-        axes[1].text(xi, v + 0.006, f"{v:.3f}", ha="center", va="bottom", fontsize=6)
+        axes[1].text(xi, v + 0.006, f"{v:.3f}", ha="center", va="bottom", fontsize=7)
     axes[1].set_xticks(x, labels, rotation=15)
     axes[1].set_ylabel("RMSE (m)")
     axes[1].set_title("Chowilla LSG-Max RMSE")

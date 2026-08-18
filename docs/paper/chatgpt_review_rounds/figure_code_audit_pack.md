@@ -148,6 +148,8 @@ mask for LF-only, LSG-Max H-LSG, and (Carlisle only) LSG-TS across the three cas
 
 ```python
 variants = ("lf_only", "lsg_max", "lsg_ts")
+colors = {"lf_only": PALETTE["lf"], "lsg_max": PALETTE["hlsg"],
+          "lsg_ts": PALETTE["lsg_ts"]}
 # LSG-TS is only evaluated for Carlisle; Chowilla/Burnett use max-only time
 # reduction, so LSG-TS duplicates LSG-Max and is skipped.
 for ax, metric, ylab, ylim in ((axes[0], csi, "CSI (−)", (0, 1.02)),
@@ -155,10 +157,11 @@ for ax, metric, ylab, ylim in ((axes[0], csi, "CSI (−)", (0, 1.02)),
     ...
     for xi, val in zip(x + (i - 1) * width, vals):
         if not np.isfinite(val):
-            ax.text(xi, ax.get_ylim()[0] if ylim is None else ylim[0] + 0.01, "—", ha="center", fontsize=7)
+            ax.text(xi, 0.01, "N/A", ha="center", va="bottom", fontsize=7)
         else:
-            ax.text(xi, val + 0.015, f"{val:.3f}", ha="center", va="bottom", fontsize=6)
-    # CSI axis now spans 0–1 (no truncated baseline); numeric labels added on bars
+            ax.text(xi, val + 0.015, f"{val:.3f}", ha="center", va="bottom", fontsize=7)
+    # CSI axis spans 0–1 (no truncated baseline); numeric labels added on bars
+    # LSG-Max H-LSG uses the shared H-LSG blue for cross-figure consistency
 ```
 
 **Data** (`wet_train` protocol):
@@ -175,7 +178,9 @@ for ax, metric, ylab, ylim in ((axes[0], csi, "CSI (−)", (0, 1.02)),
 
 **Caption:** O1–O4 depth RMSE (m) for the Group 1 train and test splits, scored on
 the training wet domain. Panels: (a) Carlisle LSG-Max, (b) Carlisle LSG-TS,
-(c) Chowilla LSG-Max, (d) Burnett LSG-Max.
+(c) Chowilla LSG-Max, (d) Burnett LSG-Max. Each panel uses an independent y-axis
+limit so that the small O1/O2 bars remain visible alongside the larger O3 values;
+bars should not be compared across panels by height.
 
 ![Figure 6](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig06_error_budget_o1o4.png)
 
@@ -196,7 +201,7 @@ for ax, (case, variant, rows), tag in zip(...):
 |---|---|---|---|---|
 | Carlisle LSG-Max | 0.048 | 0.052 | 0.068 | 0.094 |
 | Carlisle LSG-TS | 0.018 | 0.033 | 0.240 | 0.102 |
-| Chowilla LSG-Max | 0.021 | 0.034 | 0.701 | 0.093 |
+| Chowilla LSG-Max | 0.020 | 0.034 | 0.701 | 0.093 |
 | Burnett LSG-Max | 0.074 | 0.083 | 0.668 | 0.387 |
 
 ---
@@ -220,7 +225,7 @@ for ax, metric_idx, ylab, ylim in ((axes[0], 2, "CSI (−)", (0, 1.01)),
         if not ok:
             ax.plot(xi, 0.0, marker="x", color="0.5", markersize=5)
         else:
-            ax.text(xi, val + 0.012, f"{val:.3f}", ha="center", va="bottom", fontsize=6)
+            ax.text(xi, val + 0.012, f"{val:.3f}", ha="center", va="bottom", fontsize=7)
     # CSI axis spans 0–1 (no truncated baseline)
 ```
 
@@ -238,9 +243,9 @@ for ax, metric_idx, ylab, ylim in ((axes[0], 2, "CSI (−)", (0, 1.01)),
 
 **Caption:** CRPS-based variance calibration and spatial diagnostics. (a)
 Carlisle reliability diagram before/after. (b) spatial distribution of the
-0.5 ≤ P < 0.95 fringe vs the HF wet–dry pattern. (c) all-cell and active-cell 90%
-coverage before/after. (d) CRPS (m) before/after for all three cases on a
-logarithmic axis.
+0.5 ≤ P < 0.95 fringe vs the HF wet–dry pattern. (c) Carlisle all-cell and
+active-cell 90% coverage before/after. (d) CRPS (m) before/after for all three
+cases on a logarithmic axis.
 
 ![Figure 8](https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/outputs/figures/fig08_uq_calibration_crps_scale.png)
 
@@ -251,6 +256,8 @@ logarithmic axis.
 # (b) fringe map: fringe = (p >= 0.5) & (p < 0.95)
 # (c) coverage: before/after bars for coverage_90 and coverage_90_active
 ax.set_title("Carlisle LSG-Max coverage")   # panel (c) now names Carlisle
+ax.set_ylim(0, 1.02)                        # full 0–1 scale (no truncated baseline)
+ax.axhline(0.9, color="0.4", ls=":", lw=0.8)  # nominal 90% coverage line
 # (d) CRPS: log scale, bottom = 1e-2
 ax.set_yscale("log")
 ax.set_ylim(1e-2, 5.0)

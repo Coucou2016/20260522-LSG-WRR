@@ -157,10 +157,10 @@ Fraehr (2024) Figshare 公开数据 (CC BY 4.0)
 
 | 行 | 请求/实现 WSE dim | CSI | RMSE | O2−O1 | 来源 JSON |
 |---|---|---|---|---|---|
-| Global native | auto / 1 | 0.976 | 0.112 | 0.064 | `workflow_summary_full_Grp1_wse_ext.json` |
-| H-LSG | — / 13 | 0.976 | 0.094 | 0.005 | `workflow_summary_full_Grp1_wse_ext_hlsg_residual_kmeans.json` |
+| Global native | auto / 1 | 0.976 | 0.112 | 0.064 | `workflow_summary.json`（= `workflow_summary_grp1_wse_ext_global_max_capacity.json`，native global 1-mode max） |
+| H-LSG | — / 13 | 0.976 | 0.094 | 0.005 | `workflow_summary_full_Grp1_wse_ext_hlsg_sgpr_fix.json` |
 | Global forced 13 | 13 / 8 | 0.975 | 0.202 | 0.000 | `workflow_summary_grp1_wse_ext_global_matched13_max.json` |
-| H-LSG modes=0 | — / 1 | 0.976 | 0.112 | 0.064 | 同 native global（residual modes=0 回退到全局基线） |
+| H-LSG modes=0 | — / 1 | 0.976 | 0.112 | 0.064 | `workflow_summary_grp1_wse_ext_hlsg_budget1_max.json`（residual modes=0 回退到全局基线） |
 
 **"实现维度 8"的原因：** `lsg/base.py` 中 `prepare_training_matrix` → `np.linalg.svd` 对 8 个训练事件的 max-surface 矩阵只能产生 rank ≤ 8 → 请求 13 模式被截断。这是 SVD 线性代数约束，非人为选择。
 
@@ -401,6 +401,8 @@ Fraehr (2024) Figshare 公开数据 (CC BY 4.0)
 | Round 6 | 数值一致性 + 模拟审稿人 | `chatgpt_review_rounds/round6_numeric_consistency_reviewer.md` | `_archive_manuscript_pre_round6_20260818_043806` |
 | Round F1 | 图视觉 + 对应代码双线审核（第一轮） | `chatgpt_review_rounds/roundF1_figure_visual_code_review.md` | `_archive_roundF1_20260818_213405` |
 | Round F2-GPT | ChatGPT 真视觉图-码双线审核（GitHub 托管图片） | `chatgpt_review_rounds/roundF2gpt_visual_review.md` | `_archive_roundF2gpt_20260819_004728` |
+| Round F3-GPT | ChatGPT 真视觉第3轮（颜色/图例/标注一致性 + F2 修复落地核验） | `chatgpt_review_rounds/roundF3gpt_visual_review.md` | `_archive_roundF3gpt_20260819_022212` |
+| Round F4-local | 图↔正文↔表↔JSON 数字逐位核对（本地） | 本文档 Table 6 溯源修正 | 无 |
 
 ### Round F1 本地核验与处置（2026-08-18）
 
@@ -460,6 +462,28 @@ Fraehr (2024) Figshare 公开数据 (CC BY 4.0)
 **核验人:** Cursor Agent（浏览器 MCP + ChatGPT 真视觉 + 本地源码/JSON 对照）
 **核验日期:** 2026-08-19
 
+### Round F3-GPT 真视觉第3轮（颜色/图例/标注一致性；2026-08-19）
+
+**审图方式**：ChatGPT 网页检索 GitHub（HEAD 固定 `6b60375`，避开 raw/.../main 旧缓存）对 15 图做第 3 轮真视觉审图，重点查颜色/图例/标注一致性与 F2 修复落地情况。
+
+**结论**：F2 六项修复全部确认落地；**无 P0、无需要重算的 P1 数值问题**。剩余均为绘图/图注小修。
+
+**唯一 P1（已修）**：Fig 8c coverage 柱状图仍用 `ax.set_ylim(0.8, 1.02)` 截断基线（与已修掉的 Fig 5/7/9 同类视觉放大）。→ 改为 0–1.02 全尺度 + 4 根柱三位数值标签，保留 0.90 nominal 虚线。
+
+**P2/P3 已修（只动图/图注/审计包，不动任何数值）**：
+
+| 修复 | 文件 |
+|---|---|
+| Fig 1/2/3 地图 panel label `(a)–(c)` 与 `×10^6` offset 碰撞 → `x=-0.12`；Fig 2/3 suptitle `y=1.05` | `make_figures.py` |
+| Fig 2 图例外移 figure-level 下方 `ncol=4, 7pt`；Fig 5/7 图例外移下方；Fig 8b `upper right`；Fig 8c 下方 | `make_figures.py` |
+| Fig 5 缺失 LSG-TS `—` → `N/A`（不画 0 高度 bar） | `make_figures.py` |
+| Fig 5 LSG-Max H-LSG 颜色 `lsg_max`→`hlsg`，legend 写全 "LSG-Max H-LSG"（跨图一致） | `make_figures.py` |
+| Fig 5/7/8d/9 柱顶数值 6→7 pt | `make_figures.py` |
+| 审计包 Fig 6 caption 同步 independent-y-axis；Fig 6 Chowilla O1 0.021→0.020；Fig 8 caption 标 Carlisle | `figure_code_audit_pack.md` |
+
+**核验人:** Cursor Agent（浏览器 MCP + ChatGPT 真视觉 + 本地源码/JSON 对照）
+**核验日期:** 2026-08-19
+
 ### Round 6 本地核验与处置（2026-08-18）
 
 ChatGPT 标记 Table 3 三处 O2−O1 “减法不符”（Carlisle 0.005、Chowilla H-LSG 0.013、Chowilla global 0.057）。
@@ -488,3 +512,23 @@ ChatGPT 标记 Table 3 三处 O2−O1 “减法不符”（Carlisle 0.005、Chow
 
 **核验人:** Cursor Agent（本地源码审查 + 源 JSON 对照）  
 **核验日期:** 2026-08-18
+
+### Round F4-local 数字逐位核对与溯源修正（2026-08-19）
+
+**核对方式**：本地脚本逐表读取 `outputs/evaluation/*/workflow_summary*.json`，把 manuscript Tables 2–9 与 audit trail 溯源列逐一比对。
+
+**逐表结果（全部数值与 manuscript 一致）**：
+- Table 2：Carlisle/Chowilla/Burnett 的 LF、LSG-Max H-LSG、global 的 wet_train/all_cells CSI/RMSE 全部命中（Carlisle Max H-LSG wet 0.0945/0.9757；Chowilla H-LSG 0.0932/0.9756、global 0.0877/0.9744；Burnett H-LSG 0.3868/0.9752、global 0.1788/0.9751）。
+- Table 3 O1–O4：Carlisle Max 0.0478/0.0525/0.0680/0.0945；Chowilla H-LSG 0.0205/0.0338/0.7010/0.0932、global 0.0205/0.0776/0.6661/0.0877；Burnett H-LSG 0.0744/0.0829/0.6678/0.3868、global 0.0744/0.1233/0.7080/0.1788——全部命中。
+- Table 4（Chowilla capacity）、Table 5（Burnett capacity）、Table 7（inducing/zone sweep）、Table 8（wet-corr）、Table 9（CRPS 0.0285/2.1550/0.1270，cov90_active 0.966/0.287/0.890，var_scale 0.417/0.419/0.604）全部命中。
+
+**发现并修正 1 处溯源错误（Table 6）**：
+audit trail 原 Table 6 的"Global native"行溯源写的是 `workflow_summary_full_Grp1_wse_ext.json`（该文件 lsg_max wet RMSE 实为 0.1539），"H-LSG"行写的是 `workflow_summary_full_Grp1_wse_ext_hlsg_residual_kmeans.json`（该文件实为 0.2673）。正确溯源：
+- Global native（0.112, O2−O1 0.064）→ `workflow_summary.json`（= `workflow_summary_grp1_wse_ext_global_max_capacity.json`）
+- H-LSG（0.094, O2−O1 0.005）→ `workflow_summary_full_Grp1_wse_ext_hlsg_sgpr_fix.json`
+- H-LSG modes=0（0.112, 0.064）→ `workflow_summary_grp1_wse_ext_hlsg_budget1_max.json`
+
+manuscript 数值本身全部正确，仅 audit trail 溯源列文件路径有误，已修正。**判定：manuscript Tables 2–9 数值真实、可追溯、与源 JSON 一致。**
+
+**核验人:** Cursor Agent（本地 JSON 逐表核对）
+**核验日期:** 2026-08-19
