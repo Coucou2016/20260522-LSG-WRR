@@ -400,6 +400,7 @@ Fraehr (2024) Figshare 公开数据 (CC BY 4.0)
 | Round 5 | 图/表/标题格式 | `chatgpt_review_rounds/round5_figures_tables_captions.md` | `_archive_manuscript_pre_round5_*` |
 | Round 6 | 数值一致性 + 模拟审稿人 | `chatgpt_review_rounds/round6_numeric_consistency_reviewer.md` | `_archive_manuscript_pre_round6_20260818_043806` |
 | Round F1 | 图视觉 + 对应代码双线审核（第一轮） | `chatgpt_review_rounds/roundF1_figure_visual_code_review.md` | `_archive_roundF1_20260818_213405` |
+| Round F2-GPT | ChatGPT 真视觉图-码双线审核（GitHub 托管图片） | `chatgpt_review_rounds/roundF2gpt_visual_review.md` | `_archive_roundF2gpt_20260819_004728` |
 
 ### Round F1 本地核验与处置（2026-08-18）
 
@@ -430,6 +431,34 @@ Fraehr (2024) Figshare 公开数据 (CC BY 4.0)
 
 **核验人:** Cursor Agent（本地读图 + 源码 + 源 JSON/NPZ 对照）
 **核验日期:** 2026-08-18
+
+### Round F2-GPT 真视觉图-码双线审核（2026-08-19）
+
+**审图方式**：恢复浏览器 MCP 后，将 15 张图 PNG + 生成代码 + 底层数值打包为 `figure_code_audit_pack.md`（markdown 内嵌 raw GitHub URL），推送到公开仓库 `Coucou2016/20260522-LSG-WRR`，由 ChatGPT 网页检索实际打开 15 张图面做真视觉审图（首次真正让 ChatGPT 看到像素）。
+
+**关键发现（ChatGPT 真视觉；F1 本地审图遗漏的统计呈现问题）**：
+1. Fig 5/7/9 的 CSI 柱状图使用**截断基线**（0.70 / 0.90 / 0.90 起），放大微小差异（Fig 9 实际差异仅 0.001–0.003，视觉上却显得很突出）。
+2. Fig 4 标题被截断（"LSG-Max inundation probabilit…"）。
+3. Fig 8c 图内标题未标明只画 Carlisle。
+4. Fig 6 四 panel 独立 y 轴但 caption 未醒目标明。
+5. 审计包 Fig 6 舍入笔误（0.053/0.095 vs manuscript Table 3 的 0.052/0.094）。
+6. Fig 1 正文 "common easting and northing axes" 会被误解为 shared limits。
+
+**已落实修复（不改任何数值，只改图/图注/措辞）**：
+
+| 修复 | 文件 |
+|---|---|
+| Fig 5/7/9 CSI 截断基线 → 全尺度 0–1 + 柱顶数值标签 | `make_figures.py` |
+| Fig 4 标题缩短为 `{case} · {eid} · LSG-Max P(wet)` | `make_figures.py` |
+| Fig 8c 标题 "Coverage" → "Carlisle LSG-Max coverage" | `make_figures.py` |
+| Fig 6 caption 明说独立 y 轴（不可跨 panel 按柱高比较） | `_build_html.py` |
+| Fig 1 正文 "common axes" → "equal-aspect coordinate axes" | `manuscript.md` |
+| 审计包 Fig 6 舍入对齐 Table 3（0.052/0.094） | `figure_code_audit_pack.md` |
+
+图已重新生成（15 图 × svg/pdf/png），`manuscript.html`（img tags=15）与 `manuscript.pdf`（1.9 MB）已重建，全部推送到 GitHub。
+
+**核验人:** Cursor Agent（浏览器 MCP + ChatGPT 真视觉 + 本地源码/JSON 对照）
+**核验日期:** 2026-08-19
 
 ### Round 6 本地核验与处置（2026-08-18）
 
