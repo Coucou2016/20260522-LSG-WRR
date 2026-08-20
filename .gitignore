@@ -18,6 +18,13 @@ _chatgpt_excerpts/
 Water Resources Research - *.pdf
 Water Resources Research - *.md
 
+# Temporary image-upload staging artifacts from ChatGPT figure-review rounds
+docs/paper/chatgpt_review_rounds/_stage/
+docs/paper/chatgpt_review_rounds/imgs/
+docs/paper/chatgpt_review_rounds/_*
+docs/paper/chatgpt_review_rounds/roundA_contact_sheet.png
+docs/paper/chatgpt_review_rounds/roundA_fig1to3_prompt.txt
+
 # Secrets (API tokens, credentials) — never commit
 .secrets/
 **/mineru_token.txt

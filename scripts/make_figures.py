@@ -325,56 +325,47 @@ def fig_global_vs_hlsg(out_dir: Path, skips: list[str]) -> list[Path]:
         if c not in cases:
             cases.append(c)
 
-    fig, axes = plt.subplots(1, 2, figsize=figsize_double(3.0))
+    # Wet-domain CSI is nearly identical across Global and H-LSG (the extent
+    # gate is shared and global), so the informative contrast is depth RMSE.
+    # The CSI comparison is reported in text (Section 4.3) rather than plotted.
+    fig, ax = plt.subplots(1, 1, figsize=figsize_double(2.4))
     color_map = {
         "Global": PALETTE["global"],
         "H-LSG": PALETTE["hlsg"],
     }
 
-    for ax, metric_idx, ylab, ylim in (
-        (axes[0], 2, "CSI (−)", (0, 1.01)),
-        (axes[1], 3, "RMSE (m)", None),
-    ):
-        x = np.arange(len(cases), dtype=float)
-        # group labels present per case
-        labels_order = ["Global", "H-LSG"]
-        width = 0.25
-        for i, lab in enumerate(labels_order):
-            vals = []
-            for case in cases:
-                hit = [r for r in records if r[0] == case and r[1] == lab]
-                vals.append(hit[0][metric_idx] if hit else np.nan)
-            vals_a = np.asarray(vals, dtype=float)
-            finite_mask = np.isfinite(vals_a)
-            if not finite_mask.any():
-                continue
-            _bar_values(
-                ax,
-                x + (i - 1) * width,
-                np.where(finite_mask, vals_a, 0.0),
-                width=width,
-                color=color_map[lab],
-                label=lab,
-            )
-            for xi, val, ok in zip(x + (i - 1) * width, vals_a, finite_mask):
-                if not ok:
-                    ax.plot(xi, 0.0, marker="x", color="0.5", markersize=5)
-                else:
-                    ax.text(xi, val + 0.012, f"{val:.3f}", ha="center", va="bottom", fontsize=7)
-        ax.set_xticks(x, cases)
-        ax.set_ylabel(ylab)
-        if ylim is not None:
-            ax.set_ylim(*ylim)
-        ax.set_xlabel("Case")
+    x = np.arange(len(cases), dtype=float)
+    labels_order = ["Global", "H-LSG"]
+    width = 0.32
+    for i, lab in enumerate(labels_order):
+        vals = []
+        for case in cases:
+            hit = [r for r in records if r[0] == case and r[1] == lab]
+            vals.append(hit[0][3] if hit else np.nan)  # index 3 = depth RMSE
+        vals_a = np.asarray(vals, dtype=float)
+        finite_mask = np.isfinite(vals_a)
+        if not finite_mask.any():
+            continue
+        _bar_values(
+            ax,
+            x + (i - 0.5) * width,
+            np.where(finite_mask, vals_a, 0.0),
+            width=width,
+            color=color_map[lab],
+            label=lab,
+        )
+        for xi, val, ok in zip(x + (i - 0.5) * width, vals_a, finite_mask):
+            if not ok:
+                ax.plot(xi, 0.0, marker="x", color="0.5", markersize=5)
+            else:
+                ax.text(xi, val + 0.008, f"{val:.3f}", ha="center", va="bottom", fontsize=7)
+    ax.set_xticks(x, cases)
+    ax.set_ylabel("Depth RMSE (m)")
+    ax.set_xlabel("Case")
+    ax.set_title(f"Global vs residual H-LSG (LSG-Max) · {MASK_LABEL}")
 
-    handles, labels = axes[0].get_legend_handles_labels()
-    add_panel_label(axes[0], "(a)")
-    add_panel_label(axes[1], "(b)")
-    fig.suptitle(
-        f"Global vs residual H-LSG (LSG-Max) · {MASK_LABEL}",
-        y=1.04,
-    )
-    fig.tight_layout(rect=(0, 0.07, 1, 1))
+    handles, labels = ax.get_legend_handles_labels()
+    fig.tight_layout(rect=(0, 0.08, 1, 1))
     fig.legend(handles, labels, loc="lower center", bbox_to_anchor=(0.5, 0.01),
                ncol=2, fontsize=7)
     paths = save_pub(fig, out_dir / "fig07_global_vs_hlsg_ab")
@@ -1016,15 +1007,14 @@ def fig_zoning_sensitivity(out_dir: Path, skips: list[str]) -> list[Path]:
     import matplotlib.pyplot as plt
 
     rows = [
-        ("Residual k-means", ARTIFACTS["chowilla_hlsg"], PALETTE["hlsg"]),
-        ("Wet-correlation", ARTIFACTS["chowilla_wet_corr"], PALETTE["sgpr"]),
-        ("Global (none)", ARTIFACTS["chowilla_global"], PALETTE["global"]),
+        ("Residual k-means", ARTIFACTS["chowilla_hlsg"]),
+        ("Wet-correlation", ARTIFACTS["chowilla_wet_corr"]),
+        ("Global", ARTIFACTS["chowilla_global"]),
     ]
     labels: list[str] = []
     csi_vals: list[float] = []
     rmse_vals: list[float] = []
-    colors: list[str] = []
-    for lab, path, color in rows:
+    for lab, path in rows:
         summary = load_json(path)
         if summary is None:
             skips.append(f"fig09: Chowilla {lab} 未运行/缺数据")
@@ -1036,34 +1026,60 @@ def fig_zoning_sensitivity(out_dir: Path, skips: list[str]) -> list[Path]:
         labels.append(lab)
         csi_vals.append(m["csi"])
         rmse_vals.append(m["rmse"])
-        colors.append(color)
 
     if len(labels) < 2:
         if not any("fig09" in s for s in skips):
             skips.append("fig09: wet_correlation zoning A/B 未运行/缺数据")
         return []
 
-    fig, axes = plt.subplots(1, 2, figsize=figsize_double(2.6))
+    fig, ax = plt.subplots(1, 1, figsize=figsize_double(2.4))
     x = np.arange(len(labels), dtype=float)
-    for xi, c, v in zip(x, colors, csi_vals):
-        axes[0].bar(xi, v, width=0.55, color=c)
-        axes[0].text(xi, v + 0.012, f"{v:.3f}", ha="center", va="bottom", fontsize=7)
-    axes[0].set_xticks(x, labels, rotation=15)
-    axes[0].set_ylabel("CSI (−)")
-    axes[0].set_ylim(0, 1.01)
-    axes[0].set_title("Chowilla LSG-Max CSI")
-    add_panel_label(axes[0], "(a)")
+    width = 0.32
 
-    for xi, c, v in zip(x, colors, rmse_vals):
-        axes[1].bar(xi, v, width=0.55, color=c)
-        axes[1].text(xi, v + 0.006, f"{v:.3f}", ha="center", va="bottom", fontsize=7)
-    axes[1].set_xticks(x, labels, rotation=15)
-    axes[1].set_ylabel("RMSE (m)")
-    axes[1].set_title("Chowilla LSG-Max RMSE")
-    add_panel_label(axes[1], "(b)")
+    csi_color = PALETTE["hlsg"]
+    rmse_color = PALETTE["sgpr"]
 
-    fig.suptitle(f"Chowilla zoning-method sensitivity · {MASK_LABEL}", y=1.03)
-    fig.tight_layout()
+    bars_csi = ax.bar(
+        x - width / 2,
+        csi_vals,
+        width=width,
+        color=csi_color,
+        edgecolor="black",
+        linewidth=0.4,
+        label="CSI",
+    )
+    ax.set_ylabel("CSI (−)", color=csi_color)
+    ax.set_ylim(0, 1.01)
+    ax.set_xticks(x, labels)
+    ax.tick_params(axis="y", labelcolor=csi_color)
+    for xi, v in zip(x - width / 2, csi_vals):
+        ax.text(xi, v + 0.012, f"{v:.3f}", ha="center", va="bottom", fontsize=7)
+
+    ax2 = ax.twinx()
+    bars_rmse = ax2.bar(
+        x + width / 2,
+        rmse_vals,
+        width=width,
+        color=rmse_color,
+        edgecolor="black",
+        linewidth=0.4,
+        label="RMSE",
+    )
+    ax2.set_ylabel("Depth RMSE (m)", color=rmse_color)
+    ax2.set_ylim(0, 0.12)
+    ax2.tick_params(axis="y", labelcolor=rmse_color)
+    ax2.spines["right"].set_visible(True)
+    ax2.spines["top"].set_visible(False)
+    ax2.spines["left"].set_visible(False)
+    for xi, v in zip(x + width / 2, rmse_vals):
+        ax2.text(xi, v + 0.003, f"{v:.3f}", ha="center", va="bottom", fontsize=7)
+
+    ax.set_title(f"Chowilla zoning-method sensitivity · {MASK_LABEL}")
+
+    handles = [bars_csi, bars_rmse]
+    fig.tight_layout(rect=(0, 0.10, 1, 1))
+    fig.legend(handles, ["CSI", "RMSE"], loc="lower center",
+               bbox_to_anchor=(0.5, 0.01), ncol=2, fontsize=7)
     paths = save_pub(fig, out_dir / "fig09_zoning_wet_correlation_ab")
     plt.close(fig)
     return paths
@@ -1078,8 +1094,9 @@ def make_all(out_dir: Path) -> dict[str, Any]:
     out_dir.mkdir(parents=True, exist_ok=True)
     skips: list[str] = []
     written: list[Path] = []
-    # Visual-first (Fraehr/Wang order), then metrics
-    written += fig_study_domains(out_dir, skips)
+    # Visual-first (Fraehr/Wang order), then metrics.
+    # Figure 1 (study-domain cell-center footprints) was removed: the domains
+    # are visible in the extent/depth/probability maps and described in Table 1.
     written += fig_extent_hit_miss(out_dir, skips)
     written += fig_peak_depth_error(out_dir, skips)
     written += fig_pwet_maps(out_dir, skips)

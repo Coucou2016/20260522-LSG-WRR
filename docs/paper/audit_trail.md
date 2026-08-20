@@ -2,7 +2,7 @@
 
 **日期:** 2026-08-17  
 **审计对象:** `docs/paper/manuscript.md`（WRR 投稿稿）  
-**审计范围:** 所有 Table 1–9 数值、所有 Figure 1–9 图形、Methods 章节方法归属  
+**审计范围:** 所有 Table 1–9 数值、所有 Figure 1–8 图形、Methods 章节方法归属  
 **审计标准:** 每一项数据必须可追溯到本地计算产物（JSON/NPZ），不可来自参考论文直接引用
 
 ---
@@ -404,6 +404,7 @@ Fraehr (2024) Figshare 公开数据 (CC BY 4.0)
 | Round F3-GPT | ChatGPT 真视觉第3轮（颜色/图例/标注一致性 + F2 修复落地核验） | `chatgpt_review_rounds/roundF3gpt_visual_review.md` | `_archive_roundF3gpt_20260819_022212` |
 | Round F4-local | 图↔正文↔表↔JSON 数字逐位核对（本地） | 本文档 Table 6 溯源修正 | 无 |
 | Round F5-local | PDF 排版/图题终审 + 图号按引用顺序重排 | 本文档 Round F5-local | `_archive_roundF5_20260819_024004` |
+| Round F6 | 删图一(study domains) + Fig7 只留RMSE + Fig8(zoning)合并单面板；全稿图号重排 | 本文档 Round F6 | `_archive_roundF6_20260821_*` |
 
 ### Round F1 本地核验与处置（2026-08-18）
 
@@ -559,3 +560,30 @@ manuscript 数值本身全部正确，仅 audit trail 溯源列文件路径有�
 
 **核验人:** Cursor Agent（本地全稿通读 + 图注逐条终审）
 **核验日期:** 2026-08-19
+
+### Round F6 图结构调整（删图一 + 简化 Fig7 + 合并 Fig8；2026-08-21）
+
+**触发**：作者反馈三点（数据均经本地 JSON 复核，不改任何数值）：
+
+1. **Figure 1（study domains）删除**——该图只是三个 HF 单元中心点云（无 DEM），只表达区域大小/形状；而淹没范围/水深误差/P(wet) 图（原 Fig2/3/4）本身就画在这三个区域上，区域形状已完整可见，且区域规模在 Table 1 已有。删图 + 正文 §4.1 删对应段，其余图号顺延。
+2. **Figure 7（global vs H-LSG）子图 a（CSI）删除**——复核底层 JSON，CSI 确实极其接近且数据正确：
+   - Carlisle Global 0.97569 vs H-LSG 0.97569（完全相同）
+   - Chowilla 0.97443 vs 0.97560（差 0.0012）
+   - Burnett 0.97511 vs 0.97515（差 0.00004）
+   原因是 extent 由共享的 global EXT 门控决定、zoning 只作用在 WSE 分支，故湿域 CSI 几乎不变。CSI 在正文 §4.3 已文字说明（0.974→0.976），信息不丢失。→ 图改为**单面板 RMSE**（Carlisle 0.112→0.094 变好、Chowilla 0.088→0.093 略差、Burnett 0.179→0.387 明显变差）。
+3. **Figure 8（zoning 敏感性）合并**——原 2 子图×3 柱（CSI 0.974/0.976/0.978、RMSE 0.088/0.093/0.094 都几乎不变）改**单面板分组柱状图 + 双 y 轴**（CSI 左轴 0–1，RMSE 右轴 0–0.12，均 0 起）。
+
+**图号重排映射（删图一后顺延）**：extent→Fig1、peak-depth→Fig2、P(wet)→Fig3、cross-case→Fig4、O1–O4→Fig5、global-vs-H-LSG→Fig6、zoning→Fig7、UQ→Fig8。
+
+| 修复 | 文件 |
+|---|---|
+| 删 `fig_study_domains` 调用；`fig_global_vs_hlsg` 改单面板 RMSE；`fig_zoning_sensitivity` 改双轴分组柱状图 | `make_figures.py` |
+| 删 fig1 条目 + 4.1 插入分支；FIGURES 全量图号顺延 + Fig6/Fig7 图注改写 | `_build_html.py` |
+| 删 §4.1 Fig1 段 + 全稿 `Figure N` 引用顺延 + §4.3 句改写（CSI 文字化） | `manuscript.md` |
+| 删 Study-domains 段 + 图号顺延 + Fig6/Fig7 段内容更新 | `figure_code_audit_pack.md` |
+| 新增 Round F6 条目 | `audit_trail.md` |
+
+**重建产物**：删除遗留 `fig01_study_domains.*`；`make_figures.py` 重跑（14 图 × svg/pdf/png）；`manuscript.html`（3.68 MB，14 img tags，图注 1→8 连贯）；`manuscript.pdf`（1.75 MB）。
+
+**核验人:** Cursor Agent（本地 JSON 复核 + 源码修改 + 重建）
+**核验日期:** 2026-08-21

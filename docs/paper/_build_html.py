@@ -13,18 +13,12 @@ FIG_DIR = ROOT / "outputs" / "figures"
 
 FIGURES = [
     (
-        "fig1",
-        "fig01_study_domains.svg",
-        "Figure 1. High-fidelity (HF) computational domains for Carlisle, Chowilla, and Burnett, "
-        "plotted from HF cell-center coordinates on equal-aspect easting and northing axes. "
-        "A digital elevation model (DEM) raster was not available in the public geometry package "
-        "used for this figure; cell counts *n* are given in the panel titles, and points are "
-        "subsampled for display on the largest meshes.",
-    ),
-    (
+        # Internal file IDs (fig02–fig09) follow generation order in make_figures.py.
+        # Display numbering is sequential: the study-domain footprint figure was
+        # removed, so the extent maps open as Figure 1.
         "fig2a",
         "fig02_extent_hit_miss_carlisle_E1.svg",
-        "Figure 2a. Carlisle event E1 inundation-extent classification at τ = 0.03 m, comparing "
+        "Figure 1a. Carlisle event E1 inundation-extent classification at τ = 0.03 m, comparing "
         "(a) the low-fidelity (LF) simulation with the HF reference and (b) the LSG-Max H-LSG "
         "prediction with HF. Blue indicates hits, red misses, gold false alarms, and grey cells "
         "dry in both.",
@@ -32,7 +26,7 @@ FIGURES = [
     (
         "fig2b",
         "fig02_extent_hit_miss_chowilla_E1.svg",
-        "Figure 2b. Chowilla event E1 inundation-extent classification at τ = 0.03 m, comparing "
+        "Figure 1b. Chowilla event E1 inundation-extent classification at τ = 0.03 m, comparing "
         "(a) the LF simulation with the HF reference and (b) the LSG-Max H-LSG prediction with HF. "
         "Blue indicates hits, red misses, gold false alarms, and grey cells dry in both. Chowilla "
         "event E1 is the Group 1 held-out event; its inundation extent (84,667 wet cells) "
@@ -43,14 +37,14 @@ FIGURES = [
     (
         "fig2c",
         "fig02_extent_hit_miss_burnett_E1.svg",
-        "Figure 2c. Burnett event E1 inundation-extent classification at τ = 0.03 m, comparing "
+        "Figure 1c. Burnett event E1 inundation-extent classification at τ = 0.03 m, comparing "
         "(a) the LF simulation with the HF reference and (b) the LSG-Max H-LSG prediction with HF. "
         "Blue indicates hits, red misses, gold false alarms, and grey cells dry in both.",
     ),
     (
         "fig3a",
         "fig03_peak_depth_error_carlisle_E1.svg",
-        "Figure 3a. Carlisle event E1 peak-depth errors (m), shown for (a) the LF simulation and "
+        "Figure 2a. Carlisle event E1 peak-depth errors (m), shown for (a) the LF simulation and "
         "(b) the LSG-Max H-LSG prediction relative to the HF reference; each panel uses an "
         "independent color scale spanning its own 99th-percentile absolute error. Positive errors "
         "indicate overprediction and negative errors indicate underprediction.",
@@ -58,7 +52,7 @@ FIGURES = [
     (
         "fig3b",
         "fig03_peak_depth_error_chowilla_E1.svg",
-        "Figure 3b. Chowilla event E1 peak-depth errors (m), shown for (a) the LF simulation and "
+        "Figure 2b. Chowilla event E1 peak-depth errors (m), shown for (a) the LF simulation and "
         "(b) the LSG-Max H-LSG prediction relative to the HF reference; each panel uses an "
         "independent color scale spanning its own 99th-percentile absolute error. Positive errors "
         "indicate overprediction and negative errors indicate underprediction. The large negative "
@@ -67,7 +61,7 @@ FIGURES = [
     (
         "fig3c",
         "fig03_peak_depth_error_burnett_E1.svg",
-        "Figure 3c. Burnett event E1 peak-depth errors (m), shown for (a) the LF simulation and "
+        "Figure 2c. Burnett event E1 peak-depth errors (m), shown for (a) the LF simulation and "
         "(b) the LSG-Max H-LSG prediction relative to the HF reference; each panel uses an "
         "independent color scale spanning its own 99th-percentile absolute error. Positive errors "
         "indicate overprediction and negative errors indicate underprediction.",
@@ -75,13 +69,13 @@ FIGURES = [
     (
         "fig4a",
         "fig04_pwet_carlisle_E1.svg",
-        "Figure 4a. Carlisle event E1 LSG-Max H-LSG inundation probability *P*(*h* ≥ 0.03 m), "
+        "Figure 3a. Carlisle event E1 LSG-Max H-LSG inundation probability *P*(*h* ≥ 0.03 m), "
         "reconstructed from the probabilistic WSE pathway conditional on the EXT gate.",
     ),
     (
         "fig4b",
         "fig04_pwet_chowilla_E1.svg",
-        "Figure 4b. Chowilla event E1 LSG-Max H-LSG inundation probability *P*(*h* ≥ 0.03 m), "
+        "Figure 3b. Chowilla event E1 LSG-Max H-LSG inundation probability *P*(*h* ≥ 0.03 m), "
         "reconstructed from the probabilistic WSE pathway conditional on the EXT gate. The "
         "near-zero probability region beyond the trained extent reflects extent-gate extrapolation "
         "outside the training wet domain (Section 4.5).",
@@ -89,20 +83,20 @@ FIGURES = [
     (
         "fig4c",
         "fig04_pwet_burnett_E1.svg",
-        "Figure 4c. Burnett event E1 LSG-Max H-LSG inundation probability *P*(*h* ≥ 0.03 m), "
+        "Figure 3c. Burnett event E1 LSG-Max H-LSG inundation probability *P*(*h* ≥ 0.03 m), "
         "reconstructed from the probabilistic WSE pathway conditional on the EXT gate.",
     ),
     (
         "fig5",
         "fig05_cross_case_csi_rmse_wet_train.svg",
-        "Figure 5. Critical success index (CSI) and root-mean-square error (RMSE; m) on the Group 1 "
+        "Figure 4. Critical success index (CSI) and root-mean-square error (RMSE; m) on the Group 1 "
         "training wet-domain scoring mask for LF-only, LSG-Max H-LSG, and (Carlisle only) LSG-TS "
         "maximum-surface predictions across Carlisle, Chowilla, and Burnett.",
     ),
     (
         "fig6",
         "fig06_error_budget_o1o4.svg",
-        "Figure 6. O1–O4 depth RMSE (m) for the Group 1 train and test splits, scored on the "
+        "Figure 5. O1–O4 depth RMSE (m) for the Group 1 train and test splits, scored on the "
         "training wet domain. Panels: (a) Carlisle LSG-Max H-LSG, (b) Carlisle LSG-TS H-LSG, "
         "(c) Chowilla LSG-Max H-LSG, (d) Burnett LSG-Max H-LSG. Each panel uses an independent "
         "y-axis limit so that the small O1/O2 bars remain visible alongside the larger O3 values; "
@@ -111,31 +105,30 @@ FIGURES = [
     (
         "fig7",
         "fig07_global_vs_hlsg_ab.svg",
-        "Figure 7. Native-capacity wet-domain CSI and depth RMSE (m) for the Group 1 maximum-surface "
+        "Figure 6. Native-capacity wet-domain depth RMSE (m) for the Group 1 maximum-surface "
         "evaluations of Carlisle, Chowilla, and Burnett. Bars compare the native global model with "
         "residual H-LSG; the Carlisle H-LSG bar is the SGPR-enabled run reported in Tables 2 and 6 "
-        "(0.094 m), not the legacy non-SGPR residual run.",
+        "(0.094 m), not the legacy non-SGPR residual run. Wet-domain CSI is essentially unchanged "
+        "across the two models (0.974–0.976) because the extent gate is shared and global, so it is "
+        "reported in Section 4.3 rather than plotted.",
     ),
     (
-        # Internal file IDs (fig08/fig09) reflect generation order in make_figures.py;
-        # display numbering follows section order, so zoning (Section 4.4) is Figure 8
-        # and UQ calibration (Section 4.6) is Figure 9.
+        "fig9",
+        "fig09_zoning_wet_correlation_ab.svg",
+        "Figure 7. Chowilla Group 1 maximum-surface zoning sensitivity comparing the global model, "
+        "residual-response *k*-means zoning, and wet-correlation zoning. Bars show wet-domain CSI "
+        "(left axis) and depth RMSE (right axis, m).",
+    ),
+    (
         "fig8",
         "fig08_uq_calibration_crps_scale.svg",
-        "Figure 9. CRPS-based variance calibration and its spatial diagnostics. "
+        "Figure 8. CRPS-based variance calibration and its spatial diagnostics. "
         "(a) Carlisle LSG-Max H-LSG reliability diagram before and after variance calibration. "
         "(b) Spatial distribution of Carlisle cells with 0.5 ≤ *P*(*h* ≥ τ) < 0.95 relative to the "
         "HF wet–dry pattern. (c) Carlisle all-cell and active-cell 90% coverage before and after "
         "calibration. (d) CRPS (m) before and after calibration for Carlisle, Chowilla, and Burnett, "
         "evaluated over all cells including dry cells on a logarithmic axis; Chowilla's larger value "
         "reflects the all-cell scoring domain rather than wet-domain depth error (Table 9).",
-    ),
-    (
-        "fig9",
-        "fig09_zoning_wet_correlation_ab.svg",
-        "Figure 8. Chowilla Group 1 maximum-surface zoning sensitivity comparing the global model, "
-        "residual-response *k*-means zoning, and wet-correlation zoning: (a) wet-domain CSI and "
-        "(b) wet-domain depth RMSE (m).",
     ),
 ]
 
@@ -241,7 +234,6 @@ def md_to_body(md: str, fig_html: dict[str, str]) -> str:
             title = line[4:].strip()
             out.append(f"<h3>{inline_fmt(title)}</h3>")
             if title.startswith("4.1"):
-                out.append(fig_html["fig1"])
                 out.append(fig_html["fig2a"])
                 out.append(fig_html["fig2b"])
                 out.append(fig_html["fig2c"])
