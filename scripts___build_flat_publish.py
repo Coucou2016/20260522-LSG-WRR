@@ -141,6 +141,17 @@ def collect() -> list[Path]:
             add(p)
         elif p.suffix.lower() in {".png", ".svg", ".pdf"} and p.name.startswith("fig"):
             add(p)
+        elif p.suffix.lower() == ".png":
+            # non-publication workflow plots produced by scripts/plot_workflow_results.py
+            # (referenced from data/README.md); small, and part of the artifact record
+            add(p)
+        elif p.suffix.lower() == ".log":
+            # figure-build logs: provenance for which figures were regenerated when
+            add(p)
+
+    # ---- demo notebook --------------------------------------------------------
+    for p in (ROOT / "notebooks").rglob("*"):
+        add(p)
 
     return sorted(set(picked))
 

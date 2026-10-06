@@ -2,7 +2,7 @@
 
 **Repository:** https://github.com/Coucou2016/20260522-LSG-WRR
 **Mirror of working project:** `I:\Projects\20260522-LSG-WRR`
-**Built:** 2026-10-06, assembled from the working tree (base revision `970318b735444cb4f1b1ea4b691daae9405d6f91`), so files also
+**Built:** 2026-10-06, assembled from the working tree (base revision `79ae22c7c33a0b33ef7bc88b250b1dec27336119`), so files also
 include working-tree corrections made after that revision
 **Purpose:** one-directory, machine-readable cross-review mirror of the LSG multi-fidelity
 flood-surrogate study (manuscript, Chinese research report, code, configs, tests, result
