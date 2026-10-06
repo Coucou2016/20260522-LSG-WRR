@@ -2,7 +2,8 @@
 
 **Repository:** https://github.com/Coucou2016/20260522-LSG-WRR
 **Mirror of working project:** `I:\Projects\20260522-LSG-WRR`
-**Built:** 2026-10-06 from commit `7ae0bcdd8b0d85da3a2b8caded39dea74d25a19e`
+**Built:** 2026-10-06, assembled from the working tree (base revision `970318b735444cb4f1b1ea4b691daae9405d6f91`), so files also
+include working-tree corrections made after that revision
 **Purpose:** one-directory, machine-readable cross-review mirror of the LSG multi-fidelity
 flood-surrogate study (manuscript, Chinese research report, code, configs, tests, result
 summaries, figures).
@@ -90,6 +91,21 @@ soft-limits repositories to ~1 GB, so the following are excluded **by size, not 
 
 Consequently the manuscript's `data/...` and `outputs/...` path references describe the
 **working** layout; translate them with the table in section 2.
+
+Because of that split, some `*.json` summaries record the absolute run path of the machine
+that produced them (for example `I:\Projects\20260522-LSG-WRR\...`) inside their provenance
+fields. Those strings are left exactly as written: the JSON files are the primary numerical
+evidence for the reported metrics, and editing them to tidy paths would make the archived
+evidence differ from what the code actually emitted. Treat any absolute path as a local
+machine detail, not as a reproducible location.
+
+## 5b. How to verify a reported number yourself
+
+1. Open the relevant `outputs__evaluation__*.json` and locate the `lsg_max` or `lsg_ts` block.
+2. Read `score_protocol.<variant>.<mask>.{csi,rmse,pod,rfa}`; mask keys are `all` and `wet_train`.
+3. Compare against the corresponding table row in `docs__paper__manuscript.md`.
+4. To regenerate end to end: obtain the cubes, then run `scripts__run_lsg_workflow.py`
+   with the matching `config__*.yaml`, then `scripts__make_figures.py`.
 
 ## 6. Reproduction (working layout)
 

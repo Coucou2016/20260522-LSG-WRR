@@ -80,13 +80,13 @@ th { background: var(--table-head); text-align: left; }
 <p class="subtitle">Low-fidelity, Spatial analysis, and Gaussian Process Learning（LSG）公共基准复现、诊断扩展与局部化的等容量负结果</p>
 <table class="meta">
 <tr><th>报告类型</th><td>正式科学研究报告（方法/诊断导向）</td></tr>
-<tr><th>项目路径</th><td><code>I:\Projects\20260522-LSG-WRR</code></td></tr>
+<tr><th>项目路径</th><td><code>20260522-LSG-WRR</code>（本地 <code>main</code>）· 公开镜像 <a href="https://github.com/Coucou2016/20260522-LSG-WRR">github.com/Coucou2016/20260522-LSG-WRR</a></td></tr>
 <tr><th>案例</th><td>Carlisle（主）、Chowilla（次）、Burnett（第三）</td></tr>
 <tr><th>证据截止日期</th><td>2026-08-16</td></tr>
 <tr><th>nature-writing 轴</th><td>task=manuscript · paper_type=methods · language=zh（报告体）· journal=generic（WRR/JoH/EMS 语境）</td></tr>
 <tr><th>一句话论点</th><td>多保真 LSG 主导技能提升；残差分区主要缩小 O2−O1；CRPS 标定改善 UQ；Chowilla all-cells 为协议反例。</td></tr>
 <tr><th>交付物</th><td><code>docs/report/report.html</code>（自包含）、<code>report.md</code>、<code>report.pdf</code></td></tr>
-<tr><th>版本控制</th><td>仅本地修改；未提交、未推送、未创建 PR、未部署</td></tr>
+<tr><th>版本控制</th><td>已纳入 Git（<code>main</code>）；静态产物与源码镜像已推送至公开仓库</td></tr>
 <tr><th>顾问评审</th><td>ChatGPT 结构评审（本轮）；大改章节合并未执行</td></tr>
 </table>
 <p class="lede"><strong>报告读法：</strong>优先沿“问题→证据→诊断→最小处理→验证→边界”主线；O1–O4 为机制诊断/反事实归因，非可加因果贡献率；方差标定改善概率评分，CSI/RMSE 因均值不变按构造保持。</p>
@@ -26246,6 +26246,6 @@ python scripts/rescore_uq_calibrated.py --config config/carlisle.yaml</pre>
 2. Brisbane / FloodCastBench — 移出公开证据链，仅未来外部复现。
 3. Burnett CRPS <em>s</em> 嵌套 CV、容量×分区×站点完整析因、oracle 顺序置换 — 不构成本稿逻辑缺口。</p>
 <p><strong>本轮已完成：</strong> Chowilla/Burnett 等容量对照；Carlisle 等容量对照（秩上限说明，见 <code>docs/paper/05_carlisle_capacity.md</code>）；Chowilla+Carlisle CRPS <em>s</em> 嵌套 CV；Carlisle 区划 8-NN 相干诊断；硬件/软件版本钉扎；手稿开放占位符已全部改为关闭局限表述。</p>
-<p><strong>Carlisle 等容量教学要点（wet_train）：</strong> H-LSG 维 13 → RMSE 0.094 m；原生全局维 1 → 0.112 m；<code>force_n_modes: 13</code> 受 <em>n</em>_train=8 限制实现为维 8 → RMSE 0.202 m 且 O2−O1=0；<code>residual_eof_modes: 0</code> 坍缩回原生全局。精确维 13 的全局匹配在 Max 路径上不可行。</p></section><p class="callout"><strong>状态声明：</strong>工作区 <code>20260522-LSG-WRR</code> 仍无 <code>.git</code>；公开镜像通过 staging 副本推送到 <a href="https://github.com/Coucou2016/lsg-flood-surrogate-benchmark">github.com/Coucou2016/lsg-flood-surrogate-benchmark</a>（等容量负结果修订）。</p>
+<p><strong>Carlisle 等容量教学要点（wet_train）：</strong> H-LSG 维 13 → RMSE 0.094 m；原生全局维 1 → 0.112 m；<code>force_n_modes: 13</code> 受 <em>n</em>_train=8 限制实现为维 8 → RMSE 0.202 m 且 O2−O1=0；<code>residual_eof_modes: 0</code> 坍缩回原生全局。精确维 13 的全局匹配在 Max 路径上不可行。</p></section><p class="callout"><strong>状态声明：</strong>工作区 <code>20260522-LSG-WRR</code> 已纳入 Git（<code>main</code>）。论文、报告、源码、配置、测试与评测摘要已通过扁平化镜像推送至公开仓库 <a href="https://github.com/Coucou2016/20260522-LSG-WRR">github.com/Coucou2016/20260522-LSG-WRR</a>；该仓库<strong>刻意不设子目录</strong>，全部文件平铺于根目录（原路径以 <code>__</code> 编码），便于外部审阅方一次抓取全部内容。计算型主仓库见 <a href="https://github.com/Coucou2016/lsg-flood-surrogate-benchmark">lsg-flood-surrogate-benchmark</a>。约 30 GB 公开数据立方体、4.4 GB 训练态及单文件超 100 MB 的预测立方体因托管体积上限未随镜像分发。</p>
 </body>
 </html>

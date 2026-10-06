@@ -34,6 +34,21 @@ SKIP_PAPER_RE = re.compile(r"(_archive|imgs/|_stage/|roundA_contact_sheet|_round
 # Raw ChatGPT conversation dumps: working scratch, not evidence of record
 SKIP_RAW_CONV_RE = re.compile(r"_chatgpt_conv\d+.*_raw\.txt$")
 
+# Local review plumbing: a CORS file server, a clipboard helper, a base64 payload blob,
+# and image-staging scripts. These exist only to move screenshots into a browser session
+# on the author's machine; they carry no scientific or reproduction content.
+SKIP_PLUMBING_NAMES = {
+    "docs/paper/chatgpt_review_rounds/_fileserver.py",
+    "docs/paper/chatgpt_review_rounds/_set_clip_image.ps1",
+    "docs/paper/chatgpt_review_rounds/_rA_p.b64",
+    "docs/paper/chatgpt_review_rounds/_imgA_manifest.json",
+    "docs/paper/chatgpt_review_rounds/roundA_fig1to3_prompt.txt",
+    "docs/paper/_stage_roundA_imgs.py",
+    "docs/paper/_make_roundA_sheet.py",
+    "docs/paper/_plan_imgA.py",
+    "docs/paper/_make_review_jpgs.py",
+}
+
 # Elsevier VoR full text / assets are copyright-restricted (see .gitignore)
 SKIP_REF_RE = re.compile(r"(^1-s2\.0-|Fraehr_2024_WaterResearch_|Fraehr_2024_JEnvironManage_|_assets/)")
 
@@ -82,6 +97,8 @@ def collect() -> list[Path]:
             continue
         rel = p.relative_to(ROOT).as_posix()
         if SKIP_PAPER_RE.search(rel) or SKIP_RAW_CONV_RE.search(rel):
+            continue
+        if rel in SKIP_PLUMBING_NAMES:
             continue
         add(p)
 
@@ -185,7 +202,8 @@ GUIDE = """# 00 - START HERE: this repository is deliberately FLAT
 
 **Repository:** https://github.com/{owner}/{repo}
 **Mirror of working project:** `{root}`
-**Built:** {built} from commit `{commit}`
+**Built:** {built}, assembled from the working tree (base revision `{commit}`), so files also
+include working-tree corrections made after that revision
 **Purpose:** one-directory, machine-readable cross-review mirror of the LSG multi-fidelity
 flood-surrogate study (manuscript, Chinese research report, code, configs, tests, result
 summaries, figures).
@@ -273,6 +291,21 @@ soft-limits repositories to ~1 GB, so the following are excluded **by size, not 
 
 Consequently the manuscript's `data/...` and `outputs/...` path references describe the
 **working** layout; translate them with the table in section 2.
+
+Because of that split, some `*.json` summaries record the absolute run path of the machine
+that produced them (for example `I:\\Projects\\20260522-LSG-WRR\\...`) inside their provenance
+fields. Those strings are left exactly as written: the JSON files are the primary numerical
+evidence for the reported metrics, and editing them to tidy paths would make the archived
+evidence differ from what the code actually emitted. Treat any absolute path as a local
+machine detail, not as a reproducible location.
+
+## 5b. How to verify a reported number yourself
+
+1. Open the relevant `outputs__evaluation__*.json` and locate the `lsg_max` or `lsg_ts` block.
+2. Read `score_protocol.<variant>.<mask>.{{csi,rmse,pod,rfa}}`; mask keys are `all` and `wet_train`.
+3. Compare against the corresponding table row in `docs__paper__manuscript.md`.
+4. To regenerate end to end: obtain the cubes, then run `scripts__run_lsg_workflow.py`
+   with the matching `config__*.yaml`, then `scripts__make_figures.py`.
 
 ## 6. Reproduction (working layout)
 
@@ -390,6 +423,18 @@ def main() -> int:
     (STAGE / ".gitignore").write_text(
         ".venv/\n__pycache__/\n*.pyc\n.pytest_cache/\n.DS_Store\n"
         "# Secrets - never commit\n.secrets/\n**/*token*\n",
+        encoding="utf-8",
+    )
+
+    # ---- line-ending policy ---------------------------------------------------
+    # The staging tree is assembled by byte copy from a Windows working copy, so files
+    # arrive with mixed CRLF/LF. Normalise to LF in the repository so that diffs reflect
+    # content changes only, and so every file reads identically regardless of platform.
+    (STAGE / ".gitattributes").write_text(
+        "# Normalise line endings for reviewability: store LF in the repository.\n"
+        "* text=auto eol=lf\n"
+        "# Keep screenshots and other binaries untouched.\n"
+        "*.png binary\n*.jpg binary\n*.pdf binary\n*.npz binary\n*.svg text eol=lf\n",
         encoding="utf-8",
     )
 

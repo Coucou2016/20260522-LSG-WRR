@@ -4,6 +4,13 @@ Physics-guided **Low-fidelity, Spatial analysis, and Gaussian Process Learning (
 
 LSG does **not** depend on HEC-RAS, TUFLOW, or any particular solver. It needs paired high-fidelity / low-fidelity inundation fields (depth or water-surface on a mesh). If a public dump already contains those fields, we ingest them. We do **not** re-run hydrodynamics.
 
+> **Reading this from the flat cross-review mirror?** The published mirror at
+> [20260522-LSG-WRR](https://github.com/Coucou2016/20260522-LSG-WRR) deliberately keeps
+> **every file in the repository root**, with each original path encoded by replacing
+> `/` with `__` (e.g. `docs__paper__manuscript.md` → `docs__paper__manuscript.md`).
+> Start there with `00_START_HERE_FLAT_LAYOUT.md` and `FILE_MANIFEST.csv`. The paths in
+> the tables below describe this **working** layout; translate them using that convention.
+
 ## Repository map (start here)
 
 | Path | What it is |

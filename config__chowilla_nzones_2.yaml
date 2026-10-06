@@ -4,8 +4,7 @@
 # HF = fine HEC-RAS, LF = coarse HEC-RAS (model G). Do not re-run HEC-RAS.
 #
 # Local data: junctions under data/external/chowilla/ → sibling unzip at
-# I:\Projects\202606-JOH-zonal-LSG\data\external\fraehr2024\Chowilla (or a
-# fresh unzip of Chowilla.zip). Same Fraehr layout as Carlisle.
+# # Chowilla.zip (or a fresh unzip of the archive). Same Fraehr layout as Carlisle.# fresh unzip of Chowilla.zip). Same Fraehr layout as Carlisle.
 
 study_area:
   id: chowilla_nzones_2

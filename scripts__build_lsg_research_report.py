@@ -699,12 +699,12 @@ def main() -> None:
 | 项目 | 内容 |
 | --- | --- |
 | 报告类型 | 正式科学研究报告（方法/诊断导向，非短文） |
-| 项目仓库 | `I:\\Projects\\20260522-LSG-WRR` |
+| 项目仓库 | 本地工作区（`main`）；公开镜像 https://github.com/Coucou2016/20260522-LSG-WRR |
 | 主案例 | Carlisle；次案例 Chowilla；第三案例 Burnett |
 | 证据日期 | 2026-08-16（与 `docs/paper/00_progress_review.md` 对齐） |
 | 目标期刊语境 | WRR / JoH / EMS（methods） |
 | 一句话论点 | 多保真 LSG 是技能主源；残差分区主要压缩截断间隙（O2−O1）；CRPS 方差标定改善概率可靠性且不改 CSI/RMSE；Chowilla all-cells 是强 LF 协议反例 |
-| Git 状态 | 仓库基线无 `.git` / 本交付仅本地写 `docs/report/`，不提交不推送 |
+| Git 状态 | 工作区已纳入 Git（`main`）；本报告的静态产物与源码镜像推送至公开仓库 https://github.com/Coucou2016/20260522-LSG-WRR |
 | 图件风格 | SciencePlots；Times New Roman；600 dpi PNG 并存；HTML 优先内联 SVG |
 | 顾问评审 | ChatGPT 结构评审 https://chatgpt.com/c/6a816202-85e0-83ea-9ed9-3de1fdb994cb；大改章节合并未执行 |
 
@@ -724,13 +724,13 @@ def main() -> None:
 <p class="subtitle">{html.escape(subtitle)}</p>
 <table class="meta">
 <tr><th>报告类型</th><td>正式科学研究报告（方法/诊断导向）</td></tr>
-<tr><th>项目路径</th><td><code>I:\\Projects\\20260522-LSG-WRR</code></td></tr>
+<tr><th>项目路径</th><td><code>20260522-LSG-WRR</code>（本地 <code>main</code>）· 公开镜像 <a href="https://github.com/Coucou2016/20260522-LSG-WRR">github.com/Coucou2016/20260522-LSG-WRR</a></td></tr>
 <tr><th>案例</th><td>Carlisle（主）、Chowilla（次）、Burnett（第三）</td></tr>
 <tr><th>证据截止日期</th><td>2026-08-16</td></tr>
 <tr><th>nature-writing 轴</th><td>task=manuscript · paper_type=methods · language=zh（报告体）· journal=generic（WRR/JoH/EMS 语境）</td></tr>
 <tr><th>一句话论点</th><td>多保真 LSG 主导技能提升；残差分区主要缩小 O2−O1；CRPS 标定改善 UQ；Chowilla all-cells 为协议反例。</td></tr>
 <tr><th>交付物</th><td><code>docs/report/report.html</code>（自包含）、<code>report.md</code>、<code>report.pdf</code></td></tr>
-<tr><th>版本控制</th><td>仅本地修改；未提交、未推送、未创建 PR、未部署</td></tr>
+<tr><th>版本控制</th><td>已纳入 Git（<code>main</code>）；静态产物与源码镜像已推送至公开仓库</td></tr>
 <tr><th>顾问评审</th><td>ChatGPT 结构评审（本轮）；大改章节合并未执行</td></tr>
 </table>
 <p class="lede"><strong>报告读法：</strong>优先沿“问题→证据→诊断→最小处理→验证→边界”主线；O1–O4 为机制诊断/反事实归因，非可加因果贡献率；方差标定改善概率评分，CSI/RMSE 因均值不变按构造保持。</p>
@@ -1616,7 +1616,7 @@ python scripts/rescore_uq_calibrated.py --config config/carlisle.yaml</pre>
         refs,
         appendix,
         pending,
-        "\n---\n\n**状态声明：** 工作区 `20260522-LSG-WRR` 仍无 `.git`；公开镜像通过 staging 副本 `I:\\Projects\\_publish_lsg-flood-surrogate-benchmark` 推送到 https://github.com/Coucou2016/lsg-flood-surrogate-benchmark 。本轮已将论文侧过程泄漏清理到研究报告，并保留等容量负结果为主贡献。\n",
+        "\n---\n\n**状态声明：** 工作区 `20260522-LSG-WRR` 已纳入 Git（`main`）。本报告、论文、源码、配置、测试与评测摘要通过扁平化镜像推送至公开仓库 https://github.com/Coucou2016/20260522-LSG-WRR （该仓库**刻意不设子目录**，全部文件平铺于根目录，原路径以 `__` 编码，便于 ChatGPT 等外部审阅方一次抓取全部内容；详见仓库内 `00_START_HERE_FLAT_LAYOUT.md`）。计算型主仓库为 https://github.com/Coucou2016/lsg-flood-surrogate-benchmark 。约 30 GB 的公开 HF/LF 数据立方体、4.4 GB 训练态与单文件超 100 MB 的预测立方体因托管体积上限未随镜像分发（非保密原因）。\n",
     ]
     md_text = "\n\n".join(md_parts)
     (OUT / "report.md").write_text(md_text, encoding="utf-8")
@@ -1718,7 +1718,7 @@ th { background: var(--table-head); text-align: left; }
         f'<section id="{slug("参考文献")}">{md_to_simple_html(refs)}</section>',
         appendix_html,
         f'<section id="{slug("范围边界与本轮已完成项")}">{md_to_simple_html(pending)}</section>',
-        '<p class="callout"><strong>状态声明：</strong>工作区 <code>20260522-LSG-WRR</code> 仍无 <code>.git</code>；公开镜像通过 staging 副本推送到 <a href="https://github.com/Coucou2016/lsg-flood-surrogate-benchmark">github.com/Coucou2016/lsg-flood-surrogate-benchmark</a>（等容量负结果修订）。</p>',
+        '<p class="callout"><strong>状态声明：</strong>工作区 <code>20260522-LSG-WRR</code> 已纳入 Git（<code>main</code>）。论文、报告、源码、配置、测试与评测摘要已通过扁平化镜像推送至公开仓库 <a href="https://github.com/Coucou2016/20260522-LSG-WRR">github.com/Coucou2016/20260522-LSG-WRR</a>；该仓库<strong>刻意不设子目录</strong>，全部文件平铺于根目录（原路径以 <code>__</code> 编码），便于外部审阅方一次抓取全部内容。计算型主仓库见 <a href="https://github.com/Coucou2016/lsg-flood-surrogate-benchmark">lsg-flood-surrogate-benchmark</a>。约 30 GB 公开数据立方体、4.4 GB 训练态及单文件超 100 MB 的预测立方体因托管体积上限未随镜像分发。</p>',
     ]
 
     html_doc = f"""<!DOCTYPE html>

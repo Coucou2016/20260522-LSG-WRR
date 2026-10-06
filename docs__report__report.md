@@ -5,12 +5,12 @@
 | 项目 | 内容 |
 | --- | --- |
 | 报告类型 | 正式科学研究报告（方法/诊断导向，非短文） |
-| 项目仓库 | `I:\Projects\20260522-LSG-WRR` |
+| 项目仓库 | 本地工作区（`main`）；公开镜像 https://github.com/Coucou2016/20260522-LSG-WRR |
 | 主案例 | Carlisle；次案例 Chowilla；第三案例 Burnett |
 | 证据日期 | 2026-08-16（与 `docs__paper__00_progress_review.md` 对齐） |
 | 目标期刊语境 | WRR / JoH / EMS（methods） |
 | 一句话论点 | 多保真 LSG 是技能主源；残差分区主要压缩截断间隙（O2−O1）；CRPS 方差标定改善概率可靠性且不改 CSI/RMSE；Chowilla all-cells 是强 LF 协议反例 |
-| Git 状态 | 仓库基线无 `.git` / 本交付仅本地写 `docs/report/`，不提交不推送 |
+| Git 状态 | 工作区已纳入 Git（`main`）；本报告的静态产物与源码镜像推送至公开仓库 https://github.com/Coucou2016/20260522-LSG-WRR |
 | 图件风格 | SciencePlots；Times New Roman；600 dpi PNG 并存；HTML 优先内联 SVG |
 | 顾问评审 | ChatGPT 结构评审 https://chatgpt.com/c/6a816202-85e0-83ea-9ed9-3de1fdb994cb；大改章节合并未执行 |
 
@@ -1121,4 +1121,4 @@ python scripts/rescore_uq_calibrated.py --config config/carlisle.yaml
 
 ---
 
-**状态声明：** 工作区 `20260522-LSG-WRR` 仍无 `.git`；公开镜像通过 staging 副本 `I:\Projects\_publish_lsg-flood-surrogate-benchmark` 推送到 https://github.com/Coucou2016/lsg-flood-surrogate-benchmark 。本轮已将论文侧过程泄漏清理到研究报告，并保留等容量负结果为主贡献。
+**状态声明：** 工作区 `20260522-LSG-WRR` 已纳入 Git（`main`）。本报告、论文、源码、配置、测试与评测摘要通过扁平化镜像推送至公开仓库 https://github.com/Coucou2016/20260522-LSG-WRR （该仓库**刻意不设子目录**，全部文件平铺于根目录，原路径以 `__` 编码，便于 ChatGPT 等外部审阅方一次抓取全部内容；详见仓库内 `00_START_HERE_FLAT_LAYOUT.md`）。计算型主仓库为 https://github.com/Coucou2016/lsg-flood-surrogate-benchmark 。约 30 GB 的公开 HF/LF 数据立方体、4.4 GB 训练态与单文件超 100 MB 的预测立方体因托管体积上限未随镜像分发（非保密原因）。

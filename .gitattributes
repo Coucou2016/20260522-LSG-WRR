@@ -1,0 +1,8 @@
+# Normalise line endings for reviewability: store LF in the repository.
+* text=auto eol=lf
+# Keep screenshots and other binaries untouched.
+*.png binary
+*.jpg binary
+*.pdf binary
+*.npz binary
+*.svg text eol=lf
