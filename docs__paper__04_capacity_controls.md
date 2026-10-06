@@ -31,16 +31,16 @@ Honest manuscript implication: report H-LSG primarily as a **truncated-gap (O2�
 |-------|--------|
 | `.git` | **Absent** (no commit/push) |
 | pytest | `.\.venv\Scripts\python.exe -m pytest tests -q` → **80 passed, 1 skipped** (start); **83 passed, 1 skipped** (end) |
-| Prior handoff | `docs__paper__03_new_results.md` |
+| Prior handoff | `docs/paper/03_new_results.md` |
 
 Code added for matched capacity:
 
-- `lsg.force_n_modes` via `eof.resolve_n_modes` (used in `lsg__base.py`, `lsg__wse_ext.py`)
-- `base.capacity_snapshot` + `metrics["capacity"]` in `scripts__run_lsg_workflow.py`
-- Fixed `config__chowilla_global.yaml` models path → `outputs/models/chowilla_global` (was sharing `chowilla/` and had overwritten H-LSG weights)
-- Config twins under `config/chowilla_*`, `config__burnett_global_matched18.yaml`
-- Scripts: `scripts__run_capacity_controls.py`, `scripts__diagnose_burnett_hlsg_gap.py`, `scripts__nested_crps_scale_cv.py`
-- Tests: `tests__test_eof.py` (`resolve_n_modes`), `tests__test_zoning.py` (`capacity_snapshot`)
+- `lsg.force_n_modes` via `eof.resolve_n_modes` (used in `lsg/base.py`, `lsg/wse_ext.py`)
+- `base.capacity_snapshot` + `metrics["capacity"]` in `scripts/run_lsg_workflow.py`
+- Fixed `config/chowilla_global.yaml` models path → `outputs/models/chowilla_global` (was sharing `chowilla/` and had overwritten H-LSG weights)
+- Config twins under `config/chowilla_*`, `config/burnett_global_matched18.yaml`
+- Scripts: `scripts/run_capacity_controls.py`, `scripts/diagnose_burnett_hlsg_gap.py`, `scripts/nested_crps_scale_cv.py`
+- Tests: `tests/test_eof.py` (`resolve_n_modes`), `tests/test_zoning.py` (`capacity_snapshot`)
 
 ---
 
@@ -78,7 +78,7 @@ Does the H-LSG effect survive when total WSE GP input dimensionality matches the
 
 | Run | Command | Exit | Artifact |
 |-----|---------|------|----------|
-| Prior global | (from `03_new_results.md`) | 0 | `outputs__evaluation__burnett__workflow_summary_grp1_wse_ext_global_max.json` |
+| Prior global | (from `03_new_results.md`) | 0 | `outputs/evaluation/burnett/workflow_summary_grp1_wse_ext_global_max.json` |
 | Prior H-LSG | (existing) | 0 | `.../hlsg_max.json` |
 | Global matched-18 | `python scripts/run_lsg_workflow.py --config config/burnett_global_matched18.yaml --variants lsg_max --no-pred-examples --summary-out outputs/evaluation/burnett/workflow_summary_grp1_wse_ext_global_matched18_max.json` | 0 | `.../global_matched18_max.json` (`runtime_train_s`≈100; log `matched18_run.log`) |
 
@@ -106,7 +106,7 @@ python scripts/run_lsg_workflow.py --config config/chowilla_inducing_m{2,8,28}.y
 ```
 
 Baseline `m=16`: `.../hlsg_max_capacity_rerun.json`.  
-Global `m=2`: `config__chowilla_global_inducing_m2.yaml` → `.../global_inducing_m2_max.json`.
+Global `m=2`: `config/chowilla_global_inducing_m2.yaml` → `.../global_inducing_m2_max.json`.
 
 | Zoning | `min_inducing` | CSI | RMSE | test O2−O1 | Exit / wall |
 |--------|----------------|-----|------|------------|-------------|
@@ -136,7 +136,7 @@ Why does H-LSG shrink test O2−O1 but worsen wet RMSE / O4 on Burnett?
 python scripts/diagnose_burnett_hlsg_gap.py
 ```
 
-Exit 0 · wall ≈ 2136 s · artifact: `outputs__evaluation__burnett__diagnose_hlsg_o2_vs_rmse.json`.
+Exit 0 · wall ≈ 2136 s · artifact: `outputs/evaluation/burnett/diagnose_hlsg_o2_vs_rmse.json`.
 
 ### Measured evidence
 
@@ -177,7 +177,7 @@ Is train-fit `s` stable across folds when official test is N_event=1?
 python scripts/nested_crps_scale_cv.py --config config/chowilla.yaml --model outputs/models/chowilla/lsg_max_state.npz --summary-out outputs/evaluation/chowilla/nested_crps_scale_cv.json --max-folds 8
 ```
 
-Exit 0 · wall ≈ 84 s · artifact: `outputs__evaluation__chowilla__nested_crps_scale_cv.json`.
+Exit 0 · wall ≈ 84 s · artifact: `outputs/evaluation/chowilla/nested_crps_scale_cv.json`.
 
 | Statistic | Value |
 |-----------|-------|
@@ -232,22 +232,22 @@ python scripts/run_lsg_workflow.py --config config/chowilla_nzones_{2,6}.yaml --
 
 | Path | Role |
 |------|------|
-| `lsg__eof.py` | `resolve_n_modes` + `force_n_modes` |
-| `lsg__base.py` / `lsg__wse_ext.py` | use `resolve_n_modes`; `capacity_snapshot` |
-| `scripts__run_lsg_workflow.py` | emit `metrics.capacity` |
-| `config__chowilla_global.yaml` | models → `outputs/models/chowilla_global` |
-| `config__chowilla_global_matched15.yaml` | `force_n_modes: 15` |
-| `config__burnett_global_matched18.yaml` | `force_n_modes: 18` |
-| `config__chowilla_hlsg_budget3.yaml` | `residual_eof_modes: 0` |
+| `lsg/eof.py` | `resolve_n_modes` + `force_n_modes` |
+| `lsg/base.py` / `lsg/wse_ext.py` | use `resolve_n_modes`; `capacity_snapshot` |
+| `scripts/run_lsg_workflow.py` | emit `metrics.capacity` |
+| `config/chowilla_global.yaml` | models → `outputs/models/chowilla_global` |
+| `config/chowilla_global_matched15.yaml` | `force_n_modes: 15` |
+| `config/burnett_global_matched18.yaml` | `force_n_modes: 18` |
+| `config/chowilla_hlsg_budget3.yaml` | `residual_eof_modes: 0` |
 | `config/chowilla_nzones_{2,6}.yaml` | zone sweep |
 | `config/chowilla_inducing_m{2,8,28}.yaml` | inducing sweep |
-| `config__chowilla_global_inducing_m2.yaml` | global inducing control |
-| `scripts__diagnose_burnett_hlsg_gap.py` | Burnett O2 vs RMSE attribution |
-| `scripts__nested_crps_scale_cv.py` | LOO CRPS `s` |
-| `scripts__run_capacity_controls.py` | batch runner + JSONL log |
-| `tests__test_eof.py`, `tests__test_zoning.py` | focused tests |
+| `config/chowilla_global_inducing_m2.yaml` | global inducing control |
+| `scripts/diagnose_burnett_hlsg_gap.py` | Burnett O2 vs RMSE attribution |
+| `scripts/nested_crps_scale_cv.py` | LOO CRPS `s` |
+| `scripts/run_capacity_controls.py` | batch runner + JSONL log |
+| `tests/test_eof.py`, `tests/test_zoning.py` | focused tests |
 
-**Did not edit:** `docs__paper__manuscript.md`, `docs__report__report.md`, `docs__paper__01_literature_review.md` (concurrent writing agent).
+**Did not edit:** `docs/paper/manuscript.md`, `docs/report/report.md`, `docs/paper/01_literature_review.md` (concurrent writing agent).
 
 ---
 
@@ -273,6 +273,6 @@ Source: `outputs/evaluation/pytest_capacity_controls.txt`.
 
 ## Appendix — Carlisle equal-capacity (this revision)
 
-See `docs__paper__05_carlisle_capacity.md`. Headline wet_train: H-LSG dim 13 RMSE **0.094 m**; native global dim 1 RMSE 0.112 m; `force_n_modes: 13` realises dim **8** with RMSE **0.202 m** and O2−O1 = 0; residual_modes=0 collapses to native global. Exact dim-13 global match is infeasible under Max *n*_train = 8.
+See `docs/paper/05_carlisle_capacity.md`. Headline wet_train: H-LSG dim 13 RMSE **0.094 m**; native global dim 1 RMSE 0.112 m; `force_n_modes: 13` realises dim **8** with RMSE **0.202 m** and O2−O1 = 0; residual_modes=0 collapses to native global. Exact dim-13 global match is infeasible under Max *n*_train = 8.
 
 **仅本地修改，未提交、未推送、未创建 PR、未部署。**

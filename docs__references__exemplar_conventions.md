@@ -72,7 +72,7 @@ Plot separate panels for **LF vs HF** and **LSG vs HF**.
 
 ## 7. What we changed in our stack
 
-1. Figures in `scripts__make_figures.py`: domain; extent H/M/FA; peak-depth error; P(wet) after deterministic maps.
+1. Figures in `scripts/make_figures.py`: domain; extent H/M/FA; peak-depth error; P(wet) after deterministic maps.
 2. Results renumbered so maps precede bars/tables.
 3. Capacity-control **negative** localisation framing kept honest after Fraehr 2024 re-read.
 4. Honest gaps: no fabricated hydrographs; no Fraehr 2024 ML re-benchmark; no 50% extrapolation suite; Elsevier full texts local-only.

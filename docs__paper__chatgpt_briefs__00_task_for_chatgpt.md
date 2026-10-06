@@ -13,7 +13,7 @@
 3. Research report (process detail; **not** the paper voice):  
    https://github.com/Coucou2016/lsg-flood-surrogate-benchmark/blob/main/docs/report/report.md
 4. Supporting claim/evidence notes (repo-relative):  
-   `docs__paper__04_capacity_controls.md`, `docs__paper__05_carlisle_capacity.md`, `docs__references__exemplar_conventions.md`
+   `docs/paper/04_capacity_controls.md`, `docs/paper/05_carlisle_capacity.md`, `docs/references/exemplar_conventions.md`
 
 **Please list every GitHub URL / file you actually opened** at the start of your reply. If fetch fails, say so and work only from pasted excerpts.
 

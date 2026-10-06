@@ -1,6 +1,6 @@
 # Data directory
 
-See **[DATA_INVENTORY.md](DATA_INVENTORY.md)** for the full catalogue.
+See **[DATA_INVENTORY.md](data__DATA_INVENTORY.md)** for the full catalogue.
 
 **Main line (public, already computed):** `external/carlisle/` (Fraehr Figshare dump). Chowilla is the same ingest once downloaded.
 
@@ -27,7 +27,7 @@ Required array keys:
 - `terrain` (optional): float, shape `(n_cells,)`
 - `shape` (optional): `[ny, nx]` for structured grids
 
-LF files must use the same event stems as HF (`FE1`…`FE51`). Event lists and VE1–VE4 splits: `metadata/events.csv`, `metadata/splits.yaml`.
+LF files must use the same event stems as HF (`FE1`…`FE51`). Event lists and VE1–VE4 splits: `data__metadata__events.csv`, `data__metadata__splits.yaml`.
 
 ## Synthetic data
 

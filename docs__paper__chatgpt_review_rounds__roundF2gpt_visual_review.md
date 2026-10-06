@@ -50,7 +50,7 @@ ChatGPT 实际打开了 15 张 PNG 图面 + 完整 `make_figures.py` + `manuscri
 
 ## 三、本轮落地修复
 
-### 代码（`scripts__make_figures.py`）
+### 代码（`scripts/make_figures.py`）
 | 修改 | 内容 |
 |---|---|
 | `fig_cross_case` | CSI ylim (0.7,1.02)→(0,1.02) + 柱顶数值标签 |
@@ -59,12 +59,12 @@ ChatGPT 实际打开了 15 张 PNG 图面 + 完整 `make_figures.py` + `manuscri
 | `fig_pwet_maps` | 标题缩短为 `{case} · {eid} · LSG-Max P(wet)`（修复截断） |
 | `fig_uq_calibration` | panel (c) 标题 "Coverage"→"Carlisle LSG-Max coverage" |
 
-### caption（`docs__paper___build_html.py`）
+### caption（`docs/paper/_build_html.py`）
 | 修改 | 内容 |
 |---|---|
 | Fig 6 caption | 明说 "Each panel uses an independent y-axis limit … bars should not be compared across panels by height" |
 
-### 正文（`docs__paper__manuscript.md`）
+### 正文（`docs/paper/manuscript.md`）
 | 修改 | 内容 |
 |---|---|
 | §4.1 line 149 | "common easting and northing axes" → "equal-aspect easting and northing coordinate axes" |

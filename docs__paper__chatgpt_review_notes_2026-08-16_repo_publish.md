@@ -15,7 +15,7 @@ Advisor only. Local executor verified claims against sources + `outputs/evaluati
 - **URL:** https://chatgpt.com/c/6a8189d9-bac4-83ea-a149-5c8ecf88d721
 - **Purpose:** Architecture / correctness / tests / reproducibility of `lsg/`
 - **Web search:** YES (`正在搜索 raw.githubusercontent.com`; citation chips; file URL list)
-- **GitHub read:** YES — listed raw URLs for README, `lsg/*.py`, tests, `config__carlisle.yaml`, etc. at pinned commit
+- **GitHub read:** YES — listed raw URLs for README, `lsg/*.py`, tests, `config/carlisle.yaml`, etc. at pinned commit
 - **Rate limit:** mid-generation “请求过于频繁”; dismissed; continuation partially citation-noisy but first reply completed (~28k)
 
 ### Advisor main points (verified locally)
@@ -44,7 +44,7 @@ Advisor only. Local executor verified claims against sources + `outputs/evaluati
 - **URL:** https://chatgpt.com/c/6a819be9-19c4-83ea-9721-6809bf203f0f
 - **Purpose:** Teaching depth / glossary / causal narrative vs formal report standard
 - **Web search:** YES (GitHub + raw report.md + figure SVGs/manifest)
-- **GitHub read:** YES — `docs__report__report.md`, figure SVGs, `figure_manifest.json` at commit `19ff7ad`
+- **GitHub read:** YES — `docs/report/report.md`, figure SVGs, `figure_manifest.json` at commit `19ff7ad`
 - **Accepted locally (this turn):** glossary inducing-point symbol `Z_ind`; sanitize `figure_manifest.json` relative paths; keep `待补充`; soft O2−O1 wording in conclusion
 - **Deferred:** full report chapter rewrite / Fig5 merge / HTML+PDF full rebuild cycle (**PDF QA 未运行** this turn after md-only report tweaks)
 
@@ -56,10 +56,10 @@ Advisor only. Local executor verified claims against sources + `outputs/evaluati
 
 ## Local code changes this turn
 
-1. `lsg__wse_ext.py` — AF ∪ varying → WSE `wet_idx`
-2. `tests__test_wse_ext.py` — constant-AF regression
-3. `lsg__uq.py` — train-fit variance scale wording
-4. `lsg__diagnostics.py` — O1 / `max_eof_modes` wording
+1. `lsg/wse_ext.py` — AF ∪ varying → WSE `wet_idx`
+2. `tests/test_wse_ext.py` — constant-AF regression
+3. `lsg/uq.py` — train-fit variance scale wording
+4. `lsg/diagnostics.py` — O1 / `max_eof_modes` wording
 
 ## Conversation 2 — Manuscript + repo (completed)
 

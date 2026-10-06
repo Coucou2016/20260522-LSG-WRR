@@ -255,7 +255,7 @@ outputs__figures__figure_manifest.json,outputs/figures/figure_manifest.json,4076
 pytest.ini,pytest.ini,45,(root)
 README.md,README.md,17829,(root)
 requirements.txt,requirements.txt,871,(root)
-scripts___build_flat_publish.py,scripts/_build_flat_publish.py,20397,scripts
+scripts___build_flat_publish.py,scripts/_build_flat_publish.py,22662,scripts
 scripts___carlisle_svd_diagnostic.py,scripts/_carlisle_svd_diagnostic.py,1898,scripts
 scripts___extract_fig_data_roundF.py,scripts/_extract_fig_data_roundF.py,3313,scripts
 scripts___gen_burnett_m56.py,scripts/_gen_burnett_m56.py,1210,scripts

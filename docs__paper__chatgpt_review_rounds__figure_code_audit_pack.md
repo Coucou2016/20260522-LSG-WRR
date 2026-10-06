@@ -2,8 +2,8 @@
 
 **Repo:** https://github.com/Coucou2016/20260522-LSG-WRR
 **Manuscript:** https://raw.githubusercontent.com/Coucou2016/20260522-LSG-WRR/main/docs/paper/manuscript.md
-**Generating code:** `scripts__make_figures.py` (all figures)
-**Captions:** `docs__paper___build_html.py` (`FIGURES` list)
+**Generating code:** `scripts/make_figures.py` (all figures)
+**Captions:** `docs/paper/_build_html.py` (`FIGURES` list)
 
 This pack pairs every manuscript figure with (a) the figure image, (b) the exact
 generating code, and (c) the underlying data values, so you can do a **visual

@@ -41,7 +41,7 @@ LSG does **not** depend on HEC-RAS, TUFLOW, or any particular solver. It needs p
 | Merced / Bald Eagle USACE ZIPs | **No** (terrain + hydrographs only) | kept as optional generators | — | Not required |
 | Brisbane TUFLOW | Licensed, not public | `config__brisbane.yaml` | — | Appendix only |
 
-Registry: [`config__cases.yaml`](config/cases.yaml). Inventory: [`data__DATA_INVENTORY.md`](data/DATA_INVENTORY.md).
+Registry: [`config__cases.yaml`](config__cases.yaml). Inventory: [`data__DATA_INVENTORY.md`](data__DATA_INVENTORY.md).
 
 ## Setup
 
@@ -303,6 +303,6 @@ and `..._global_max.json` (+ `..._global_matched15_max.json`).
 ## Paper drafting notes
 
 Progress review, literature gap analysis, and manuscript framework (local drafts):
-[`docs__paper__00_progress_review.md`](docs/paper/00_progress_review.md),
-[`docs__paper__01_literature_review.md`](docs/paper/01_literature_review.md),
-[`docs__paper__02_paper_framework.md`](docs/paper/02_paper_framework.md).
+[`docs__paper__00_progress_review.md`](docs__paper__00_progress_review.md),
+[`docs__paper__01_literature_review.md`](docs__paper__01_literature_review.md),
+[`docs__paper__02_paper_framework.md`](docs__paper__02_paper_framework.md).

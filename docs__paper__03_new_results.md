@@ -14,11 +14,11 @@ Post-change pytest (this resume): **80 passed, 1 skipped** (`.\.venv\Scripts\pyt
 
 | Item | Value |
 |------|-------|
-| Config | `config__burnett_global.yaml` (`lsg.zoning: none`; models → `outputs/models/burnett_global`) |
+| Config | `config/burnett_global.yaml` (`lsg.zoning: none`; models → `outputs/models/burnett_global`) |
 | Command | `.\.venv\Scripts\python.exe scripts\run_lsg_workflow.py --config config\burnett_global.yaml --variants lsg_max --no-pred-examples --summary-out outputs\evaluation\burnett\workflow_summary_grp1_wse_ext_global_max.json` |
 | Exit | 0 |
 | Wall | ~32 min (incl. Fraehr ingest); `runtime_train_s` ≈ 56.9; `runtime_predict_s` ≈ 4.3 |
-| Artifact | `outputs__evaluation__burnett__workflow_summary_grp1_wse_ext_global_max.json` |
+| Artifact | `outputs/evaluation/burnett/workflow_summary_grp1_wse_ext_global_max.json` |
 | Smoke first | `--events E30,E31,E32,E33,E12` → `workflow_summary_smoke_global_E30E31E32E33E12_max.json` (EXIT=0, ~198 s) |
 
 ### Wet_train LSG-Max (Grp1)
@@ -29,7 +29,7 @@ Post-change pytest (this resume): **80 passed, 1 skipped** (`.\.venv\Scripts\pyt
 | **Global** (`zoning: none`) | **0.975108** | **0.178787** |
 | H-LSG (`residual_kmeans`) | 0.975152 | 0.386751 |
 
-Source H-LSG: `outputs__evaluation__burnett__workflow_summary_grp1_wse_ext_hlsg_max.json` (unchanged).
+Source H-LSG: `outputs/evaluation/burnett/workflow_summary_grp1_wse_ext_hlsg_max.json` (unchanged).
 
 ### Test error budget (O2−O1)
 
@@ -52,7 +52,7 @@ Prefer re-score from saved states (no retrain).
 |------|-------|
 | Command | `.\.venv\Scripts\python.exe scripts\rescore_uq_calibrated.py --config config\chowilla.yaml --summary-in outputs\evaluation\chowilla\workflow_summary_grp1_wse_ext_hlsg_max.json --summary-out outputs\evaluation\chowilla\workflow_summary_grp1_wse_ext_hlsg_max_uq_calibrated.json --variants lsg_max` |
 | Exit / wall | 0 / ~42 s |
-| Artifact | `outputs__evaluation__chowilla__workflow_summary_grp1_wse_ext_hlsg_max_uq_calibrated.json` |
+| Artifact | `outputs/evaluation/chowilla/workflow_summary_grp1_wse_ext_hlsg_max_uq_calibrated.json` |
 
 | | CRPS (m) | cov90 | cov90_active | var_scale |
 |--|----------|-------|--------------|-----------|
@@ -67,7 +67,7 @@ Note: on Chowilla Grp1 the CRPS scale shrinks intervals but CRPS is essentially 
 |------|-------|
 | Command | `.\.venv\Scripts\python.exe scripts\rescore_uq_calibrated.py --config config\burnett.yaml --summary-in outputs\evaluation\burnett\workflow_summary_grp1_wse_ext_hlsg_max.json --summary-out outputs\evaluation\burnett\workflow_summary_grp1_wse_ext_hlsg_max_uq_calibrated.json --variants lsg_max` |
 | Exit / wall | 0 / ~35–40 min (ingest + `predict_uq` on 18×780k) |
-| Artifact | `outputs__evaluation__burnett__workflow_summary_grp1_wse_ext_hlsg_max_uq_calibrated.json` |
+| Artifact | `outputs/evaluation/burnett/workflow_summary_grp1_wse_ext_hlsg_max_uq_calibrated.json` |
 
 | | CRPS (m) | cov90 | cov90_active | var_scale |
 |--|----------|-------|--------------|-----------|
@@ -84,11 +84,11 @@ Point CSI/RMSE unchanged vs H-LSG baseline (CSI 0.975152, RMSE 0.386751).
 
 | Case | Command | Artifact key | Shape / mean |
 |------|---------|--------------|--------------|
-| Carlisle | `scripts\export_inundation_prob.py --config config\carlisle.yaml --variants lsg_max` | `outputs__evaluation__carlisle__pred_examples.npz` → `inundation_prob_lsg_max` | (1, 581061), mean≈0.364 |
+| Carlisle | `scripts\export_inundation_prob.py --config config\carlisle.yaml --variants lsg_max` | `outputs/evaluation/carlisle/pred_examples.npz` → `inundation_prob_lsg_max` | (1, 581061), mean≈0.364 |
 | Chowilla | same w/ `config\chowilla.yaml` | `.../chowilla/pred_examples.npz` | (1, 109914), mean≈0.310 |
 | Burnett | same w/ `config\burnett.yaml` | `.../burnett/pred_examples.npz` | (18, 780785), mean≈0.554; `predict_uq_s`≈11.9 |
 
-Workflow also updated to persist `inundation_prob_lsg_max` on future runs (`scripts__run_lsg_workflow.py`).
+Workflow also updated to persist `inundation_prob_lsg_max` on future runs (`scripts/run_lsg_workflow.py`).
 
 **Figure panel:** Fig. 5 spatial maps panel (e) is now labeled **P(wet)** (not binary depth≥0.03 m).
 
@@ -98,10 +98,10 @@ Workflow also updated to persist `inundation_prob_lsg_max` on future runs (`scri
 
 | Item | Value |
 |------|-------|
-| Config | `config__chowilla_wet_correlation.yaml` (`zoning: wet_correlation`; models → `outputs/models/chowilla_wet_correlation`) |
+| Config | `config/chowilla_wet_correlation.yaml` (`zoning: wet_correlation`; models → `outputs/models/chowilla_wet_correlation`) |
 | Command | `.\.venv\Scripts\python.exe scripts\run_lsg_workflow.py --config config\chowilla_wet_correlation.yaml --variants lsg_max --no-pred-examples --summary-out outputs\evaluation\chowilla\workflow_summary_grp1_wse_ext_wet_correlation_max.json` |
 | Exit / train | 0 / `runtime_train_s` ≈ 41.1 |
-| Artifact | `outputs__evaluation__chowilla__workflow_summary_grp1_wse_ext_wet_correlation_max.json` |
+| Artifact | `outputs/evaluation/chowilla/workflow_summary_grp1_wse_ext_wet_correlation_max.json` |
 
 ### Chowilla wet_train LSG-Max
 
@@ -144,18 +144,18 @@ Exit: 0 · wall ≈ 258 s · manifest skips: **[]**
 | Fig. 5 | `fig05_spatial_maps_{carlisle,chowilla,burnett}_E1` | Panel (e) = P(wet) |
 | Fig. 6 | `outputs/figures/fig06_zoning_wet_correlation_ab` | Zoning sensitivity (new) |
 
-Manifest: `outputs__figures__figure_manifest.json` (`n_files`: 24, `skips`: []).
+Manifest: `outputs/figures/figure_manifest.json` (`n_files`: 24, `skips`: []).
 
 ---
 
 ## Code / config touchpoints (local only)
 
-- `config__burnett_global.yaml` — models dir `outputs/models/burnett_global`
-- `config__chowilla_wet_correlation.yaml` — wet_correlation twin
-- `scripts__run_lsg_workflow.py` — `--variants`, `--summary-out`, `--no-pred-examples`, export `inundation_prob_*`
-- `scripts__export_inundation_prob.py` — re-score P(wet) into pred_examples
-- `scripts__make_figures.py` — Burnett global, UQ pairs, P(wet) panel, Fig. 6
-- `tests__test_inundation_prob_export.py` — focused tests
+- `config/burnett_global.yaml` — models dir `outputs/models/burnett_global`
+- `config/chowilla_wet_correlation.yaml` — wet_correlation twin
+- `scripts/run_lsg_workflow.py` — `--variants`, `--summary-out`, `--no-pred-examples`, export `inundation_prob_*`
+- `scripts/export_inundation_prob.py` — re-score P(wet) into pred_examples
+- `scripts/make_figures.py` — Burnett global, UQ pairs, P(wet) panel, Fig. 6
+- `tests/test_inundation_prob_export.py` — focused tests
 
 H-LSG Burnett model MD5 unchanged vs backup after global A/B.
 

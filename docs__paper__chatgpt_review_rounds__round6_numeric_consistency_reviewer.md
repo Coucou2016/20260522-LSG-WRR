@@ -2,7 +2,7 @@
 
 Date: 2026-08-18 (UTC+8)
 Chat: LSG WRR paper / 论文写作修改建议 (`6a82fa1e-ec94-83ea-9be2-31429a2f926d`)
-Prompt: `docs__paper___round6_prompt_compact.txt` (compact extract: Key Points + Abstract, all tables verbatim,
+Prompt: `docs/paper/_round6_prompt_compact.txt` (compact extract: Key Points + Abstract, all tables verbatim,
 every sentence containing a number from Results/Discussion, full Conclusions).
 Injected via base64 chunks into `localStorage.__r6text`, verified byte-identical
 (26,110 chars, checksum 33827) before sending.

@@ -40,7 +40,7 @@ The Availability Statement says:
 - Access is **upon request**: [Brisbane River Catchment Flood Study reports and models](https://www.business.qld.gov.au/industries/mining-energy-water/water/maps-data/modelling/brisbane-river-catchment).
 - LSG Python code is cited as Fraehr (2024) [10.26188/24312658](https://doi.org/10.26188/24312658) — that deposit is **Carlisle / Chowilla / Burnett**, not this Lower Brisbane TUFLOW event library.
 
-No Zenodo, HydroShare, Figshare, or GitHub archive of the 51-event HF/LF depth cubes was declared or found (see `metadata/sources.yaml`).
+No Zenodo, HydroShare, Figshare, or GitHub archive of the 51-event HF/LF depth cubes was declared or found (see `data__metadata__sources.yaml`).
 
 ## Paper specifications
 
@@ -56,7 +56,7 @@ No Zenodo, HydroShare, Figshare, or GitHub archive of the 51-event HF/LF depth c
 | CRS | not stated | conventional EPSG:28356 (confirm on licensed files) |
 | Hydrology | URBS (Seqwater / BRCFS, Aurecon 2015) | licensed |
 | Hydrodynamics | TUFLOW (BRCFS, BMT WBM 2016) | licensed |
-| Synthetic design events | 47 (FE1–FE47), 11 AEP classes in text; table lists AEP 1-in-2 to 1-in-500 | `metadata/events.csv` |
+| Synthetic design events | 47 (FE1–FE47), 11 AEP classes in text; table lists AEP 1-in-2 to 1-in-500 | `data__metadata__events.csv` |
 | Historical LSG events | 1996, 1999, 2011, 2013 (FE48–FE51) | same |
 | HF calibration (not all used in LSG) | 1974, 1996, 1999, 2011, 2013 | 1974 not in Appendix A |
 
@@ -70,7 +70,7 @@ No Zenodo, HydroShare, Figshare, or GitHub archive of the 51-event HF/LF depth c
 | LSG-TS synthetic-only train | 6 | TS train without 1999/2011 |
 | LSG-Max synthetic-only train | 45 | Max train without 1999/2011 |
 
-Machine-readable copies: `metadata/events.csv`, `metadata/splits.yaml`. Paper Table 1 metrics: `metadata/paper_table1_metrics.csv`.
+Machine-readable copies: `data__metadata__events.csv`, `data__metadata__splits.yaml`. Paper Table 1 metrics: `data__metadata__paper_table1_metrics.csv`.
 
 Figure 5 labels **TE1–TE4**; the article does not map those labels onto FE IDs.
 
@@ -89,7 +89,7 @@ Figure 5 labels **TE1–TE4**; the article does not map those labels onto FE IDs
 | BCC 2011 flood extent polygons | auxiliary only | `data/raw/auxiliary/bcc_2011_flood_extent.geojson` | **downloaded** (~5.4 MB, CC BY 4.0) | BCC Open Data; LGA extent, not TUFLOW depths |
 | Synthetic demo cube | CI / smoke tests | `data/synthetic/training_events.npz` | generated on demand | `scripts/generate_synthetic_data.py` |
 
-Expected file list (all `missing` until you drop licensed NPZ/NetCDF in): `metadata/file_manifest.csv`.
+Expected file list (all `missing` until you drop licensed NPZ/NetCDF in): `data__metadata__file_manifest.csv`.
 
 ## NPZ / NetCDF contract
 

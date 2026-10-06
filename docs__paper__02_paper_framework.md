@@ -66,7 +66,7 @@ We evaluate a residual hierarchical LSG variant (global modes + residual zonal E
 
 ## Figure / table list (intended names; figures regenerated 2026-08-16)
 
-Verified via `outputs__figures__figure_manifest.json` (`skips=[]`).
+Verified via `outputs/figures/figure_manifest.json` (`skips=[]`).
 
 | ID | Content | Artifact source |
 |---|---|---|

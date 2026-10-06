@@ -8,10 +8,10 @@ Mirror of Chowilla Exp 1 (`04_capacity_controls.md`):
 
 | Run | Config | Summary artifact |
 |-----|--------|------------------|
-| Global native | `config__carlisle_global.yaml` | `outputs__evaluation__carlisle__workflow_summary_grp1_wse_ext_global_max_capacity.json` |
-| Global matched (`force_n_modes: 13`) | `config__carlisle_global_matched13.yaml` | `.../workflow_summary_grp1_wse_ext_global_matched13_max.json` |
-| H-LSG residual_modes=0 | `config__carlisle_hlsg_budget1.yaml` | `.../workflow_summary_grp1_wse_ext_hlsg_budget1_max.json` |
-| H-LSG baseline (prior) | `config__carlisle.yaml` | `.../workflow_summary_full_Grp1_wse_ext_hlsg_sgpr_fix.json` |
+| Global native | `config/carlisle_global.yaml` | `outputs/evaluation/carlisle/workflow_summary_grp1_wse_ext_global_max_capacity.json` |
+| Global matched (`force_n_modes: 13`) | `config/carlisle_global_matched13.yaml` | `.../workflow_summary_grp1_wse_ext_global_matched13_max.json` |
+| H-LSG residual_modes=0 | `config/carlisle_hlsg_budget1.yaml` | `.../workflow_summary_grp1_wse_ext_hlsg_budget1_max.json` |
+| H-LSG baseline (prior) | `config/carlisle.yaml` | `.../workflow_summary_full_Grp1_wse_ext_hlsg_sgpr_fix.json` |
 
 H-LSG WSE GP input dim on Carlisle Max = 1 global + 4×3 residual = **13**. LSG-Max train *N* = 8 events, so a global-only EOF cannot realise 13 modes: `force_n_modes: 13` is capped by `pca.n_components_` to **8** (full train rank).
 
@@ -33,5 +33,5 @@ H-LSG WSE GP input dim on Carlisle Max = 1 global + 4×3 residual = **13**. LSG-
 
 ## Related cheap diagnostics (this session)
 
-- Nested CRPS *s* LOO on Carlisle Max: `outputs__evaluation__carlisle__nested_crps_scale_cv.json` — *s*_full = 0.417; fold mean 0.418 ± 0.031 (8 folds).
-- Zone spatial coherence: `outputs__evaluation__carlisle__zone_contiguity_diagnostic.json` — mean 8-NN same-zone fraction ≈ 0.952 when XY is included; method still does not enforce contiguity.
+- Nested CRPS *s* LOO on Carlisle Max: `outputs/evaluation/carlisle/nested_crps_scale_cv.json` — *s*_full = 0.417; fold mean 0.418 ± 0.031 (8 folds).
+- Zone spatial coherence: `outputs/evaluation/carlisle/zone_contiguity_diagnostic.json` — mean 8-NN same-zone fraction ≈ 0.952 when XY is included; method still does not enforce contiguity.

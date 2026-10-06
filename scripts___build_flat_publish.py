@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import csv
 import json
+import posixpath
 import re
 import shutil
 import subprocess
@@ -182,18 +183,52 @@ def secret_scan(paths: list[Path]) -> list[str]:
     return hits
 
 
-def rewrite_links(path: Path, mapping: dict[str, str]) -> None:
-    """Point in-document relative links at the flattened names."""
+def rewrite_links(path: Path, path_rel: str, mapping: dict[str, str]) -> None:
+    """Point in-document relative links at the flattened names.
+
+    Handles three shapes, which is what the working documents actually use:
+      - bare references in backticks:            `docs/paper/manuscript.md`
+      - markdown link/image targets:             [text](docs/paper/manuscript.md)
+      - parent-relative targets:                 ![](../../outputs/figures/x.svg)
+    """
     if path.suffix.lower() not in {".md", ".txt"}:
         return
+
     text = path.read_text(encoding="utf-8", errors="replace")
     original = text
-    for rel, flat in sorted(mapping.items(), key=lambda kv: -len(kv[0])):
-        if rel == flat:
-            continue
-        text = text.replace("(../)+" + rel, flat)
-        text = re.sub(r"(?:\.\./)+" + re.escape(rel), flat, text)
-        text = text.replace("`" + rel + "`", "`" + flat + "`")
+
+    def flat_for(rel_path: str) -> str:
+        return mapping.get(rel_path, flat_name(rel_path))
+
+    # --- (1) markdown link and image targets --------------------------------
+    def fix_target(m: re.Match[str]) -> str:
+        prefix, target, closer = m.group(1), m.group(2), m.group(3)
+        if target.startswith(("http://", "https://", "#", "mailto:", "data:")):
+            return m.group(0)
+        # strip a leading anchor
+        anchor = ""
+        if "#" in target:
+            target, anchor = target.split("#", 1)
+            anchor = "#" + anchor
+        # normalise '../' prefixes against the file's own location
+        resolved = posixpath.normpath(posixpath.join(posixpath.dirname(path_rel), target))
+        return f"{prefix}{flat_for(resolved)}{anchor}{closer}"
+
+    for pat in (r"(\]\()([^)\s]+)(\))", r"(\]:\s*)(\S+)(\s*$)"):
+        text = re.sub(pat, fix_target, text)
+
+    # --- (2) backticked paths ------------------------------------------------
+    def fix_tick(m: re.Match[str]) -> str:
+        inner = m.group(1)
+        if inner.startswith(("http://", "https://", "-")) or "/" not in inner:
+            return m.group(0)
+        resolved = posixpath.normpath(posixpath.join(posixpath.dirname(path_rel), inner))
+        if resolved in mapping:
+            return "`" + mapping[resolved] + "`"
+        return m.group(0)
+
+    text = re.sub(r"`([^`\n]+)`", fix_tick, text)
+
     if text != original:
         path.write_text(text, encoding="utf-8")
 
@@ -299,7 +334,17 @@ evidence for the reported metrics, and editing them to tidy paths would make the
 evidence differ from what the code actually emitted. Treat any absolute path as a local
 machine detail, not as a reproducible location.
 
-## 5b. How to verify a reported number yourself
+## 5b. Some in-document links point to files that are not here (by design)
+
+A few cross-references in `docs__references__README.md` and the data READMEs name artifacts
+that section 5 excludes — for example the Elsevier VoR full-text Markdown files
+(`Fraehr_2024_WaterResearch_*`, `Fraehr_2024_JEnvironManage_*`) and local verification
+scripts that operate on the working tree. Those links will 404 here. That is expected: it
+marks exactly which inputs are local-only or copyrighted rather than missing by accident.
+Relative filenames mentioned inside `data__external__*/README.md` are relative to their
+original folder in the working layout, not to this root.
+
+## 5c. How to verify a reported number yourself
 
 1. Open the relevant `outputs__evaluation__*.json` and locate the `lsg_max` or `lsg_ts` block.
 2. Read `score_protocol.<variant>.<mask>.{{csi,rmse,pod,rfa}}`; mask keys are `all` and `wet_train`.
@@ -396,10 +441,11 @@ def main() -> int:
             w.writerow([flat_name(rel), rel, p.stat().st_size, rel.split("/")[0] if "/" in rel else "(root)"])
 
     # ---- fix in-document links to the flat names ------------------------------
-    for name in ("README.md",):
-        rewrite_links(STAGE / name, mapping)
-    for p in STAGE.glob("docs__*.md"):
-        rewrite_links(p, mapping)
+    for p in sorted(STAGE.glob("*.md")):
+        rel = next((r for r, f in mapping.items() if f == p.name), None)
+        if rel is None and p.name == "README.md":
+            rel = "README.md"
+        rewrite_links(p, rel or p.name, mapping)
 
     # ---- guide document -------------------------------------------------------
     try:

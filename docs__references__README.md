@@ -18,15 +18,15 @@ Markdown conversions here are **English structural extractions** (text + figure/
 
 ### Fraehr et al. 2022 — WRR `10.1029/2022WR032248`
 
-- PDF: [`Fraehr_2022_WRR_Upskilling_LF_Hydrodynamic_LSG.pdf`](Fraehr_2022_WRR_Upskilling_LF_Hydrodynamic_LSG.pdf) (~1.87 MB)
-- Markdown: [`Fraehr_2022_WRR_Upskilling_LF_Hydrodynamic_LSG.md`](Fraehr_2022_WRR_Upskilling_LF_Hydrodynamic_LSG.md)
+- PDF: [`Fraehr_2022_WRR_Upskilling_LF_Hydrodynamic_LSG.pdf`](docs__references__Fraehr_2022_WRR_Upskilling_LF_Hydrodynamic_LSG.pdf) (~1.87 MB)
+- Markdown: [`Fraehr_2022_WRR_Upskilling_LF_Hydrodynamic_LSG.md`](docs__references__Fraehr_2022_WRR_Upskilling_LF_Hydrodynamic_LSG.md)
 - License / access: AGU open access (**CC BY-NC**). Acquired lawfully from University of Melbourne Minerva Access bitstream (publisher Wiley/AGU PDF blocked by Cloudflare for automated curl on this host).
 - Redistribution: **OK for non-commercial sharing with attribution** under CC BY-NC; prefer linking the DOI for commercial contexts.
 
 ### Fraehr et al. 2023 — WRR `10.1029/2022WR033836`
 
-- PDF: [`Fraehr_2023_WRR_Fast_Accurate_Hybrid_Floodplain_LSG.pdf`](Fraehr_2023_WRR_Fast_Accurate_Hybrid_Floodplain_LSG.pdf) (~2.44 MB)
-- Markdown: [`Fraehr_2023_WRR_Fast_Accurate_Hybrid_Floodplain_LSG.md`](Fraehr_2023_WRR_Fast_Accurate_Hybrid_Floodplain_LSG.md)
+- PDF: [`Fraehr_2023_WRR_Fast_Accurate_Hybrid_Floodplain_LSG.pdf`](docs__references__Fraehr_2023_WRR_Fast_Accurate_Hybrid_Floodplain_LSG.pdf) (~2.44 MB)
+- Markdown: [`Fraehr_2023_WRR_Fast_Accurate_Hybrid_Floodplain_LSG.md`](docs__references__Fraehr_2023_WRR_Fast_Accurate_Hybrid_Floodplain_LSG.md)
 - License / access: AGU open access (**CC BY**). VoR PDF fetched via authenticated browser session after Cloudflare challenge (OA; Minerva record is metadata-only).
 - Redistribution: **OK** under CC BY with attribution.
 
@@ -34,7 +34,7 @@ Markdown conversions here are **English structural extractions** (text + figure/
 
 - **Verified identity (from PDF first page):** *Assessment of surrogate models for flood inundation: The physics-guided LSG model vs. state-of-the-art machine learning models* — Niels Fraehr, Quan J. Wang, Wenyan Wu, Rory Nathan — *Water Research* **252 (2024) 121202** — available online 24 January 2024 — **CC BY 4.0**.
 - Local PDF (gitignored): `1-s2.0-S0043135424001027-main.pdf`
-- MinerU Markdown (gitignored full text): [`Fraehr_2024_WaterResearch_Assessment_surrogate_LSG.md`](Fraehr_2024_WaterResearch_Assessment_surrogate_LSG.md) — extraction method: **MinerU API** (`/api/v4/file-urls/batch`, model `vlm`).
+- MinerU Markdown (gitignored full text): [`Fraehr_2024_WaterResearch_Assessment_surrogate_LSG.md`](docs__references__Fraehr_2024_WaterResearch_Assessment_surrogate_LSG.md) — extraction method: **MinerU API** (`/api/v4/file-urls/batch`, model `vlm`).
 - Assets (gitignored): `Fraehr_2024_WaterResearch_Assessment_surrogate_LSG_assets/`
 - **Publish policy:** VoR PDF + full-text MD are **local-only** (excluded from the public GitHub mirror by default even though the VoR is CC BY). Cite the DOI; do not redistribute the Elsevier layout PDF from this repo.
 
@@ -42,21 +42,21 @@ Markdown conversions here are **English structural extractions** (text + figure/
 
 - **Verified identity (from PDF text):** *Generation and selection of training events for surrogate flood inundation models* — Niels Fraehr, Quan J. Wang, Wenyan Wu, Rory Nathan — *Journal of Environmental Management* **373 (2025) 123570** — available online 6 December 2024 — **CC BY 4.0**.
 - Local PDF (gitignored): `1-s2.0-S0301479724035564-main.pdf`
-- MinerU Markdown (gitignored full text): [`Fraehr_2024_JEnvironManage_Generation_selection_training_events.md`](Fraehr_2024_JEnvironManage_Generation_selection_training_events.md) — extraction method: **MinerU API**.
+- MinerU Markdown (gitignored full text): [`Fraehr_2024_JEnvironManage_Generation_selection_training_events.md`](docs__references__Fraehr_2024_JEnvironManage_Generation_selection_training_events.md) — extraction method: **MinerU API**.
 - Assets (gitignored): `Fraehr_2024_JEnvironManage_Generation_selection_training_events_assets/`
 - **Publish policy:** same as above — local-only; cite DOI only in the public mirror.
 
 ### Wang et al. 2026 — WRR `10.1029/2025WR042481`
 
-- PDF: [`Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.pdf`](Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.pdf) (~3.05 MB; already present in workspace root — copied here, not re-downloaded)
-- Markdown (publisher-style local extract, pre-existing): [`Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.md`](Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.md)
-- Markdown (PDF structural extract): [`Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.from_pdf.md`](Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.from_pdf.md)
+- PDF: [`Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.pdf`](docs__references__Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.pdf) (~3.05 MB; already present in workspace root — copied here, not re-downloaded)
+- Markdown (publisher-style local extract, pre-existing): [`Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.md`](docs__references__Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.md)
+- Markdown (PDF structural extract): [`Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.from_pdf.md`](docs__references__Wang_2026_WRR_Strategies_Flood_Inundation_Large_Complex.from_pdf.md)
 - License / access: AGU gold OA (**CC BY**).
 - Redistribution: **OK** under CC BY with attribution.
 
 ## Presentation conventions
 
-See [`exemplar_conventions.md`](exemplar_conventions.md) for the exact figure/table/metric order we now mirror in `docs__paper__manuscript.md` and `docs/report/`.
+See [`exemplar_conventions.md`](docs__references__exemplar_conventions.md) for the exact figure/table/metric order we now mirror in `docs/paper/manuscript.md` and `docs/report/`.
 
 ## Git / publish note
 

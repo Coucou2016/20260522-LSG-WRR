@@ -13,7 +13,7 @@
 | Item | Detail |
 | --- | --- |
 | Manuscript anchors | Abstract; §6.5 Table 2; §7.2 |
-| Evidence | `outputs__evaluation__burnett__workflow_summary_grp1_wse_ext_hlsg_max.json`; LF wet_train CSI ≈ 0.853 → LSG ≈ 0.975; RMSE ≈ 0.989 → 0.387 m |
+| Evidence | `outputs/evaluation/burnett/workflow_summary_grp1_wse_ext_hlsg_max.json`; LF wet_train CSI ≈ 0.853 → LSG ≈ 0.975; RMSE ≈ 0.989 → 0.387 m |
 | Also | Chowilla wet_train LF RMSE ≈ 0.690 → LSG ≈ 0.093 m (`.../chowilla/..._hlsg_max.json`) |
 | Overreach risk | Claiming zoning caused the CSI lift |
 
@@ -22,7 +22,7 @@
 | Item | Detail |
 | --- | --- |
 | Manuscript anchors | Abstract; §6.11 Table 6 |
-| Evidence | `docs__paper__04_capacity_controls.md`; `outputs__evaluation__chowilla__workflow_summary_grp1_wse_ext_global_matched15_max.json`; H-LSG `..._hlsg_max_capacity_rerun.json`; budget-0 `..._hlsg_budget3_max.json` |
+| Evidence | `docs/paper/04_capacity_controls.md`; `outputs/evaluation/chowilla/workflow_summary_grp1_wse_ext_global_matched15_max.json`; H-LSG `..._hlsg_max_capacity_rerun.json`; budget-0 `..._hlsg_budget3_max.json` |
 | Numbers (wet_train) | Matched-15 global RMSE **0.085 m**, O2−O1 **0.002 m**; H-LSG RMSE 0.093 m, O2−O1 0.013 m; residual_modes=0 collapses to native global |
 | Status | **NEGATIVE for localisation as RMSE/O2−O1 explanation** |
 
@@ -31,7 +31,7 @@
 | Item | Detail |
 | --- | --- |
 | Manuscript anchors | Abstract; §6.11 Table 7 |
-| Evidence | `outputs__evaluation__burnett__workflow_summary_grp1_wse_ext_global_max.json`; `..._hlsg_max.json`; `..._global_matched18_max.json`; `outputs__evaluation__burnett__diagnose_hlsg_o2_vs_rmse.json` |
+| Evidence | `outputs/evaluation/burnett/workflow_summary_grp1_wse_ext_global_max.json`; `..._hlsg_max.json`; `..._global_matched18_max.json`; `outputs/evaluation/burnett/diagnose_hlsg_o2_vs_rmse.json` |
 | Numbers | H-LSG wet RMSE 0.387 m vs global 0.179 m; O4−O2 0.304 vs 0.056 m; EXT agreement identical 0.986; matched-18 global RMSE 0.416 m |
 | Status | **NEGATIVE**; extent gate ruled out |
 
@@ -48,7 +48,7 @@
 | Item | Detail |
 | --- | --- |
 | Manuscript anchors | §6.11 Table 9 |
-| Evidence | `docs__paper__05_carlisle_capacity.md`; `outputs__evaluation__carlisle__workflow_summary_grp1_wse_ext_global_max_capacity.json`; `..._global_matched13_max.json`; `..._hlsg_budget1_max.json` |
+| Evidence | `docs/paper/05_carlisle_capacity.md`; `outputs/evaluation/carlisle/workflow_summary_grp1_wse_ext_global_max_capacity.json`; `..._global_matched13_max.json`; `..._hlsg_budget1_max.json` |
 | Numbers | H-LSG dim 13 RMSE 0.094 m; matched requested-13 realised **8**, RMSE 0.202 m; residual_modes=0 = native global |
 | Overreach risk | Calling this a positive proof that residual zoning “works” in general |
 
@@ -90,7 +90,7 @@
 | Item | Detail |
 | --- | --- |
 | Manuscript anchors | §8; Appendix C |
-| Evidence | `docs__paper__03_new_results.md` Gap 5 (Burnett HF stack ≈199 GB vs ≈128 GB RAM) |
+| Evidence | `docs/paper/03_new_results.md` Gap 5 (Burnett HF stack ≈199 GB vs ≈128 GB RAM) |
 | Correct form | Closed Limitations prose; **not** 待补充 TODOs |
 
 ---

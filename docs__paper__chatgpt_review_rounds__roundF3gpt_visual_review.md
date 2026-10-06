@@ -55,9 +55,9 @@ ChatGPT 改用 SHA 固定读取），对 15 张图 PNG + 生成代码 + `figure_
 
 | 文件 | 变更 |
 |---|---|
-| `scripts__make_figures.py` | Fig 5（颜色 hlsg / N/A / 7pt / 图例外移）、Fig 7（7pt / 图例外移）、Fig 8c（0–1 轴 + 标签 + 图例外移）、Fig 8b（图例位置）、Fig 8d（7pt）、Fig 9（7pt）、Fig 1/2/3（panel label x=-0.12 + suptitle y=1.05 + Fig 2 图例外移） |
-| `docs__paper__chatgpt_review_rounds__figure_code_audit_pack.md` | Fig 6 caption 同步、Chowilla O1 0.021→0.020、Fig 8 caption 同步、Fig 5/7/8 代码片段同步 |
-| `docs__paper___build_html.py` | 无改动（caption 已正确，仅审计包摘录落后） |
+| `scripts/make_figures.py` | Fig 5（颜色 hlsg / N/A / 7pt / 图例外移）、Fig 7（7pt / 图例外移）、Fig 8c（0–1 轴 + 标签 + 图例外移）、Fig 8b（图例位置）、Fig 8d（7pt）、Fig 9（7pt）、Fig 1/2/3（panel label x=-0.12 + suptitle y=1.05 + Fig 2 图例外移） |
+| `docs/paper/chatgpt_review_rounds/figure_code_audit_pack.md` | Fig 6 caption 同步、Chowilla O1 0.021→0.020、Fig 8 caption 同步、Fig 5/7/8 代码片段同步 |
+| `docs/paper/_build_html.py` | 无改动（caption 已正确，仅审计包摘录落后） |
 
 图已重新生成（15 图 × svg/pdf/png，共 45 文件），`manuscript.html` 与 `manuscript.pdf` 重建中。
 

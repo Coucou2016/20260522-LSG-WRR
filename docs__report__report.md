@@ -7,7 +7,7 @@
 | 报告类型 | 正式科学研究报告（方法/诊断导向，非短文） |
 | 项目仓库 | 本地工作区（`main`）；公开镜像 https://github.com/Coucou2016/20260522-LSG-WRR |
 | 主案例 | Carlisle；次案例 Chowilla；第三案例 Burnett |
-| 证据日期 | 2026-08-16（与 `docs__paper__00_progress_review.md` 对齐） |
+| 证据日期 | 2026-08-16（与 `docs/paper/00_progress_review.md` 对齐） |
 | 目标期刊语境 | WRR / JoH / EMS（methods） |
 | 一句话论点 | 多保真 LSG 是技能主源；残差分区主要压缩截断间隙（O2−O1）；CRPS 方差标定改善概率可靠性且不改 CSI/RMSE；Chowilla all-cells 是强 LF 协议反例 |
 | Git 状态 | 工作区已纳入 Git（`main`）；本报告的静态产物与源码镜像推送至公开仓库 https://github.com/Coucou2016/20260522-LSG-WRR |
@@ -269,7 +269,7 @@ HF ≈ 全局模态重构 + Σ_zones 残差模态重构；GP 输入级联全局�
 
 ### 原始 UQ
 
-每个 EOF 模态保留 GP 方差，单元深度方差闭式传播并加残差/截断项（`lsg__uq.py`）。
+每个 EOF 模态保留 GP 方差，单元深度方差闭式传播并加残差/截断项（`lsg/uq.py`）。
 
 ### 问题
 
@@ -286,7 +286,7 @@ Max CRPS 0.039→0.028；CSI/RMSE 不变。Chowilla/Burnett 已用保存状态�
 
 ## O1–O4 误差预算
 
-定义（`lsg__diagnostics.py`；`wse_ext` 下 EXT/WSE 同步神谕再门控成深度 RMSE）：
+定义（`lsg/diagnostics.py`；`wse_ext` 下 EXT/WSE 同步神谕再门控成深度 RMSE）：
 
 | 阶 | 名称 | 物理含义 |
 | --- | --- | --- |
@@ -1008,7 +1008,7 @@ python scripts/rescore_uq_calibrated.py --config config/carlisle.yaml
 
 ### 工件索引（摘要）
 
-- Carlisle 主结果：`outputs__evaluation__carlisle__workflow_summary_full_Grp1_wse_ext_hlsg_sgpr_fix.json`
+- Carlisle 主结果：`outputs/evaluation/carlisle/workflow_summary_full_Grp1_wse_ext_hlsg_sgpr_fix.json`
 - Carlisle UQ：`..._uq_calibrated.json`
 - Chowilla H-LSG / global / wet_correlation：`..._hlsg_max.json` / `..._global_max.json` / `..._wet_correlation_max.json`
 - Chowilla/Burnett UQ rescore：`..._hlsg_max_uq_calibrated.json`
@@ -1068,7 +1068,7 @@ python scripts/rescore_uq_calibrated.py --config config/carlisle.yaml
 7. Tan et al. (2025). HESS, 29, 3833. https://doi.org/10.5194/hess-29-3833-2025
 8. Wang, R. et al. (2025). REOF-SGP. https://doi.org/10.1007/s13753-025-00642-5
 9. Fraehr (2024) datasets. https://doi.org/10.26188/24312658
-10. 其余概率代理与 FIER 文献见 `docs__paper__01_literature_review.md`。
+10. 其余概率代理与 FIER 文献见 `docs/paper/01_literature_review.md`。
 
 
 ## 附录
@@ -1099,7 +1099,7 @@ python scripts/rescore_uq_calibrated.py --config config/carlisle.yaml
 
 | 类别 | 路径 |
 | --- | --- |
-| 进度/文献/框架 | `docs__paper__00_progress_review.md` 等 |
+| 进度/文献/框架 | `docs/paper/00_progress_review.md` 等 |
 | 评价 JSON | `outputs/evaluation/{carlisle,chowilla,burnett}/` |
 | 图件 | `outputs/figures/fig01*`–`fig06*` |
 | 配置 | `config/{carlisle,chowilla,burnett,burnett_global,chowilla_wet_correlation}.yaml` |
@@ -1113,7 +1113,7 @@ python scripts/rescore_uq_calibrated.py --config config/carlisle.yaml
 2. Brisbane / FloodCastBench — 移出公开证据链，仅未来外部复现。
 3. Burnett CRPS *s* 嵌套 CV、容量×分区×站点完整析因、oracle 顺序置换 — 不构成本稿逻辑缺口。
 
-**本轮已完成：** Chowilla/Burnett 等容量对照；Carlisle 等容量对照（秩上限说明，见 `docs__paper__05_carlisle_capacity.md`）；Chowilla+Carlisle CRPS *s* 嵌套 CV；Carlisle 区划 8-NN 相干诊断；硬件/软件版本钉扎；手稿开放占位符已全部改为关闭局限表述。
+**本轮已完成：** Chowilla/Burnett 等容量对照；Carlisle 等容量对照（秩上限说明，见 `docs/paper/05_carlisle_capacity.md`）；Chowilla+Carlisle CRPS *s* 嵌套 CV；Carlisle 区划 8-NN 相干诊断；硬件/软件版本钉扎；手稿开放占位符已全部改为关闭局限表述。
 
 **Carlisle 等容量教学要点（wet_train）：** H-LSG 维 13 → RMSE 0.094 m；原生全局维 1 → 0.112 m；`force_n_modes: 13` 受 *n*_train=8 限制实现为维 8 → RMSE 0.202 m 且 O2−O1=0；`residual_eof_modes: 0` 坍缩回原生全局。精确维 13 的全局匹配在 Max 路径上不可行。
 

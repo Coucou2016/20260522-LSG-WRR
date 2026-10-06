@@ -2,7 +2,7 @@
 
 > 日期：2026-08-18
 > 目标：把每张图的渲染结果 + 对应生成代码 + 底层数据都对应起来，发现"图的结果本身有问题但被写进论文"的问题。
-> 方式：Cursor 独立读图（Read 看 PNG）+ 读代码（`scripts__make_figures.py`）+ 读数据（`outputs/evaluation/*/workflow_summary_*.json`、`pred_examples.npz`）。
+> 方式：Cursor 独立读图（Read 看 PNG）+ 读代码（`scripts/make_figures.py`）+ 读数据（`outputs/evaluation/*/workflow_summary_*.json`、`pred_examples.npz`）。
 
 ---
 
@@ -24,9 +24,9 @@
 
 ## 二、重大问题（P0）—— Chowilla 测试事件 E1 是"训练范围外"的极端洪水### 事实（数据确凿）
 
-`config__chowilla.yaml` 的 Group 1 划分是 Fraehr leave-one-group-out：`validation: [E1]`，训练 = E2–E29（28 事件）。
+`config/chowilla.yaml` 的 Group 1 划分是 Fraehr leave-one-group-out：`validation: [E1]`，训练 = E2–E29（28 事件）。
 
-`outputs__evaluation__chowilla__pred_examples.npz` 实测（test event E1）：
+`outputs/evaluation/chowilla/pred_examples.npz` 实测（test event E1）：
 
 | 指标 | 值 |
 |---|---|

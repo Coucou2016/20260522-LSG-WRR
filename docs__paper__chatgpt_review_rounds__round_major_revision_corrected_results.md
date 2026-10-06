@@ -5,7 +5,7 @@ numbers below are re-derived after two code-correctness fixes (see bottom).
 
 ## Code-correctness fixes applied this round
 
-1. **`force_n_modes` now applies to the WSE branch only** (`lsg__eof.py`
+1. **`force_n_modes` now applies to the WSE branch only** (`lsg/eof.py`
    `resolve_n_modes(..., apply_force=...)` + `lsg/wse_ext.py::_fit_branch`).
    Previously `force_n_modes` was read by *both* the EXT and WSE branches, so a
    "capacity-matched" global control (e.g. `force_n_modes: 15`) silently also
@@ -13,7 +13,7 @@ numbers below are re-derived after two code-correctness fixes (see bottom).
    (North/Kaiser) EXT rank (5). This broke the "EXT shared/global, WSE matched"
    construction and is the root cause of the matched-global models' anomalous
    `all_cells` CSI.
-2. **Numerical-rank tolerance in `fit_eof`** (`lsg__eof.py`, `rank_tolerance=1e-12`).
+2. **Numerical-rank tolerance in `fit_eof`** (`lsg/eof.py`, `rank_tolerance=1e-12`).
    A mean-centred `(n_samples × n_cells)` training matrix has algebraic rank
    ≤ `n_samples − 1`; the previous code kept all `min(n_components, n_samples)`
    SVD vectors, retaining a null trailing mode for the small-event cases

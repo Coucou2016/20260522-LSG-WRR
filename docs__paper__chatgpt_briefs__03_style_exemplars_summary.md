@@ -10,7 +10,7 @@
 | Fraehr et al. 2024b J. Environ. Manage. | https://doi.org/10.1016/j.jenvman.2024.123570 |
 | Wang et al. 2026 WRR | https://doi.org/10.1029/2025WR042481 |
 
-Local convention notes (non-copyrighted distillation): `docs__references__exemplar_conventions.md` on GitHub.
+Local convention notes (non-copyrighted distillation): `docs/references/exemplar_conventions.md` on GitHub.
 
 ## Distilled style moves (what to imitate)
 

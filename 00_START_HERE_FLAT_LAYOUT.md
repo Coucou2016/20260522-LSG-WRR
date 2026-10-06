@@ -99,7 +99,17 @@ evidence for the reported metrics, and editing them to tidy paths would make the
 evidence differ from what the code actually emitted. Treat any absolute path as a local
 machine detail, not as a reproducible location.
 
-## 5b. How to verify a reported number yourself
+## 5b. Some in-document links point to files that are not here (by design)
+
+A few cross-references in `docs__references__README.md` and the data READMEs name artifacts
+that section 5 excludes — for example the Elsevier VoR full-text Markdown files
+(`Fraehr_2024_WaterResearch_*`, `Fraehr_2024_JEnvironManage_*`) and local verification
+scripts that operate on the working tree. Those links will 404 here. That is expected: it
+marks exactly which inputs are local-only or copyrighted rather than missing by accident.
+Relative filenames mentioned inside `data__external__*/README.md` are relative to their
+original folder in the working layout, not to this root.
+
+## 5c. How to verify a reported number yourself
 
 1. Open the relevant `outputs__evaluation__*.json` and locate the `lsg_max` or `lsg_ts` block.
 2. Read `score_protocol.<variant>.<mask>.{csi,rmse,pod,rfa}`; mask keys are `all` and `wet_train`.

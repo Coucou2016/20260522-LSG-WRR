@@ -2,7 +2,7 @@
 
 ## Intended split
 
-| Belongs in **paper** (`docs__paper__manuscript.md`) | Belongs in **research report** (`docs__report__report.md`) |
+| Belongs in **paper** (`docs/paper/manuscript.md`) | Belongs in **research report** (`docs/report/report.md`) |
 | --- | --- |
 | Scientific motivation, RQs, methods equations, protocols | Local chronology, failed attempts, SGPR debugging story |
 | Public Figshare DOI + public GitHub for code/data | Absolute Windows paths, host brand/RAM diary |
@@ -19,8 +19,8 @@ Please read the current GitHub `manuscript.md` and **list every phrase/theme tha
 2. **Chinese process token** — “缺数据” in Results / Appendix for missing hydrographs (should be closed English limitation language).
 3. **Process meta** — “an early reading of our own runs”; “which an earlier reading of our runs treated as…” (narrative of reinterpretation belongs in report or should be neutralized).
 4. **Hardware diary in Section 3.8** — Dell Precision / Xeon / RAM / Windows build as Methods detail (journal-dependent; often SI or Availability, not core Methods).
-5. **Appendix C “Completed in this revision”** — revision-log tone; cite of `docs__paper__05_carlisle_capacity.md` is report/handoff language.
-6. **Table 1 config columns** — `` `config__carlisle.yaml` `` style cells may be too repo-internal for a journal table.
+5. **Appendix C “Completed in this revision”** — revision-log tone; cite of `docs/paper/05_carlisle_capacity.md` is report/handoff language.
+6. **Table 1 config columns** — `` `config/carlisle.yaml` `` style cells may be too repo-internal for a journal table.
 7. **Data Availability** — listing `outputs/...` without the public repository URL as the primary locator.
 
 ## Ask ChatGPT

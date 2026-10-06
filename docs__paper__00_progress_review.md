@@ -4,7 +4,7 @@
 **nature-writing axes:** `task=manuscript`, `paper_type=methods`, `language=en`, `journal=generic` (target WRR / JoH / EMS)  
 **Repo baseline:** **no `.git`** (verified). Python: `.\.venv\Scripts\python.exe`.  
 **Test gate (from `03_new_results.md`):** `.\.venv\Scripts\python.exe -m pytest tests -q` → **80 passed, 1 skipped**.  
-**Figures:** `outputs__figures__figure_manifest.json` — `n_files` 24, **`skips=[]`**.
+**Figures:** `outputs/figures/figure_manifest.json` — `n_files` 24, **`skips=[]`**.
 
 ## One-sentence argument (working)
 
@@ -14,7 +14,7 @@ In multi-fidelity flood inundation surrogates, we deliver a reproducible LSG dia
 
 | Capability | Status | Evidence |
 |---|---|---|
-| Fraehr ingest (Carlisle / Chowilla / Burnett) | Done | `config/{carlisle,chowilla,burnett}.yaml`, `data__DATA_INVENTORY.md` |
+| Fraehr ingest (Carlisle / Chowilla / Burnett) | Done | `config/{carlisle,chowilla,burnett}.yaml`, `data/DATA_INVENTORY.md` |
 | `lsg.field: wse_ext` (EXT + WSE → depth) | Done | configs; workflow summaries |
 | H-LSG `residual_kmeans` (WSE residuals; EXT global) | Done | default zoning in case YAMLs |
 | Global A/B (`zoning: none`) | Done Chowilla **and Burnett** | `..._global_max.json` for both |
@@ -27,7 +27,7 @@ In multi-fidelity flood inundation surrogates, we deliver a reproducible LSG dia
 
 ## Verified metrics (from JSON; Grp1 / protocol masks)
 
-Sources: as in `docs__paper__03_new_results.md` and manuscript Tables 2–5.
+Sources: as in `docs/paper/03_new_results.md` and manuscript Tables 2–5.
 
 ### Point skill / zoning (headline)
 

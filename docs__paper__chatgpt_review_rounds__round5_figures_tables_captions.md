@@ -10,7 +10,7 @@
 
 ### Accepted and applied
 
-**Figure captions (`docs__paper___build_html.py`):**
+**Figure captions (`docs/paper/_build_html.py`):**
 1. Figure 1: removed build-script shorthand ("cell-centre scatters (DEM raster unavailable)"); now describes domains, equal-aspect axes, and DEM unavailability in prose; notes cell counts in panel titles (verified present: n=581,061 / 109,914 / 780,785).
 2. Figures 2a–2c: removed nested "(a) LF vs HF, (b) LSG-Max vs HF" ambiguity by keeping panel letters but spelling out full comparison per case; removed interpretation from 2b ("Supports...") and 2c ("Clearest visual..."); unified three captions to identical structure; replaced H/M/FA shorthand with hits/misses/false alarms/grey dry-in-both (verified legend has "Both dry" patch).
 3. Figures 3a–3c: replaced "LF−HF and LSG-Max−HF (red +, blue −)" shorthand; stated signed error interpretation; added "(m)" units; unified all three captions (removed interpretation from 3c).
@@ -39,7 +39,7 @@
 **Cross-reference:**
 21. Figure 9 citation added at its natural location in Section 4.4 wet-correlation paragraph (the only uncited figure; verified Figures 1–8 and Tables 1–9 were already cited).
 
-**In-figure labels (`scripts__make_figures.py`) — code-style identifiers also cleaned inside the rendered SVGs/PDFs/PNGs, figures regenerated:**
+**In-figure labels (`scripts/make_figures.py`) — code-style identifiers also cleaned inside the rendered SVGs/PDFs/PNGs, figures regenerated:**
 22. `MASK_LABEL` "Fraehr wet_train (Categories wet_idx)" → "training wet domain" (used in fig05, fig07, fig09 suptitles).
 23. fig01 suptitle: "Study domains (HF cell centres; DEM raster unavailable — cell-scatter)" → "Study domains (HF cell centers; DEM raster unavailable)" (also centre→center spelling alignment with manuscript body).
 24. fig02 suptitle: "extent H/M/FA (τ=0.03 m)" → "inundation-extent classification (τ=0.03 m)".
@@ -61,7 +61,7 @@
 
 ## Verification performed
 
-- All figure panel contents verified against `scripts__make_figures.py` source and the rendered SVG text (regex-extracted labels) before adopting any caption wording.
+- All figure panel contents verified against `scripts/make_figures.py` source and the rendered SVG text (regex-extracted labels) before adopting any caption wording.
 - `_build_html.py` pre-existing Python-3.9-incompatible f-string (`src=\"data:` backslash) fixed; build re-run: 14 img tags / 14 data URIs (9 numbered figures with fig2a-c, fig3a-c, fig4a-c subpanels = 14 images).
 - Figures regenerated with Agg backend (45 files); matplotlib version 3.9.2 in this shell.
 
