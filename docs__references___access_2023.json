@@ -1,0 +1,9 @@
+{
+  "status" : "metadata.only",
+  "type" : "accessStatus",
+  "_links" : {
+    "self" : {
+      "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/accessStatus"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "_links" : {
+    "latestFromDuplicatecheck" : {
+      "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/search/latestFromDuplicatecheck"
+    }
+  }
+}

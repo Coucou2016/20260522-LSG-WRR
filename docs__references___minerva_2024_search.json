@@ -1,0 +1,2079 @@
+{
+  "id" : null,
+  "scope" : null,
+  "query" : "Assessment of surrogate models Fraehr",
+  "appliedFilters" : null,
+  "sort" : null,
+  "configuration" : null,
+  "type" : "discover",
+  "_links" : {
+    "self" : {
+      "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM"
+    }
+  },
+  "_embedded" : {
+    "searchResult" : {
+      "_embedded" : {
+        "objects" : [ {
+          "hitHighlights" : {
+            "dc.description.abstract" : [ " for future research efforts in flood inundation simulation. This study compares the LSG <em>model</em> to four state-of-the-art <em>surrogate</em> flood inundation <em>models</em>. The <em>surrogate</em> <em>models</em> are <em>assessed</em> for their ability to simulate the temporal and spatial evolution", "-resolution hydrodynamic <em>models</em> for real-time flood predictions or when a large number of predictions are needed for probabilistic flood design. Computationally efficient <em>surrogate</em> <em>models</em> have been developed to address this issue. The recently developed Low" ],
+            "dc.contributor.author" : [ "<em>Fraehr</em>, N" ],
+            "dc.title" : [ "<em>Assessment</em> of <em>surrogate</em> <em>models</em> for flood inundation: The physics-guided LSG <em>model</em> vs. state-of-the-art machine learning <em>models</em>" ]
+          },
+          "type" : "discover",
+          "_links" : {
+            "indexableObject" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241"
+            }
+          },
+          "_embedded" : {
+            "indexableObject" : {
+              "id" : "4643eaf2-bf54-49f2-8531-487ce140a241",
+              "uuid" : "4643eaf2-bf54-49f2-8531-487ce140a241",
+              "name" : "Assessment of surrogate models for flood inundation: The physics-guided LSG model vs. state-of-the-art machine learning models",
+              "handle" : "11343/344113",
+              "metadata" : {
+                "dc.contributor.author" : [ {
+                  "value" : "Fraehr, N",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Wang, QJ",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Wu, W",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Nathan, R",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                } ],
+                "dc.date.accessioned" : [ {
+                  "value" : "2024-03-24T22:36:19Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.available" : [ {
+                  "value" : "2024-03-24T22:36:19Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.issued" : [ {
+                  "value" : "2024-03-15",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.description.abstract" : [ {
+                  "value" : "Hydrodynamic models can accurately simulate flood inundation but are limited by their high computational demand that scales non-linearly with model complexity, resolution, and domain size. Therefore, it is often not feasible to use high-resolution hydrodynamic models for real-time flood predictions or when a large number of predictions are needed for probabilistic flood design. Computationally efficient surrogate models have been developed to address this issue. The recently developed Low-fidelity, Spatial analysis, and Gaussian Process Learning (LSG) model has shown strong performance in both computational efficiency and simulation accuracy. The LSG model is a physics-guided surrogate model that simulates flood inundation by first using an extremely coarse and simplified (i.e. low-fidelity) hydrodynamic model to provide an initial estimate of flood inundation. Then, the low-fidelity estimate is upskilled via Empirical Orthogonal Functions (EOF) analysis and Sparse Gaussian Process models to provide accurate high-resolution predictions. Despite the promising results achieved thus far, the LSG model has not been benchmarked against other surrogate models. Such a comparison is needed to fully understand the value of the LSG model and to provide guidance for future research efforts in flood inundation simulation. This study compares the LSG model to four state-of-the-art surrogate flood inundation models. The surrogate models are assessed for their ability to simulate the temporal and spatial evolution of flood inundation for events both within and beyond the range used for model training. The models are evaluated for three distinct case studies in Australia and the United Kingdom. The LSG model is found to be superior in accuracy for both flood extent and water depth, including when applied to flood events outside the range of training data used, while achieving high computational efficiency. In addition, the low-fidelity model is found to play a crucial role in achieving the overall superior performance of the LSG model.",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier" : [ {
+                  "value" : "pii: S0043-1354(24)00102-7",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.citation" : [ {
+                  "value" : "Fraehr, N., Wang, Q. J., Wu, W.  &  Nathan, R. (2024). Assessment of surrogate models for flood inundation: The physics-guided LSG model vs. state-of-the-art machine learning models. Water Research, 252, https://doi.org/10.1016/j.watres.2024.121202.",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.doi" : [ {
+                  "value" : "10.1016/j.watres.2024.121202",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.eissn" : [ {
+                  "value" : "1879-2448",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.issn" : [ {
+                  "value" : "0043-1354",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.uri" : [ {
+                  "value" : "https://hdl.handle.net/11343/344113",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.language" : [ {
+                  "value" : "English",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.publisher" : [ {
+                  "value" : "PERGAMON-ELSEVIER SCIENCE LTD",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.rights.license" : [ {
+                  "value" : "CC BY",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.rights.uri" : [ {
+                  "value" : "https://creativecommons.org/licenses/by/4.0",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.title" : [ {
+                  "value" : "Assessment of surrogate models for flood inundation: The physics-guided LSG model vs. state-of-the-art machine learning models",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.type" : [ {
+                  "value" : "Journal Article",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.accessrights" : [ {
+                  "value" : "Access this item via the Open Access location",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Open Access",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                } ],
+                "melbourne.affiliation.department" : [ {
+                  "value" : "Infrastructure Engineering",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.affiliation.faculty" : [ {
+                  "value" : "Engineering and Information Technology",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.contributor.author" : [ {
+                  "value" : "Wang, Quan",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Wu, Wenyan",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Nathan, Rory",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Fraehr, Niels",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                }, {
+                  "value" : "Fraehr, Niels",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 4
+                } ],
+                "melbourne.elementsid" : [ {
+                  "value" : "1855098",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.identifier.arc" : [ {
+                  "value" : "DE210100117",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.identifier.fundernameid" : [ {
+                  "value" : "Australian Research Council, DE210100117",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.internal.authorids" : [ {
+                  "value" : "Wang, Quan; 8525; 0000-0002-8787-2738",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Wu, Wenyan; 136047; 0000-0003-3907-1570",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Nathan, Rory; 4672; 0000-0001-7759-8344",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Fraehr, Niels; 163627",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                }, {
+                  "value" : "Fraehr, Niels; 160497; 0000-0001-5558-323X",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 4
+                } ],
+                "melbourne.openaccess.status" : [ {
+                  "value" : "published version",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.openaccess.url" : [ {
+                  "value" : "https://doi.org/10.1016/j.watres.2024.121202",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.source.pages" : [ {
+                  "value" : "121202-",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.source.title" : [ {
+                  "value" : "Water Research",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.source.volume" : [ {
+                  "value" : "252",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "pubs.publisher-url" : [ {
+                  "value" : "https://doi.org/10.1016/j.watres.2024.121202",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ]
+              },
+              "inArchive" : true,
+              "discoverable" : true,
+              "withdrawn" : false,
+              "lastModified" : "2026-07-11T18:28:37.738+00:00",
+              "entityType" : null,
+              "type" : "item",
+              "_links" : {
+                "accessStatus" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/accessStatus"
+                },
+                "bundles" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/bundles"
+                },
+                "identifiers" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/identifiers"
+                },
+                "mappedCollections" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/mappedCollections"
+                },
+                "owningCollection" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/owningCollection"
+                },
+                "relationships" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/relationships"
+                },
+                "version" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/version"
+                },
+                "templateItemOf" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/templateItemOf"
+                },
+                "thumbnail" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/thumbnail"
+                },
+                "redirect" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/redirect"
+                },
+                "citations" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/citations"
+                },
+                "self" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241"
+                }
+              },
+              "_embedded" : {
+                "bundles" : {
+                  "_embedded" : {
+                    "bundles" : [ ]
+                  },
+                  "page" : {
+                    "number" : 0,
+                    "size" : 20,
+                    "totalPages" : 0,
+                    "totalElements" : 0
+                  },
+                  "_links" : {
+                    "self" : {
+                      "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/4643eaf2-bf54-49f2-8531-487ce140a241/bundles"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }, {
+          "hitHighlights" : {
+            "dc.description.abstract" : [ "Abstract\n\n\n                  Accurate flood inundation <em>modeling</em> using a complex high‐resolution hydrodynamic (high‐fidelity) <em>model</em> can be very computationally demanding. To address this issue, efficient approximation methods (<em>surrogate</em> <em>models</em>) have", " been developed. Despite recent developments, there remain significant challenges in using <em>surrogate</em> methods for <em>modeling</em> the dynamical behavior of flood inundation in an efficient manner. Most methods focus on estimating the maximum flood extent due" ],
+            "dc.contributor.author" : [ "<em>Fraehr</em>, N" ],
+            "dc.title" : [ "Upskilling Low-Fidelity Hydrodynamic <em>Models</em> of Flood Inundation Through Spatial Analysis and Gaussian Process Learning" ],
+            "fulltext_716f4e5b-46ae-418d-a5f2-80b7e72092b8" : [ "-\nterization, <em>modeling</em>, and Niels <em>Fraehr</em>1  , Quan J. Wang1  , Wenyan Wu1  , and Rory Nathan1 \ncommunication\n1" ]
+          },
+          "type" : "discover",
+          "_links" : {
+            "indexableObject" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba"
+            }
+          },
+          "_embedded" : {
+            "indexableObject" : {
+              "id" : "8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba",
+              "uuid" : "8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba",
+              "name" : "Upskilling Low-Fidelity Hydrodynamic Models of Flood Inundation Through Spatial Analysis and Gaussian Process Learning",
+              "handle" : "11343/322065",
+              "metadata" : {
+                "dc.contributor.author" : [ {
+                  "value" : "Fraehr, N",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Wang, QJ",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Wu, W",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Nathan, R",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                } ],
+                "dc.date.accessioned" : [ {
+                  "value" : "2022-11-16T22:57:43Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.available" : [ {
+                  "value" : "2022-11-16T22:57:43Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.issued" : [ {
+                  "value" : "2022-08-01",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.description.abstract" : [ {
+                  "value" : "Abstract\n\n\n                  Accurate flood inundation modeling using a complex high‐resolution hydrodynamic (high‐fidelity) model can be very computationally demanding. To address this issue, efficient approximation methods (surrogate models) have been developed. Despite recent developments, there remain significant challenges in using surrogate methods for modeling the dynamical behavior of flood inundation in an efficient manner. Most methods focus on estimating the maximum flood extent due to the high spatial‐temporal dimensionality of the data. This study presents a hybrid surrogate model, consisting of a low‐resolution hydrodynamic (low‐fidelity) and a Sparse Gaussian Process (Sparse GP) model, to capture the dynamic evolution of the flood extent. The low‐fidelity model is computationally efficient but has reduced accuracy compared to a high‐fidelity model. To account for the reduced accuracy, a Sparse GP model is used to correct the low‐fidelity modeling results. To address the challenges posed by the high dimensionality of the data from the low‐ and high‐fidelity models, Empirical Orthogonal Functions analysis is applied to reduce the spatial‐temporal data into a few key features. This enables training of the Sparse GP model to predict high‐fidelity flood data from low‐fidelity flood data, so that the hybrid surrogate model can accurately simulate the dynamic flood extent without using a high‐fidelity model. The hybrid surrogate model is validated on the flat and complex Chowilla floodplain in Australia. The hybrid model was found to improve the results significantly compared to just using the low‐fidelity model and incurred only 39% of the computational cost of a high‐fidelity model.\n\n",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.citation" : [ {
+                  "value" : "Fraehr, N., Wang, Q. J., Wu, W.  &  Nathan, R. (2022). Upskilling Low-Fidelity Hydrodynamic Models of Flood Inundation Through Spatial Analysis and Gaussian Process Learning. Water Resources Research, 58 (8), https://doi.org/10.1029/2022WR032248.",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.doi" : [ {
+                  "value" : "10.1029/2022WR032248",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.eissn" : [ {
+                  "value" : "1944-7973",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.issn" : [ {
+                  "value" : "0043-1397",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.uri" : [ {
+                  "value" : "https://hdl.handle.net/11343/322065",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.language" : [ {
+                  "value" : "English",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.publisher" : [ {
+                  "value" : "AMER GEOPHYSICAL UNION",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.rights.license" : [ {
+                  "value" : "CC BY-NC",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.rights.uri" : [ {
+                  "value" : "https://creativecommons.org/licenses/by-nc/4.0",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.title" : [ {
+                  "value" : "Upskilling Low-Fidelity Hydrodynamic Models of Flood Inundation Through Spatial Analysis and Gaussian Process Learning",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.type" : [ {
+                  "value" : "Journal Article",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.accessrights" : [ {
+                  "value" : "Open Access",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.affiliation.department" : [ {
+                  "value" : "Infrastructure Engineering",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.affiliation.faculty" : [ {
+                  "value" : "Engineering and Information Technology",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.contributor.author" : [ {
+                  "value" : "Wang, Quan",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Nathan, Rory",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Wu, Wenyan",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Fraehr, Niels",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                } ],
+                "melbourne.elementsid" : [ {
+                  "value" : "1688983",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.identifier.arc" : [ {
+                  "value" : "DE210100117",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.identifier.fundernameid" : [ {
+                  "value" : "Australian Research Council, DE210100117",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.internal.authorids" : [ {
+                  "value" : "Wang, Quan; 8525; 0000-0002-8787-2738",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Nathan, Rory; 4672; 0000-0001-7759-8344",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Wu, Wenyan; 136047; 0000-0003-3907-1570",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Fraehr, Niels; 160497; 0000-0001-5558-323X",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                } ],
+                "melbourne.source.issue" : [ {
+                  "value" : "8",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.source.title" : [ {
+                  "value" : "Water Resources Research",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.source.volume" : [ {
+                  "value" : "58",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "pubs.publisher-url" : [ {
+                  "value" : "https://doi.org/10.1029/2022wr032248",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ]
+              },
+              "inArchive" : true,
+              "discoverable" : true,
+              "withdrawn" : false,
+              "lastModified" : "2026-07-22T09:17:01.978+00:00",
+              "entityType" : null,
+              "type" : "item",
+              "_links" : {
+                "accessStatus" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/accessStatus"
+                },
+                "bundles" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/bundles"
+                },
+                "identifiers" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/identifiers"
+                },
+                "mappedCollections" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/mappedCollections"
+                },
+                "owningCollection" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/owningCollection"
+                },
+                "relationships" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/relationships"
+                },
+                "version" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/version"
+                },
+                "templateItemOf" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/templateItemOf"
+                },
+                "thumbnail" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/thumbnail"
+                },
+                "redirect" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/redirect"
+                },
+                "citations" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/citations"
+                },
+                "self" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba"
+                }
+              },
+              "_embedded" : {
+                "bundles" : {
+                  "_embedded" : {
+                    "bundles" : [ {
+                      "uuid" : "8c81212d-dcf8-4501-9fd7-e34c656c072f",
+                      "name" : "ORIGINAL",
+                      "handle" : null,
+                      "metadata" : {
+                        "dc.title" : [ {
+                          "value" : "ORIGINAL",
+                          "language" : null,
+                          "authority" : null,
+                          "confidence" : -1,
+                          "place" : 0
+                        } ]
+                      },
+                      "type" : "bundle",
+                      "_links" : {
+                        "item" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/8c81212d-dcf8-4501-9fd7-e34c656c072f/item"
+                        },
+                        "bitstreams" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/8c81212d-dcf8-4501-9fd7-e34c656c072f/bitstreams"
+                        },
+                        "primaryBitstream" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/8c81212d-dcf8-4501-9fd7-e34c656c072f/primaryBitstream"
+                        },
+                        "self" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/8c81212d-dcf8-4501-9fd7-e34c656c072f"
+                        }
+                      }
+                    }, {
+                      "uuid" : "ee63611c-807a-4c40-a0a9-7f5e3e1563ae",
+                      "name" : "TEXT",
+                      "handle" : null,
+                      "metadata" : {
+                        "dc.title" : [ {
+                          "value" : "TEXT",
+                          "language" : null,
+                          "authority" : null,
+                          "confidence" : -1,
+                          "place" : 0
+                        } ]
+                      },
+                      "type" : "bundle",
+                      "_links" : {
+                        "item" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/ee63611c-807a-4c40-a0a9-7f5e3e1563ae/item"
+                        },
+                        "bitstreams" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/ee63611c-807a-4c40-a0a9-7f5e3e1563ae/bitstreams"
+                        },
+                        "primaryBitstream" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/ee63611c-807a-4c40-a0a9-7f5e3e1563ae/primaryBitstream"
+                        },
+                        "self" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/ee63611c-807a-4c40-a0a9-7f5e3e1563ae"
+                        }
+                      }
+                    }, {
+                      "uuid" : "5a82256e-6466-4d29-95be-063c0d84b732",
+                      "name" : "THUMBNAIL",
+                      "handle" : null,
+                      "metadata" : {
+                        "dc.title" : [ {
+                          "value" : "THUMBNAIL",
+                          "language" : null,
+                          "authority" : null,
+                          "confidence" : -1,
+                          "place" : 0
+                        } ]
+                      },
+                      "type" : "bundle",
+                      "_links" : {
+                        "item" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/5a82256e-6466-4d29-95be-063c0d84b732/item"
+                        },
+                        "bitstreams" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/5a82256e-6466-4d29-95be-063c0d84b732/bitstreams"
+                        },
+                        "primaryBitstream" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/5a82256e-6466-4d29-95be-063c0d84b732/primaryBitstream"
+                        },
+                        "self" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/5a82256e-6466-4d29-95be-063c0d84b732"
+                        }
+                      }
+                    } ]
+                  },
+                  "page" : {
+                    "number" : 0,
+                    "size" : 20,
+                    "totalPages" : 1,
+                    "totalElements" : 3
+                  },
+                  "_links" : {
+                    "self" : {
+                      "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/8d5b63a1-cb1d-4de9-9879-a1534d2ad6ba/bundles"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }, {
+          "hitHighlights" : {
+            "dc.description.abstract" : [ " Function (EOF) analysis and Sparse Gaussian Process learning. However, information on flood extent alone is often not sufficient to provide accurate flood risk <em>assessments</em>. In addition, the LSG <em>model</em> has only been tested on hydrodynamic <em>models</em>", " with structured grids, while modern hydrodynamic <em>models</em> tend to use unstructured grids. This study therefore further develops the LSG <em>model</em> to simulate water depth as well as flood extent and demonstrates its efficacy as a <em>surrogate</em> for a high" ],
+            "dc.contributor.author" : [ "<em>Fraehr</em>, N" ],
+            "dc.title" : [ "Development of a Fast and Accurate Hybrid <em>Model</em> for Floodplain Inundation Simulations" ]
+          },
+          "type" : "discover",
+          "_links" : {
+            "indexableObject" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53"
+            }
+          },
+          "_embedded" : {
+            "indexableObject" : {
+              "id" : "5de352c2-12b0-4985-bb9a-ec7d2cbdab53",
+              "uuid" : "5de352c2-12b0-4985-bb9a-ec7d2cbdab53",
+              "name" : "Development of a Fast and Accurate Hybrid Model for Floodplain Inundation Simulations",
+              "handle" : "11343/332952",
+              "metadata" : {
+                "dc.contributor.author" : [ {
+                  "value" : "Fraehr, N",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Wang, QJ",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Wu, W",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Nathan, R",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                } ],
+                "dc.date.accessioned" : [ {
+                  "value" : "2023-06-19T00:12:59Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.available" : [ {
+                  "value" : "2023-06-19T00:12:59Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.issued" : [ {
+                  "value" : "2023-06-01",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.description.abstract" : [ {
+                  "value" : "Abstract\n\n\n                  High computational cost is often the most limiting factor when running high‐resolution hydrodynamic models to simulate spatial‐temporal flood inundation behavior. To address this issue, a recent study introduced the hybrid Low‐fidelity, Spatial analysis, and Gaussian Process learning (LSG) model. The LSG model simulates the dynamic behavior of flood inundation extent by upskilling simulations from a low‐resolution hydrodynamic model through Empirical Orthogonal Function (EOF) analysis and Sparse Gaussian Process learning. However, information on flood extent alone is often not sufficient to provide accurate flood risk assessments. In addition, the LSG model has only been tested on hydrodynamic models with structured grids, while modern hydrodynamic models tend to use unstructured grids. This study therefore further develops the LSG model to simulate water depth as well as flood extent and demonstrates its efficacy as a surrogate for a high‐resolution hydrodynamic model with an unstructured grid. The further developed LSG model is evaluated on the flat and complex Chowilla floodplain of the Murray River in Australia and accurately predicts both depth and extent of the flood inundation, while being 12 times more computationally efficient than a high‐resolution hydrodynamic model. In addition, it has been found that weighting before the EOF analysis can compensate for the varying grid cell sizes in an unstructured grid and the inundation extent should be predicted from an extent‐based LSG model rather than deriving it from water depth predictions.\n\n",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.citation" : [ {
+                  "value" : "Fraehr, N., Wang, Q. J., Wu, W.  &  Nathan, R. (2023). Development of a Fast and Accurate Hybrid Model for Floodplain Inundation Simulations. Water Resources Research, 59 (6), https://doi.org/10.1029/2022WR033836.",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.doi" : [ {
+                  "value" : "10.1029/2022WR033836",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.eissn" : [ {
+                  "value" : "1944-7973",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.issn" : [ {
+                  "value" : "0043-1397",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.uri" : [ {
+                  "value" : "https://hdl.handle.net/11343/332952",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.language" : [ {
+                  "value" : "English",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.publisher" : [ {
+                  "value" : "AMER GEOPHYSICAL UNION",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.title" : [ {
+                  "value" : "Development of a Fast and Accurate Hybrid Model for Floodplain Inundation Simulations",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.type" : [ {
+                  "value" : "Journal Article",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.accessrights" : [ {
+                  "value" : "This item is currently not available from this repository",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.affiliation.department" : [ {
+                  "value" : "Minerva Elements",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.affiliation.faculty" : [ {
+                  "value" : "Collected Works",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.contributor.author" : [ {
+                  "value" : "Wang, Quan",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Nathan, Rory",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Wu, Wenyan",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Fraehr, Niels",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                } ],
+                "melbourne.elementsid" : [ {
+                  "value" : "1790640",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.identifier.arc" : [ {
+                  "value" : "DE210100117",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.identifier.fundernameid" : [ {
+                  "value" : "Australian Research Council, DE210100117",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.internal.authorids" : [ {
+                  "value" : "Wang, Quan; 8525; 0000-0002-8787-2738",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Nathan, Rory; 4672; 0000-0001-7759-8344",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Wu, Wenyan; 136047; 0000-0003-3907-1570",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Fraehr, Niels; 160497; 0000-0001-5558-323X",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                } ],
+                "melbourne.source.issue" : [ {
+                  "value" : "6",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.source.title" : [ {
+                  "value" : "Water Resources Research",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.source.volume" : [ {
+                  "value" : "59",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "pubs.publisher-url" : [ {
+                  "value" : "https://doi.org/10.1029/2022wr033836",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ]
+              },
+              "inArchive" : true,
+              "discoverable" : true,
+              "withdrawn" : false,
+              "lastModified" : "2026-07-14T02:50:11.134+00:00",
+              "entityType" : null,
+              "type" : "item",
+              "_links" : {
+                "accessStatus" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/accessStatus"
+                },
+                "bundles" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/bundles"
+                },
+                "identifiers" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/identifiers"
+                },
+                "mappedCollections" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/mappedCollections"
+                },
+                "owningCollection" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/owningCollection"
+                },
+                "relationships" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/relationships"
+                },
+                "version" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/version"
+                },
+                "templateItemOf" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/templateItemOf"
+                },
+                "thumbnail" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/thumbnail"
+                },
+                "redirect" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/redirect"
+                },
+                "citations" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/citations"
+                },
+                "self" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53"
+                }
+              },
+              "_embedded" : {
+                "bundles" : {
+                  "_embedded" : {
+                    "bundles" : [ ]
+                  },
+                  "page" : {
+                    "number" : 0,
+                    "size" : 20,
+                    "totalPages" : 0,
+                    "totalElements" : 0
+                  },
+                  "_links" : {
+                    "self" : {
+                      "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/bundles"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }, {
+          "hitHighlights" : {
+            "dc.description.abstract" : [ " high-fidelity <em>model</em> and provides predictions three orders of magnitude faster.\nTo properly <em>assess</em> the performance and value of the LSG <em>model</em>, in the fourth part of the study, the LSG <em>model</em> is compared to state-of-the-art data-driven <em>surrogate</em> <em>models</em>", " time for evacuation and mitigation strategies, as well as for uncertainty estimation through the simulation of large ensembles of possible flooding scenarios. \n<em>Surrogate</em> <em>models</em> have been developed as alternatives to high-fidelity <em>models</em> and aim" ],
+            "dc.contributor.author" : [ "<em>Fraehr</em>, Niels" ],
+            "fulltext_1ab12c39-1bb8-4a2e-bc7d-02b9640c3316" : [ " \n\nscenarios.  \n\n<em>Surrogate</em> <em>models</em> have been developed as alternatives to high-fidelity <em>models</em> and aim" ],
+            "dc.title" : [ "Upskilling low-fidelity <em>models</em> for accurate and fast prediction of flood inundation dynamics" ]
+          },
+          "type" : "discover",
+          "_links" : {
+            "indexableObject" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99"
+            }
+          },
+          "_embedded" : {
+            "indexableObject" : {
+              "id" : "dce4d8ab-6bf4-4f22-9388-1ab385c12a99",
+              "uuid" : "dce4d8ab-6bf4-4f22-9388-1ab385c12a99",
+              "name" : "Upskilling low-fidelity models for accurate and fast prediction of flood inundation dynamics",
+              "handle" : "11343/355451",
+              "metadata" : {
+                "dc.contributor.author" : [ {
+                  "value" : "Fraehr, Niels",
+                  "language" : null,
+                  "authority" : "78d4b9b3-0839-40fd-b2ae-8fa7952218d5",
+                  "confidence" : 600,
+                  "place" : 0
+                } ],
+                "dc.date.accessioned" : [ {
+                  "value" : "2025-02-06T01:15:11Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.available" : [ {
+                  "value" : "2025-02-06T01:15:11Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.issued" : [ {
+                  "value" : "2024-11",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.description" : [ {
+                  "value" : "© 2025 Niels Fraehr",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.description.abstract" : [ {
+                  "value" : "Flooding is one of the biggest natural disasters, destroying infrastructure and causing deaths through inundation of otherwise dry land. For decision-making and planning, emergency management agencies, local councils, and other authorities need accurate and timely information on which areas are prone to flooding both before, during, and after flood events. Flood inundation is challenging to predict due to the dynamic nature and complex flow patterns involved. To accurately simulate the spatio-temporal behaviour of flood inundation, researchers have developed numerical hydrodynamic models that solve complex differential equations (e.g. shallow-water equations) on a high-resolution computational grid to describe the movement of water within the model domain. These hydrodynamic models are often referred to as high-fidelity models given their high degree of realism. However, the computational demand of high-fidelity models increases with the size of the model domain, the spatial resolution, the temporal resolution, and the number of processes included. High-fidelity models are often sought to be as accurate as possible, often making them too slow to use in operational flood warning and control systems. Fast simulations of flood events are needed to provide proper warning time for evacuation and mitigation strategies, as well as for uncertainty estimation through the simulation of large ensembles of possible flooding scenarios. \nSurrogate models have been developed as alternatives to high-fidelity models and aim at approximating flood inundation in a computationally efficient manner. Different types of surrogate models have been developed, each with its advantages and limitations. This study aims to develop a surrogate model that is fast and accurate, capable of simulating dynamically evolving flood inundation behaviour, and easy to implement for new applications. \nIn the first part of this study, the main objective is to develop the overall setup and methodology of the surrogate model. A hybrid surrogate model that combines the advantages of both low-fidelity and data-driven models is proposed. In the hybrid surrogate model, the low-fidelity model is used to provide an initial estimate of the flood inundation. The low-fidelity model is a simplified, low-resolution version of the high-fidelity model, and thus is computationally efficient, but has reduced accuracy compared to the high-fidelity model. The low-fidelity estimate is subsequently upskilled to high resolution and accuracy using Empirical Orthogonal Functions (EOF) analysis and Gaussian Process (GP) models. The EOF analysis is used to capture the main spatio-temporal flood inundation behaviour and reduce the dimensionality to just a few key latent features. The GP model is then used to convert the low-fidelity latent features to high-fidelity latent features based on prior training. Finally, high-resolution, and accurate predictions of the flood inundation can be obtained by reversing the EOF analysis using the predicted high-fidelity latent features. The hybrid model is named the LSG model as it upskills the Low-fidelity model results through Spatial analysis and Gaussian Process learning for predictions of flood inundation dynamics. To simplify the initial development of the surrogate model, this part focuses on predicting the dynamic evolution of the inundation extent (i.e. binary prediction of dry or flooded areas) on a structured quadratic grid. The developed LSG model is applied to the 224 square kilometers large Chowilla floodplain (AU) and predicts the inundation extent approximately 3 times faster than using a high-fidelity model while maintaining a similar accuracy.\nIn the second part of the study, the LSG model is further developed to predict water depth. Using a combination of two separate LSG models, one for prediction of inundation extent, and one for prediction of the water depth in the inundated areas, is found to provide the most accurate predictions of the inundation extent compared to deriving the extent from the water depth predictions. Furthermore, weighting according to the grid cell areas before the EOF analysis is found to ensure accurate predictions when applying the LSG model as a surrogate model for high-fidelity models with an unstructured grid. In this part, the LSG model is also applied to predict flooding in the Chowilla floodplain (AU), but the study area is expanded to 740 square kilometers. Nonetheless, the LSG model accurately predicts the flood inundation dynamics and by using a simpler low-fidelity model than in part 1, is 12 times faster than using a high-fidelity model.\nThe third part of the study aims at speeding up the LSG model to accommodate the use of the LSG model for real-time predictions and ensemble modelling. The low-fidelity model is the most computationally demanding component of the LSG model, and thus, the low-fidelity model is simplified to increase the computational efficiency of the LSG model. It is found that an extremely simplified and hence superfast low-fidelity model retains the ability to capture the main spatio-temporal flood inundation behaviour. By exploiting this efficacy, the LSG model is used to predict flood inundation dynamics in the Chowilla floodplain (AU) and Burnett River catchment (AU), where the LSG model accurately emulates a high-fidelity model and provides predictions three orders of magnitude faster.\nTo properly assess the performance and value of the LSG model, in the fourth part of the study, the LSG model is compared to state-of-the-art data-driven surrogate models in terms of accuracy of the predicted flood inundation dynamics and computational efficiency. The surrogate models are applied to the Carlisle urban case study (UK), the Chowilla floodplain (AU) and the Burnett River catchment (AU). The LSG model outperforms all the compared data-driven surrogate models in terms of accuracy and has a similar computational efficiency to most of the data-driven surrogate models. The high accuracy of the LSG model is mainly due to the use of the low-fidelity model, which simulates the hydrodynamic physics to guide the GP model in the LSG model setup. In addition, it is found that all the compared surrogate models have reduced accuracy when applied to flood events outside the range of the training data, but including just one extra-large training event can significantly improve the performance.\nFinally, in the fifth part of the study, the focus is on easing the implementation of the LSG model. One of the biggest hurdles when applying data-driven surrogate models is the requirement of training data. Often the training data is generated by running the high-fidelity model for a selected set of training events. However, the selection of events for training is usually not replicable and transparent, and running the high-fidelity model involves high computational costs. For that reason, a Low-fidelity model and EOF analysis for Sampling Strategy (LESS) is developed. LESS is an approach to select flood events for training the surrogate model. The training events are selected from a set of candidate events based on their spatio-temporal flood inundation flood behaviour as simulated using the low-fidelity model. LESS ensures the most useful events are selected for training, thus reducing the number of simulations needed using the high-fidelity model. LESS show good performance in three case studies including the Carlisle urban case study (UK), the Burnett River catchment (AU), and the Echuca-Moama town and floodplain area (AU).\nThe main contribution of this study is the development of the fast and accurate LSG surrogate model for the prediction of flood inundation dynamics. The LSG model has been thoroughly tested using a wide range of real-world applications and flood events for emulating high-fidelity models developed using the leading commercial software (i.e. MIKE21, TUFLOW, LISFLOOD-FP, HEC-RAS). In addition, steps have been made to make the LSG model easy to implement for new applications while ensuring accurate predictions. Future directions should consider further development of the LSG model and implementation in real-time prediction and forecasting frameworks.",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.uri" : [ {
+                  "value" : "https://hdl.handle.net/11343/355451",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.rights" : [ {
+                  "value" : "Terms and Conditions: Copyright in works deposited in Minerva Access is retained by the copyright owner. The work may not be altered without permission from the copyright owner. Readers may only download, print and save electronic copies of whole works for their own personal non-commercial use. Any use that exceeds these limits requires permission from the copyright owner. Attribution is essential when quoting or paraphrasing from these works.",
+                  "language" : "",
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.subject" : [ {
+                  "value" : "Flooding",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Inundation",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Modelling",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Surrogate",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                }, {
+                  "value" : "Machine learning",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 4
+                }, {
+                  "value" : "EOF",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 5
+                }, {
+                  "value" : "Gaussian Process",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 6
+                } ],
+                "dc.title" : [ {
+                  "value" : "Upskilling low-fidelity models for accurate and fast prediction of flood inundation dynamics",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.type" : [ {
+                  "value" : "PhD thesis",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.accessrights" : [ {
+                  "value" : "Open Access",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.affiliation.department" : [ {
+                  "value" : "Infrastructure Engineering",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.affiliation.faculty" : [ {
+                  "value" : "Engineering and Information Technology",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.contributor.author" : [ {
+                  "value" : "Fraehr, Niels",
+                  "language" : null,
+                  "authority" : "3815ce25-9d18-4c09-aa69-34c715b8db10",
+                  "confidence" : 600,
+                  "place" : 0
+                } ],
+                "melbourne.preservica.change" : [ {
+                  "value" : "Manual",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.tes.fieldofresearch1" : [ {
+                  "value" : "400513 Water resources engineering",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.tes.fieldofresearch2" : [ {
+                  "value" : "370704 Surface water hydrology",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.thesis.supervisorname" : [ {
+                  "value" : "Quan Wang",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.thesis.supervisorothername" : [ {
+                  "value" : "Wenyan Wu",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Rory Nathan",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                } ]
+              },
+              "inArchive" : true,
+              "discoverable" : true,
+              "withdrawn" : false,
+              "lastModified" : "2025-12-09T16:06:29.405+00:00",
+              "entityType" : null,
+              "type" : "item",
+              "_links" : {
+                "accessStatus" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/accessStatus"
+                },
+                "bundles" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/bundles"
+                },
+                "identifiers" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/identifiers"
+                },
+                "mappedCollections" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/mappedCollections"
+                },
+                "owningCollection" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/owningCollection"
+                },
+                "relationships" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/relationships"
+                },
+                "version" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/version"
+                },
+                "templateItemOf" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/templateItemOf"
+                },
+                "thumbnail" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/thumbnail"
+                },
+                "redirect" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/redirect"
+                },
+                "citations" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/citations"
+                },
+                "self" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99"
+                }
+              },
+              "_embedded" : {
+                "bundles" : {
+                  "_embedded" : {
+                    "bundles" : [ {
+                      "uuid" : "524387b4-f47a-45e3-9757-1ffb0fc7aec8",
+                      "name" : "ORIGINAL",
+                      "handle" : null,
+                      "metadata" : {
+                        "dc.title" : [ {
+                          "value" : "ORIGINAL",
+                          "language" : null,
+                          "authority" : null,
+                          "confidence" : -1,
+                          "place" : 0
+                        } ]
+                      },
+                      "type" : "bundle",
+                      "_links" : {
+                        "item" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/524387b4-f47a-45e3-9757-1ffb0fc7aec8/item"
+                        },
+                        "bitstreams" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/524387b4-f47a-45e3-9757-1ffb0fc7aec8/bitstreams"
+                        },
+                        "primaryBitstream" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/524387b4-f47a-45e3-9757-1ffb0fc7aec8/primaryBitstream"
+                        },
+                        "self" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/524387b4-f47a-45e3-9757-1ffb0fc7aec8"
+                        }
+                      }
+                    }, {
+                      "uuid" : "e4ad636f-5e5d-4683-b2f7-4c0ffedb999d",
+                      "name" : "TEXT",
+                      "handle" : null,
+                      "metadata" : {
+                        "dc.title" : [ {
+                          "value" : "TEXT",
+                          "language" : null,
+                          "authority" : null,
+                          "confidence" : -1,
+                          "place" : 0
+                        } ]
+                      },
+                      "type" : "bundle",
+                      "_links" : {
+                        "item" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/e4ad636f-5e5d-4683-b2f7-4c0ffedb999d/item"
+                        },
+                        "bitstreams" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/e4ad636f-5e5d-4683-b2f7-4c0ffedb999d/bitstreams"
+                        },
+                        "primaryBitstream" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/e4ad636f-5e5d-4683-b2f7-4c0ffedb999d/primaryBitstream"
+                        },
+                        "self" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/e4ad636f-5e5d-4683-b2f7-4c0ffedb999d"
+                        }
+                      }
+                    }, {
+                      "uuid" : "73232cae-3199-458d-84a5-e411d6071a83",
+                      "name" : "THUMBNAIL",
+                      "handle" : null,
+                      "metadata" : {
+                        "dc.title" : [ {
+                          "value" : "THUMBNAIL",
+                          "language" : null,
+                          "authority" : null,
+                          "confidence" : -1,
+                          "place" : 0
+                        } ]
+                      },
+                      "type" : "bundle",
+                      "_links" : {
+                        "item" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/73232cae-3199-458d-84a5-e411d6071a83/item"
+                        },
+                        "bitstreams" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/73232cae-3199-458d-84a5-e411d6071a83/bitstreams"
+                        },
+                        "primaryBitstream" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/73232cae-3199-458d-84a5-e411d6071a83/primaryBitstream"
+                        },
+                        "self" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/73232cae-3199-458d-84a5-e411d6071a83"
+                        }
+                      }
+                    } ]
+                  },
+                  "page" : {
+                    "number" : 0,
+                    "size" : 20,
+                    "totalPages" : 1,
+                    "totalElements" : 3
+                  },
+                  "_links" : {
+                    "self" : {
+                      "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/dce4d8ab-6bf4-4f22-9388-1ab385c12a99/bundles"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }, {
+          "hitHighlights" : {
+            "dc.description.abstract" : [ "Flood inundation <em>models</em> are one of the important tools used to manage flood-related risks in engineering practices such as infrastructure design, flooding disaster mitigation, and reservoir operations. Two-dimensional (2D) hydrodynamic <em>models</em>", " are commonly used in engineering applications because of their ability to provide robust estimates of flood inundation depth and extent at high temporal and spatial resolutions. However, due to the high computational costs, 2D <em>models</em> are not suited to many" ],
+            "fulltext_18c1d204-3fd1-4628-99b6-99912fba8489" : [ "Development of efficient flood \ninundation <em>modelling</em> schemes using \ndeep learning \n \n \n \nYuerong" ],
+            "dc.title" : [ "Development of efficient flood inundation <em>modelling</em> schemes using deep learning" ]
+          },
+          "type" : "discover",
+          "_links" : {
+            "indexableObject" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3"
+            }
+          },
+          "_embedded" : {
+            "indexableObject" : {
+              "id" : "84780ee6-0c34-4ae5-8daf-0f7812f43da3",
+              "uuid" : "84780ee6-0c34-4ae5-8daf-0f7812f43da3",
+              "name" : "Development of efficient flood inundation modelling schemes using deep learning",
+              "handle" : "11343/326691",
+              "metadata" : {
+                "dc.contributor.author" : [ {
+                  "value" : "Zhou, Yuerong",
+                  "language" : null,
+                  "authority" : "f5d45873-5c41-410d-8f4e-6ba280715a58",
+                  "confidence" : 600,
+                  "place" : 0
+                } ],
+                "dc.date.accessioned" : [ {
+                  "value" : "2023-03-29T23:15:12Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.available" : [ {
+                  "value" : "2023-03-29T23:15:12Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.issued" : [ {
+                  "value" : "2022",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.description" : [ {
+                  "value" : "© 2022 Yuerong Zhou",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.description.abstract" : [ {
+                  "value" : "Flood inundation models are one of the important tools used to manage flood-related risks in engineering practices such as infrastructure design, flooding disaster mitigation, and reservoir operations. Two-dimensional (2D) hydrodynamic models are commonly used in engineering applications because of their ability to provide robust estimates of flood inundation depth and extent at high temporal and spatial resolutions. However, due to the high computational costs, 2D models are not suited to many applications such as real-time ensemble flood inundation forecasting or uncertainty analysis. Therefore, many models have been developed based on simplified hydraulic rules such as considering only the conservation of water mass. These models are generally faster than 2D models but have reduced accuracy, which is a problem in many studies where a fine simulation timestep is needed or flow dynamics are significant. \n\nRecently, emulation models have been developed for fast flood inundation modelling using data-driven techniques including artificial neural networks, machine learning classification models, and deep learning. These computationally efficient emulation models are found to have comparable accuracy with 2D models when used to simulate flood inundation water level or depth provided with rainfall or streamflow discharge inputs. However, most emulation models simulate flood water/depth for each grid cell in the modelling domain separately, which would significantly increase the computational costs when applied for large domains. To add to that, these models have been found to have reduced accuracy in data-scarce regions on the floodplain.\n\nTo improve the performance of emulation models, the objective of this thesis is to develop computationally efficient flood inundation models using deep learning and new spatial representation methods, that can be used for fast flood inundation simulation on floodplains with various characteristics at high spatial and temporal resolutions. \n\nThe major contributions of this thesis include: (1) the development of an emulator for rapid flood inundation modelling which incorporates a novel spatial reduction and reconstruction (SRR) method as well as long short-term memory (LSTM) deep learning models to efficiently estimate flood inundation depth and extent; (2) the development of a Python program for the SRR method for flood surface representation; (3) the development of a U-Net-based spatial reduction and reconstruction (USRR) method and one-dimensional convolutional neural network (1D-CNN) models to emulate flood inundation on flat and complex floodplains. \n\nIn addition, an input selection structure is developed and validated in the architecture of the LSTM models to simplify the model development process and to reduce the effort required for real-world applications. Also, a comparison is carried out for the performance of the combined approaches of the SRR method and LSTM models, as well as the USRR method and 1D-CNN models in an application to a flat and complex floodplain. The comparison demonstrates the advantages of using the USRR-1D-CNN emulator for rapid modelling of flood inundation on flat floodplains with complex flow paths, while the SRR-LSTM emulator is more computationally efficient and suitable for application to steep floodplains. \n\nThe flood inundation modelling schemes developed in this thesis provide fast estimates of flood inundation surfaces without a material loss of accuracy compared to 2D hydrodynamic models, useful for applications such as ensemble real-time flood forecasting and flood risk analysis. They have the potential to deepen our understanding of the impacts of input uncertainty on temporal and spatial patterns of flood inundation, and to facilitate improved flood risk management.",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.uri" : [ {
+                  "value" : "https://hdl.handle.net/11343/326691",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.rights" : [ {
+                  "value" : "Terms and Conditions: Copyright in works deposited in Minerva Access is retained by the copyright owner. The work may not be altered without permission from the copyright owner. Readers may only download, print and save electronic copies of whole works for their own personal non-commercial use. Any use that exceeds these limits requires permission from the copyright owner. Attribution is essential when quoting or paraphrasing from these works.",
+                  "language" : "",
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.subject" : [ {
+                  "value" : "Flood inundation model",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Deep learning",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "LSTM",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Convolutional neural netowrks",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                }, {
+                  "value" : "Spatial reduction",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 4
+                }, {
+                  "value" : "Spatial reconstruction",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 5
+                }, {
+                  "value" : "Surface hydrology",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 6
+                }, {
+                  "value" : "Flood",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 7
+                }, {
+                  "value" : "Machine learning",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 8
+                }, {
+                  "value" : "Floodplain",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 9
+                } ],
+                "dc.title" : [ {
+                  "value" : "Development of efficient flood inundation modelling schemes using deep learning",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.type" : [ {
+                  "value" : "PhD thesis",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.accessrights" : [ {
+                  "value" : "Open Access",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.affiliation.department" : [ {
+                  "value" : "Infrastructure Engineering",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.affiliation.faculty" : [ {
+                  "value" : "Engineering and Information Technology",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.contributor.author" : [ {
+                  "value" : "Zhou, Yuerong",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.preservica.change" : [ {
+                  "value" : "Manual",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.tes.fieldofresearch1" : [ {
+                  "value" : "400513 Water resources engineering",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.tes.fieldofresearch2" : [ {
+                  "value" : "401102 Environmentally sustainable engineering",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.tes.fieldofresearch3" : [ {
+                  "value" : "370704 Surface water hydrology",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.tes.fieldofresearch4" : [ {
+                  "value" : "461103 Deep learning",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.thesis.supervisorname" : [ {
+                  "value" : "Wenyan Wu",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.thesis.supervisorothername" : [ {
+                  "value" : "Quan Wang",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Rory Nathan",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                } ]
+              },
+              "inArchive" : true,
+              "discoverable" : true,
+              "withdrawn" : false,
+              "lastModified" : "2025-12-04T21:07:52.566+00:00",
+              "entityType" : null,
+              "type" : "item",
+              "_links" : {
+                "accessStatus" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/accessStatus"
+                },
+                "bundles" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/bundles"
+                },
+                "identifiers" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/identifiers"
+                },
+                "mappedCollections" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/mappedCollections"
+                },
+                "owningCollection" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/owningCollection"
+                },
+                "relationships" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/relationships"
+                },
+                "version" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/version"
+                },
+                "templateItemOf" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/templateItemOf"
+                },
+                "thumbnail" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/thumbnail"
+                },
+                "redirect" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/redirect"
+                },
+                "citations" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/citations"
+                },
+                "self" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3"
+                }
+              },
+              "_embedded" : {
+                "bundles" : {
+                  "_embedded" : {
+                    "bundles" : [ {
+                      "uuid" : "9e108ca0-b060-459e-a69e-9def5e731a40",
+                      "name" : "ORIGINAL",
+                      "handle" : null,
+                      "metadata" : {
+                        "dc.title" : [ {
+                          "value" : "ORIGINAL",
+                          "language" : null,
+                          "authority" : null,
+                          "confidence" : -1,
+                          "place" : 0
+                        } ]
+                      },
+                      "type" : "bundle",
+                      "_links" : {
+                        "item" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/9e108ca0-b060-459e-a69e-9def5e731a40/item"
+                        },
+                        "bitstreams" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/9e108ca0-b060-459e-a69e-9def5e731a40/bitstreams"
+                        },
+                        "primaryBitstream" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/9e108ca0-b060-459e-a69e-9def5e731a40/primaryBitstream"
+                        },
+                        "self" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/9e108ca0-b060-459e-a69e-9def5e731a40"
+                        }
+                      }
+                    }, {
+                      "uuid" : "3d4b3a0b-cbf1-475c-89da-7354b2b013a2",
+                      "name" : "TEXT",
+                      "handle" : null,
+                      "metadata" : {
+                        "dc.title" : [ {
+                          "value" : "TEXT",
+                          "language" : null,
+                          "authority" : null,
+                          "confidence" : -1,
+                          "place" : 0
+                        } ]
+                      },
+                      "type" : "bundle",
+                      "_links" : {
+                        "item" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/3d4b3a0b-cbf1-475c-89da-7354b2b013a2/item"
+                        },
+                        "bitstreams" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/3d4b3a0b-cbf1-475c-89da-7354b2b013a2/bitstreams"
+                        },
+                        "primaryBitstream" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/3d4b3a0b-cbf1-475c-89da-7354b2b013a2/primaryBitstream"
+                        },
+                        "self" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/3d4b3a0b-cbf1-475c-89da-7354b2b013a2"
+                        }
+                      }
+                    }, {
+                      "uuid" : "c4f6ab58-ed69-4ef9-9460-37b3f744320b",
+                      "name" : "THUMBNAIL",
+                      "handle" : null,
+                      "metadata" : {
+                        "dc.title" : [ {
+                          "value" : "THUMBNAIL",
+                          "language" : null,
+                          "authority" : null,
+                          "confidence" : -1,
+                          "place" : 0
+                        } ]
+                      },
+                      "type" : "bundle",
+                      "_links" : {
+                        "item" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/c4f6ab58-ed69-4ef9-9460-37b3f744320b/item"
+                        },
+                        "bitstreams" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/c4f6ab58-ed69-4ef9-9460-37b3f744320b/bitstreams"
+                        },
+                        "primaryBitstream" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/c4f6ab58-ed69-4ef9-9460-37b3f744320b/primaryBitstream"
+                        },
+                        "self" : {
+                          "href" : "https://minerva-access.unimelb.edu.au/server/api/core/bundles/c4f6ab58-ed69-4ef9-9460-37b3f744320b"
+                        }
+                      }
+                    } ]
+                  },
+                  "page" : {
+                    "number" : 0,
+                    "size" : 20,
+                    "totalPages" : 1,
+                    "totalElements" : 3
+                  },
+                  "_links" : {
+                    "self" : {
+                      "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/84780ee6-0c34-4ae5-8daf-0f7812f43da3/bundles"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        } ]
+      },
+      "page" : {
+        "number" : 0,
+        "size" : 5,
+        "totalPages" : 1,
+        "totalElements" : 5
+      },
+      "_links" : {
+        "self" : {
+          "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%20of%20surrogate%20models%20Fraehr&dsoType=ITEM&size=5"
+        }
+      }
+    },
+    "facets" : [ {
+      "name" : "dateIssued",
+      "facetType" : "date",
+      "facetLimit" : 5,
+      "minValue" : "(16th century)",
+      "maxValue" : "Unkown",
+      "page" : {
+        "number" : 0,
+        "size" : 5
+      },
+      "_links" : {
+        "self" : {
+          "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/facets/dateIssued?query=Assessment%20of%20surrogate%20models%20Fraehr&dsoType=ITEM&size=5"
+        }
+      },
+      "_embedded" : {
+        "values" : [ {
+          "label" : "1890 - 2027",
+          "count" : 5,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.dateIssued=%5B1890%20TO%202027%5D,equals"
+            }
+          }
+        } ]
+      }
+    }, {
+      "name" : "author",
+      "facetType" : "text",
+      "facetLimit" : 5,
+      "minValue" : "'Aloua-Lala, Soana",
+      "maxValue" : "豊原国周",
+      "page" : {
+        "number" : 0,
+        "size" : 5
+      },
+      "_links" : {
+        "self" : {
+          "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/facets/author?query=Assessment%20of%20surrogate%20models%20Fraehr&dsoType=ITEM&size=5"
+        }
+      },
+      "_embedded" : {
+        "values" : [ {
+          "label" : "Fraehr, Niels",
+          "count" : 4,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.author=Fraehr,%20Niels,equals"
+            }
+          }
+        }, {
+          "label" : "Nathan, Rory",
+          "count" : 3,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.author=Nathan,%20Rory,equals"
+            }
+          }
+        }, {
+          "label" : "Wang, Quan",
+          "count" : 3,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.author=Wang,%20Quan,equals"
+            }
+          }
+        }, {
+          "label" : "Wu, Wenyan",
+          "count" : 3,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.author=Wu,%20Wenyan,equals"
+            }
+          }
+        }, {
+          "label" : "Zhou, Yuerong",
+          "count" : 1,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.author=Zhou,%20Yuerong,equals"
+            }
+          }
+        } ]
+      }
+    }, {
+      "name" : "subject",
+      "facetType" : "hierarchical",
+      "facetLimit" : 5,
+      "page" : {
+        "number" : 0,
+        "size" : 5
+      },
+      "_links" : {
+        "next" : {
+          "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/facets/subject?query=Assessment%20of%20surrogate%20models%20Fraehr&dsoType=ITEM&page=1&size=5"
+        },
+        "self" : {
+          "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/facets/subject?query=Assessment%20of%20surrogate%20models%20Fraehr&dsoType=ITEM&size=5"
+        }
+      },
+      "_embedded" : {
+        "values" : [ {
+          "label" : "Machine learning",
+          "count" : 2,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.subject=Machine%20learning,equals"
+            }
+          }
+        }, {
+          "label" : "Convolutional neural netowrks",
+          "count" : 1,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.subject=Convolutional%20neural%20netowrks,equals"
+            }
+          }
+        }, {
+          "label" : "Deep learning",
+          "count" : 1,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.subject=Deep%20learning,equals"
+            }
+          }
+        }, {
+          "label" : "EOF",
+          "count" : 1,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.subject=EOF,equals"
+            }
+          }
+        }, {
+          "label" : "Flood",
+          "count" : 1,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.subject=Flood,equals"
+            }
+          }
+        } ]
+      }
+    }, {
+      "name" : "itemtype",
+      "facetType" : "text",
+      "facetLimit" : 5,
+      "page" : {
+        "number" : 0,
+        "size" : 5
+      },
+      "_links" : {
+        "self" : {
+          "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/facets/itemtype?query=Assessment%20of%20surrogate%20models%20Fraehr&dsoType=ITEM&size=5"
+        }
+      },
+      "_embedded" : {
+        "values" : [ {
+          "label" : "Journal Article",
+          "count" : 3,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.itemtype=Journal%20Article,equals"
+            }
+          }
+        }, {
+          "label" : "PhD thesis",
+          "count" : 2,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=Assessment%2520of%2520surrogate%2520models%2520Fraehr&dsoType=ITEM&f.itemtype=PhD%20thesis,equals"
+            }
+          }
+        } ]
+      }
+    } ]
+  }
+}

@@ -1,0 +1,65 @@
+# Grid / domain specs extracted from Wang et al. (2026) WRR e2025WR042481.
+# Values marked inferred_not_in_paper are conventional for SEQ / BRCFS, not stated in the article.
+
+paper:
+  doi: 10.1029/2025WR042481
+  citation: Wang, W., Wang, Q. J., & Nathan, R. (2026). Water Resources Research, 62, e2025WR042481.
+
+domain:
+  name: Lower Brisbane River floodplain
+  description: >
+    From Wivenhoe Dam to the Brisbane River mouth in Moreton Bay, including
+    Bremer River and Warrill, Lockyer, Laidley and Oxley Creeks.
+  floodplain_area_km2: 2000
+  catchment_area_km2: 13500
+  crs_paper: not_stated
+  crs_conventional_epsg: EPSG:28356
+  crs_conventional_name: GDA94 / MGA zone 56
+  vertical_datum_expected: AHD
+  approximate_bbox_wgs84:
+    note: Not published in the paper. Approximate geographic envelope of the named domain.
+    west: 152.55
+    east: 153.23
+    south: -27.75
+    north: -27.30
+
+hydrodynamic_models:
+  hydrology:
+    software: URBS
+    operator: Seqwater
+    study: Brisbane River Catchment Flood Study (BRCFS; Aurecon, 2015)
+  high_fidelity:
+    software: TUFLOW CPU implicit 1D/2D
+    study: BRCFS hydraulic assessment (BMT WBM, 2016)
+    computational_cell_m: 30
+    output_grid_m: 15
+    note: >
+      TUFLOW default output interpolation writes 15 m rasters; the numerical
+      solution is the 30 m grid. All LSG training/prediction used 15 m outputs.
+  low_fidelity:
+    lf120:
+      computational_cell_m: 120
+      output_grid_m: 60
+      coarsening_vs_hf_computational: 4
+    lf300:
+      computational_cell_m: 300
+      output_grid_m: 150
+      coarsening_vs_hf_computational: 10
+    simplifications: >
+      Small-scale urban hydraulic structures and detailed internal features
+      removed; independent coarser simulations, not merely resampled HF output.
+  timestep_hours: 2
+  depth_threshold_m: 0.03
+  hf_calibration_events: [1974, 1996, 1999, 2011, 2013]
+  lsg_historical_events: [1996, 1999, 2011, 2013]
+
+local_layout:
+  dem: data/raw/dem/dem.tif
+  hf: data/raw/hf/{event_id}.npz
+  lf120: data/raw/lf120/{event_id}.npz
+  lf300: data/raw/lf300/{event_id}.npz
+  processed: data/processed/
+  npz_keys:
+    required: [depth]
+    optional: [terrain, shape]
+    depth_shape: "(n_timesteps, n_cells) or (n_cells,) for max-only"

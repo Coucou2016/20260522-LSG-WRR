@@ -1,0 +1,57 @@
+# Sources checked while locating Wang et al. (2026) case-study data.
+# Checked: 2026-08-14.
+
+paper:
+  doi: 10.1029/2025WR042481
+  url: https://doi.org/10.1029/2025WR042481
+  availability_statement: >
+    Hydrological (URBS) and hydrodynamic (TUFLOW) models and HF/LF simulation
+    data are licensed by the Queensland Government. Access upon request.
+    LSG Python code cited as Fraehr (2024) https://doi.org/10.26188/24312658
+    (Carlisle / Chowilla / Burnett — not this Brisbane TUFLOW library).
+  corresponding_author: Wen Wang <www1@student.unimelb.edu.au>
+
+searched:
+  - id: agu_wrr
+    url: https://doi.org/10.1029/2025WR042481
+    result: Open Research / Availability Statement points to Queensland licence, not a public grid archive. No Supporting Information grids found.
+  - id: qld_brcfs_models
+    url: https://www.business.qld.gov.au/industries/mining-energy-water/water/maps-data/modelling/brisbane-river-catchment
+    result: >
+      Models released under licence (fee AUD 821, USB). Online request form
+      temporarily unavailable; email hydrology@detsi.qld.gov.au. Not a public download.
+  - id: qld_brcfs_reports
+    url: https://www.publications.qld.gov.au/dataset/brisbane-river-catchment-flood-study
+    result: Technical reports (PDF) are CC-BY; no TUFLOW result grids.
+  - id: fraehr_2024_figshare
+    url: https://doi.org/10.26188/24312658
+    result: LSG comparison code/data for Carlisle, Chowilla, BurnettRV — not Lower Brisbane TUFLOW.
+  - id: fraehr_chowilla_hecras
+    url: https://doi.org/10.26188/21235782
+    result: Chowilla HEC-RAS HDF for a different paper.
+  - id: zenodo_sfincs_lsg
+    url: https://doi.org/10.5281/zenodo.20352881
+    result: >
+      Eilander et al. SFINCS–LSG (Charleston + Brisbane compound-flood case).
+      Different model (SFINCS) and different paper. Not Wang 2026 TUFLOW outputs.
+  - id: hydroshare
+    query: Brisbane River TUFLOW LSG Wang Nathan
+    result: No matching Wang 2026 dataset.
+  - id: github
+    query: Wen Wang LSG Brisbane TUFLOW WRR
+    result: No author repository with this event library. Hybrid LSG reference is nfraehr/Hybrid_LSG_model.
+  - id: csiro_dap
+    query: Brisbane River Catchment Flood Study TUFLOW
+    result: No open TUFLOW result cube matching this paper.
+  - id: bcc_2011_extent
+    url: https://data.brisbane.qld.gov.au/explore/dataset/flood-awareness-historic-brisbane-river-floods-jan-2011
+    result: Public CC BY 4.0 observed/compiled 2011 flood extent polygons (BCC LGA only). Downloaded as auxiliary. Not HF/LF TUFLOW depths.
+  - id: qld_flood_extent_series
+    url: https://www.data.qld.gov.au/dataset/flood-extent-series
+    result: Statewide approximate flood extent polygons; not paired HF/LF training cubes.
+
+how_to_obtain_paper_grids:
+  1: Email hydrology@detsi.qld.gov.au requesting BRCFS models (select Brisbane River Catchment Flood Study / enter BRCFS).
+  2: Licence fee AUD 821; data on USB under Queensland licence (Queensland Government, 2017).
+  3: Contact corresponding author Wen Wang for the 47+4 event export used in the paper (may still require QLD licence).
+  4: Place licensed NPZ/NetCDF files in data/raw/hf, data/raw/lf120, data/raw/lf300 using FE1–FE51 stems.

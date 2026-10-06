@@ -1,0 +1,251 @@
+Round 6 of 6 - WRR manuscript review: numeric consistency + simulated reviewer pass
+
+You reviewed Rounds 1-5 of this manuscript (innovation framing, methods/data logic, results/discussion logic, writing style, figures/tables/captions). All issues you raised there are fixed; do not re-flag them. FINAL round. Two tasks:
+
+TASK A - Numeric consistency audit. Check EVERY number below for internal consistency: (1) abstract/key points vs tables vs body sentences; (2) arithmetic (each tabulated O2-O1 must equal O2 minus O1; capacity-matched statements must match Table 4/5/6); (3) units and decimal places; (4) any number appearing in two places must match or be explicitly reconciled. Report each discrepancy with exact locations. If consistent, say so explicitly.
+
+TASK B - Simulated critical reviewer. Act as a skeptical Water Resources Research reviewer seeing only this text. SHORT report: max 8 points, each labeled [major] or [minor], each with a one-sentence fix. Focus on claims unsupported by the shown evidence, ambiguous statements a reader would misread, and anything a reviewer would demand before acceptance. Sentence-level fixes only; no structural rewrites.
+
+COMPACT MANUSCRIPT EXTRACT (tables verbatim; prose limited to numbers-bearing and claim-bearing sentences):
+
+
+=== KEY POINTS + ABSTRACT ===
+# Capacity-Controlled Evaluation of Residual Hierarchical Zoning in Multi-Fidelity Flood Inundation Surrogates
+
+**Authors:** [Author names and affiliations to be finalized by the author team before submission]  
+**Affiliations:** [To be finalized]  
+**Corresponding author:** [To be finalized]
+
+## Key Points
+
+- Capacity-matched controls show no held-out depth benefit from residual hierarchical zoning in Chowilla or Burnett.
+- Oracle error budgets trace Burnett depth degradation to low- to high-fidelity Gaussian-process mapping, not extent reconstruction.
+- Scalar variance calibration lowers continuous ranked probability score in Carlisle and Burnett but not Chowilla.
+
+## Abstract
+
+High-fidelity flood inundation models can be computationally expensive for ensemble and rapid-prediction applications. Low-fidelity, spatial analysis, and Gaussian process learning (LSG) addresses this cost by mapping low-fidelity (LF) hydrodynamic fields to high-fidelity (HF) empirical orthogonal function representations. We examine whether residual hierarchical zoning, which augments global LSG with zone-specific residual modes, improves prediction once the additional representation capacity is controlled. Tests use three public benchmark cases (Carlisle, Chowilla, and Burnett), dual reconstruction of inundation extent and water-surface elevation, an O1–O4 oracle error ladder, and continuous ranked probability score (CRPS) variance calibration. For Burnett, LSG substantially improves wet-domain extent skill over LF, increasing the critical success index (CSI) from 0.853 to 0.975. Capacity matching gives no root-mean-square error (RMSE) advantage to zoning on Chowilla (0.093 m versus 0.085 m for matched global LSG), while Burnett RMSE increases from 0.179 to 0.387 m; the O1–O4 ladder locates this degradation in LF-to-HF mapping. Carlisle does not provide the same capacity comparison because the global maximum-surface model is rank-limited by eight training events. Scalar variance rescaling improves CRPS for Carlisle and Burnett but is neutral on Chowilla. These results show that apparent gains from localized residual modes can reflect added representation capacity rather than localization itself and should be tested against capacity-matched global baselines.
+
+
+=== ALL TABLES (verbatim, captions included) ===
+**Table 2. Critical success index (CSI) and depth root-mean-square error (RMSE; m) for the Group 1 evaluations at the 0.03 m inundation threshold, reported on the training wet-domain mask and the full HF mesh.**
+| Case | Model | CSI (full mesh) | CSI (training wet domain) | RMSE full mesh (m) | RMSE wet domain (m) |
+|---|---|---:|---:|---:|---:|
+| Carlisle | LF only | 0.960 | 0.966 | 0.074 | 0.101 |
+| Carlisle | LSG-TS (maximum surface) | 0.970 | 0.970 | 0.099 | 0.154 |
+| Carlisle | LSG-Max H-LSG | 0.976 | 0.976 | 0.061 | 0.094 |
+| Chowilla | LF only | 0.930 | 0.925 | 0.690 | 0.690 |
+| Chowilla | LSG-Max H-LSG | 0.390 | 0.976 | 3.789 | 0.093 |
+| Chowilla | LSG-Max global | 0.390 | 0.974 | 3.789 | 0.088 |
+| Burnett | LF only | 0.853 | 0.853 | 0.983 | 0.989 |
+| Burnett | LSG-Max H-LSG | 0.975 | 0.975 | 0.384 | 0.387 |
+| Burnett | LSG-Max global | 0.975 | 0.975 | 0.179 | 0.179 |
+**Table 3. O1–O4 depth RMSE (m) for the Group 1 test evaluations on the training wet-domain scoring mask.**
+| Case | Variant | O1 | O2 | O3 | O4 | O2 − O1 |
+|---|---|---:|---:|---:|---:|---:|
+| Carlisle | LSG-TS H-LSG | 0.018 | 0.033 | 0.240 | 0.102 | 0.015 |
+| Carlisle | LSG-Max H-LSG | 0.048 | 0.052 | 0.068 | 0.094 | 0.005 |
+| Chowilla | LSG-Max H-LSG | 0.020 | 0.034 | 0.701 | 0.093 | 0.013 |
+| Chowilla | LSG-Max global | 0.020 | 0.078 | 0.666 | 0.088 | 0.057 |
+| Burnett | LSG-Max H-LSG | 0.074 | 0.083 | 0.668 | 0.387 | 0.009 |
+| Burnett | LSG-Max global | 0.074 | 0.123 | 0.708 | 0.179 | 0.049 |
+**Table 4. Chowilla capacity control for the Group 1 maximum-surface test event, scored on the training wet-domain mask. RMSE and O2 − O1 are reported in meters.**
+| Model | WSE dimension | CSI | RMSE (m) | Test O2 − O1 (m) |
+|---|---:|---:|---:|---:|
+| Global (native) | 3 | 0.974 | 0.088 | 0.057 |
+| H-LSG residual *k*-means | 15 | 0.976 | 0.093 | 0.013 |
+| Global matched-15 | 15 | 0.975 | 0.085 | 0.002 |
+| H-LSG residual modes = 0 | 3 | 0.974 | 0.088 | 0.057 |
+**Table 5. Burnett capacity control and oracle attribution for the 18 Group 1 maximum-surface test events, scored on the training wet-domain mask. RMSE, O2 − O1, and O4 − O2 are reported in meters; EXT agreement is dimensionless.**
+| Model | WSE dimension | CSI | RMSE (m) | Test O2 − O1 (m) | Test O4 − O2 (m) | EXT agreement |
+|---|---:|---:|---:|---:|---:|---:|
+| Global (native) | 6 | 0.975 | 0.179 | 0.049 | 0.056 | 0.986 |
+| H-LSG residual *k*-means | 18 | 0.975 | 0.387 | 0.009 | 0.304 | 0.986 |
+| Global matched-18 | 18 | 0.972 | 0.416 | 0.004 | — | 0.986 |
+**Table 6. Carlisle capacity control for the Group 1 maximum-surface test event, scored on the training wet-domain mask. RMSE and O2 − O1 are reported in meters.**
+| Model | Requested / realized WSE dimension | CSI | RMSE (m) | Test O2 − O1 (m) |
+|---|---|---:|---:|---:|
+| Global (native) | auto / 1 | 0.976 | 0.112 | 0.064 |
+| H-LSG residual *k*-means | — / 13 | 0.976 | 0.094 | 0.005 |
+| Global forced to 13 modes | 13 / 8 | 0.975 | 0.202 | 0.000 |
+| H-LSG residual modes = 0 | — / 1 | 0.976 | 0.112 | 0.064 |
+**Table 7. Chowilla H-LSG inducing-point and zone-count sensitivities for the Group 1 maximum-surface test event, scored on the training wet-domain mask. RMSE and O2 − O1 are reported in meters.**
+| Factor | Setting | WSE dimension | CSI | RMSE (m) | Test O2 − O1 (m) |
+|---|---|---:|---:|---:|---:|
+| Inducing-point floor | 2 | 15 | 0.947 | 0.244 | 0.013 |
+|  | 8 | 15 | 0.990 | 0.096 | 0.013 |
+|  | 16 (default) | 15 | 0.976 | 0.093 | 0.013 |
+|  | 28 (= *n*<sub>train</sub>) | 15 | 0.983 | 0.073 | 0.013 |
+| Zone count | 2 | 9 | 0.975 | 0.087 | 0.019 |
+|  | 4 (default) | 15 | 0.976 | 0.093 | 0.013 |
+|  | 6 | 21 | 0.975 | 0.103 | 0.012 |
+**Table 8. Chowilla zoning sensitivity for the Group 1 maximum-surface test event, scored on the training wet-domain mask. RMSE and O2 − O1 are reported in meters.**
+| Zoning | CSI | RMSE (m) | Test O2 − O1 (m) |
+|---|---:|---:|---:|
+| Global (none) | 0.974 | 0.088 | 0.057 |
+| Residual *k*-means | 0.976 | 0.093 | 0.013 |
+| Wet-correlation | 0.978 | 0.094 | 0.010 |
+**Table 9. CRPS variance scaling and selected probabilistic scores.** CRPS is reported in meters and coverage as a fraction on the active-cell scoring domain; point scores are unchanged by construction because variance scaling leaves the predictive mean unchanged. The Chowilla and Burnett before/after pairs are independent rescores of saved H-LSG model states; the original workflow-fit variance scales were 0.309 for Chowilla and 0.606 for Burnett.
+| Case / surface | *s* | CRPS (m; uncalibrated → calibrated) | Active 90% coverage (uncalibrated → calibrated) | Point CSI / RMSE (m) |
+|---|---:|---|---|---|
+| Carlisle Max | 0.417 | 0.039 → 0.028 | 0.990 → 0.966 | Unchanged (CSI 0.976; RMSE 0.061 m, full mesh) |
+| Carlisle TS | 0.900 | ≈0.017 | — | Unchanged |
+| Chowilla H-LSG Max (rescore) | 0.419 | 2.155 → 2.155 | 0.334 → 0.287 | Unchanged (CSI 0.976; RMSE 0.093 m, wet domain) |
+| Burnett H-LSG Max (rescore) | 0.604 | 0.133 → 0.127 | 0.943 → 0.890 | Unchanged (CSI 0.975; RMSE 0.387 m, wet domain) |
+
+=== RESULTS: every sentence containing a number ===
+## 4.
+### 4.1.
+Figure 1 places the three HF domains on common easting and northing axes.
+The extent maps in Figure 2 compare LF and LSG-Max predictions with HF at the 0.03 m threshold.
+Chowilla shows a different pattern: extent disagreement is concentrated outside the training wet-domain mask, consistent with the large difference between wet-domain and all-cell scores reported in Section 4.5.
+Peak-depth errors in Figure 3 show the same broad pattern.
+Figure 4 adds the probabilistic view by showing reconstructed *P*(*h* ≥ 0.03 m) for the three maximum-surface examples.
+Table 2 summarizes point performance.
+On Burnett, H-LSG increases wet-domain CSI from 0.853 for LF to 0.975 and reduces wet-domain RMSE from 0.989 to 0.387 m.
+The native global LSG reaches the same CSI with a substantially lower RMSE of 0.179 m.
+Chowilla shows a similar LF-to-LSG improvement on the wet domain: CSI increases from 0.925 to 0.976 for H-LSG and RMSE decreases from 0.690 to 0.093 m.
+The native global model gives a slightly lower wet-domain RMSE of 0.088 m.
+Carlisle begins from a stronger LF baseline; H-LSG changes wet-domain CSI from 0.966 to 0.976 and RMSE from 0.101 to 0.094 m.
+**Table 2.
+Critical success index (CSI) and depth root-mean-square error (RMSE; m) for the Group 1 evaluations at the 0.03 m inundation threshold, reported on the training wet-domain mask and the full HF mesh.**
+Figure 5 compares the corresponding wet-domain CSI and RMSE values across cases.
+For Carlisle LSG-TS, the held-out time-series score is CSI 0.959 with RMSE 0.065 m.
+The maximum surface reconstructed from that time-series model is a different evaluation object and gives CSI 0.970 with all-cell RMSE 0.099 m (Table 2).
+### 4.2.
+Figure 6 and Table 3 show the O1–O4 ladder.
+On Carlisle Max, the test RMSE changes from 0.048 m at the full-rank HF reconstruction (O1) to 0.052 m after truncation (O2), giving an O2 − O1 contrast of 0.005 m.
+Direct LF projection increases the RMSE to 0.068 m (O3), and the full model reaches 0.094 m (O4).
+The relatively small O2 − O1 gap indicates that truncation is not the principal source of Carlisle Max error at the retained H-LSG capacity.
+For Chowilla H-LSG, O2 is 0.034 m and O3 is 0.701 m; the learned full mapping then reduces the final error to 0.093 m.
+Burnett H-LSG similarly increases from 0.083 m at O2 to 0.668 m at O3, but the full model reaches only 0.387 m.
+The native Burnett global model has a larger truncation contrast (O2 − O1 = 0.049 m) yet a much lower O4 error of 0.179 m.
+**Table 3.
+O1–O4 depth RMSE (m) for the Group 1 test evaluations on the training wet-domain scoring mask.**
+### 4.3.
+Figure 7 shows that Chowilla O2 − O1 decreases from 0.057 m for the 3-mode global model to 0.013 m for the 15-dimensional H-LSG model, while CSI changes only from 0.974 to 0.976 and RMSE increases from 0.088 to 0.093 m.
+Burnett shows a stronger divergence between truncation error and operational RMSE: O2 − O1 decreases from 0.049 to 0.009 m, but wet-domain RMSE increases from 0.179 to 0.387 m.
+A 15-mode global EOF model attains RMSE 0.085 m, lower than both the native global model (0.088 m) and H-LSG (0.093 m).
+Its O2 − O1 contrast is 0.002 m, also lower than the 0.013 m obtained with H-LSG.
+**Table 4.
+Chowilla capacity control for the Group 1 maximum-surface test event, scored on the training wet-domain mask.
+RMSE and O2 − O1 are reported in meters.**
+Increasing the global model from 6 to 18 coefficients reduces O2 − O1 from 0.049 to 0.004 m, similar to the reduction obtained with 18-dimensional H-LSG (0.009 m).
+H-LSG RMSE rises to 0.387 m and the matched-18 global model reaches 0.416 m, compared with 0.179 m for the native global model.
+EXT agreement is 0.986 for the native global, H-LSG, and matched-18 global models, with the same gate miss/false-alarm behavior in the global and H-LSG comparison.
+In contrast, the O4 − O2 path difference increases from 0.056 m for the native global model to 0.304 m for H-LSG.
+Training O4 is also larger for H-LSG (0.360 m versus 0.115 m).
+**Table 5.
+Burnett capacity control and oracle attribution for the 18 Group 1 maximum-surface test events, scored on the training wet-domain mask.
+RMSE, O2 − O1, and O4 − O2 are reported in meters; EXT agreement is dimensionless.**
+EXT agreement is the fraction of wet-domain cells whose predicted binary extent (EXT emulation ≥ 0.5, with always-flowing cells forced wet) matches the HF binary extent at the 0.03 m threshold, averaged over the 18 held-out Burnett events.
+Because the EXT branch is trained separately from the WSE branch, changing the number of WSE modes does not alter it; the native global, H-LSG, and matched-18 models therefore share the same EXT prediction, and the identical agreement values are a construction check rather than three independent estimates.
+H-LSG uses 13 WSE coefficients, whereas a request for 13 global modes realizes only eight.
+The max-rank global model removes the truncation contrast (O2 − O1 = 0.000 m) but increases wet-domain RMSE to 0.202 m.
+H-LSG reaches 0.094 m, compared with 0.112 m for the native 1-mode global model.
+**Table 6.
+Carlisle capacity control for the Group 1 maximum-surface test event, scored on the training wet-domain mask.
+RMSE and O2 − O1 are reported in meters.**
+### 4.4.
+With the 15-dimensional H-LSG representation, reducing the inducing-point floor to 2 increases RMSE to 0.244 m, whereas floors of 8 and 16 give 0.096 and 0.093 m, respectively.
+Using all 28 training events as inducing points reduces RMSE further to 0.073 m.
+O2 − O1 remains 0.013 m throughout because the EOF representation is unchanged.
+Increasing from 2 to 6 zones raises the WSE dimension from 9 to 21 and progressively reduces O2 − O1 from 0.019 to 0.012 m.
+Operational RMSE moves in the opposite direction, from 0.087 to 0.103 m.
+**Table 7.
+Chowilla H-LSG inducing-point and zone-count sensitivities for the Group 1 maximum-surface test event, scored on the training wet-domain mask.
+RMSE and O2 − O1 are reported in meters.**
+A second Chowilla partition based on wet-cell correlation changes wet-domain CSI only slightly (Figure 9).
+CSI is 0.978 for wet-correlation zoning, compared with 0.976 for residual *k*-means and 0.974 for the native global model.
+RMSE is 0.094 m and O2 − O1 is 0.010 m.
+**Table 8.
+Chowilla zoning sensitivity for the Group 1 maximum-surface test event, scored on the training wet-domain mask.
+RMSE and O2 − O1 are reported in meters.**
+For Carlisle Max, residual-response clustering augmented with spatial coordinates produces a mean same-zone fraction of approximately 0.95 among each cell's eight nearest neighbors.
+### 4.5.
+Under wet_train, H-LSG has CSI 0.976 and RMSE 0.093 m.
+Under all_cells, CSI falls to 0.390 and RMSE increases to 3.789 m for both H-LSG and the native global model.
+The LF model, by contrast, retains all-cell CSI 0.930 because its coarse simulation already covers a large inundation footprint.
+The extent maps in Figure 2 show that many of the additional errors occur in HF-wet cells outside the category-based wet index used to construct the LSG training domain.
+### 4.6.
+Table 9 and Figure 8 compare probabilistic scores before and after variance rescaling.
+Carlisle Max has a fitted scale *s* = 0.417.
+CRPS decreases from 0.039 to 0.028 m and active 90% coverage moves from 0.990 to 0.966, closer to the nominal 0.90 level.
+Burnett shows a smaller but consistent improvement: CRPS decreases from 0.133 to 0.127 m and active coverage from 0.943 to 0.890.
+In the saved-state rescore, *s* = 0.419, CRPS remains 2.155 m, and active 90% coverage decreases from 0.334 to 0.287.
+**Table 9.
+The Chowilla and Burnett before/after pairs are independent rescores of saved H-LSG model states; the original workflow-fit variance scales were 0.309 for Chowilla and 0.606 for Burnett.
+The Carlisle reliability diagram in Figure 8 is strongly bimodal.
+About 63% of cells have P(h ≥ τ) < 0.05 with an observed wet frequency of 0.004, whereas about 35% have P > 0.95 with an observed frequency of 0.99, and only 1.5% of cells (8,936 of 581,061) fall in the intermediate range 0.5 < P < 0.95.
+This thin fringe is systematically overconfident about wetness: its observed wet frequency is 0.62 overall and 0.29–0.33 in the 0.6–0.9 probability bins.
+In those 0.6–0.9 bins, roughly 70% of cells are false-alarm boundary cells for which the surrogate predicts shallow inundation (mean depth 0.07–0.21 m) while the HF reference is dry.
+Because these cells have latent means above τ, variance rescaling moves their probabilities toward one rather than toward the observed frequency, which is why the calibrated curve in Figure 8a retains the intermediate-probability dip.
+Figure 8b shows where the responsible cells sit: the fringe forms a narrow band along the wet-dry boundary and is dominated by false-alarm cells (surrogate wet, HF dry), i.e., the probabilistic counterpart of the extent over-prediction in Figure 2.
+The largest fringe bin (0.8–0.9) contains 2,971 cells, whereas the 0.6–0.7 bin contains only 15; the local nonmonotonicity should therefore not be interpreted as a fully resolved reliability curve.
+Chowilla leave-one-training-event-out validation gives *s* = 0.310 ± 0.007 (range 0.298–0.324) around the full-training workflow value of 0.309.
+Carlisle gives *s* = 0.418 ± 0.031 around the full-training value of 0.417.
+
+=== DISCUSSION: every sentence containing a number ===
+## 5.
+### 5.1.
+At native capacity, residual H-LSG produces a substantially smaller O2 − O1 truncation contrast than the global model on Chowilla and Burnett.
+On Chowilla, increasing the global basis from 3 to 15 modes reduces O2 − O1 below the H-LSG value and yields the lowest wet-domain RMSE.
+On Burnett, increasing the global basis from 6 to 18 modes reproduces the truncation reduction but also reproduces the deterioration in end-to-end RMSE.
+For Chowilla, disabling the residual modes returns H-LSG to the native global result; the same behavior is observed for Carlisle in Table 6.
+For Chowilla and Burnett, these results indicate that O2 − O1 is more strongly controlled by retained HF representation capacity than by whether that capacity is allocated globally or through residual zones.
+This is expected because O2 uses true HF coefficients: adding either global or residual modes expands the subspace available to reconstruct the held-out HF field.
+The shared EXT prediction is unchanged across the relevant models, whereas the O4 − O2 contrast increases from 0.056 m for the native global model to 0.304 m for H-LSG.
+The matched-18 global model shows that the deterioration in end-to-end prediction is not unique to the residual partition: increasing representation capacity can also reduce operational skill in the global model.
+H-LSG improves wet-domain RMSE relative to the native global model, while the global basis cannot be expanded to the same 13-dimensional representation because only eight maximum-surface training events are available.
+### 5.2.
+The largest LF-to-LSG improvements occur on Chowilla and Burnett: Burnett increases from wet-domain CSI 0.853 for LF to 0.975 for the native global LSG while RMSE decreases from 0.989 to 0.179 m, and Chowilla shows a similarly large reduction in wet-domain depth error.
+The O1–O4 results help explain why a low truncation error should not be used as a surrogate for operational performance.
+On Chowilla and Burnett, O3 is much larger than O2, indicating that direct LF projection does not reproduce the HF coefficients well even when the HF basis itself is expressive.
+Chowilla H-LSG RMSE changes from 0.244 to 0.073 m across the tested inducing budgets while O2 − O1 is fixed at 0.013 m.
+### 5.3.
+The same LSG-Max prediction has wet-domain CSI near 0.98 and all-cell CSI of 0.39.
+For Carlisle, the leave-one-training-event-out estimates are stable around the fitted scale of 0.417.
+For Chowilla, the nested estimates are stable around the original workflow value of 0.309, but this check does not directly establish the stability of the saved-state rescore optimum of 0.419.
+In the 0.6–0.9 probability bins, the intermediate-probability fringe is strongly biased toward false-alarm boundary cells: the surrogate mean lies above τ while the HF reference is dry.
+Scalar CRPS-based calibration is therefore a spread correction, whereas the residual dip in Figure 8a and the false-alarm fringe in Figure 8b indicate a mean-side wet-dry boundary error.
+The same analysis indicates how such diagrams should be read in data-poor settings: with only 15 cells in the 0.6–0.7 bin, local variation in that part of the reliability curve should not be interpreted as stable structure; the more defensible signal is the observed-frequency deficit across the populated intermediate-probability bins.
+### 5.4.
+(2024a) compared LSG with several machine-learning surrogates and evaluated extrapolation across the same public benchmark family; the present study keeps the published split fixed and focuses on how LSG representation capacity is allocated.
+(2024b) addressed a different resource constraint by selecting HF training events.
+(2025) retrained LSG over focus subdomains, whereas H-LSG uses a simultaneous global-plus-residual representation over the whole domain.
+(2025) used rotated EOFs rather than residual hierarchical modes, and satellite-derived flood-extent methods address a different prediction setting (Chang et al., 2020, 2023; Markert et al., 2026; Wan et al., 2025).
+(2026) identified zonal EOF analysis as a potential extension for large complex floodplains.
+### 5.5.
+First, the capacity-controlled analysis is based mainly on Group 1 maximum-inundation evaluations.
+Fourth, O1–O4 is an ordered counterfactual ladder, not an additive variance decomposition, so individual contrasts should not be interpreted as unique causal shares of total error.
+Carlisle and Chowilla each provide one maximum-surface test event in Group 1, whereas Burnett provides 18.
+(2024a) are cited rather than re-trained, and training-event reselection is not included because the published splits are held fixed.
+
+=== CONCLUSIONS (full, short) ===
+## 6. Conclusions
+
+This study tested residual hierarchical zoning in multi-fidelity LSG flood surrogates using capacity-matched controls, an O1–O4 oracle error ladder, and CRPS-based uncertainty calibration on three public benchmark cases. The controls change the interpretation of the native zoning results. On Chowilla, a global model with the same 15-dimensional WSE representation as H-LSG achieves lower wet-domain RMSE (0.085 versus 0.093 m) and a smaller truncation contrast (0.002 versus 0.013 m). On Burnett, both residual H-LSG and a matched 18-mode global model reduce truncation error but worsen end-to-end RMSE relative to the native 6-mode global model. For Burnett H-LSG, the oracle analysis locates the additional degradation in the LF-to-HF WSE mapping rather than in the shared extent prediction.
+
+Carlisle is different because eight maximum-surface training events cap the realizable global EOF rank below the 13-dimensional H-LSG representation. Residual stacking improves RMSE in that setting, so the three cases do not support a universal statement for or against localization. They do show that an apparent truncation advantage should not be interpreted as a localization effect unless representation capacity is controlled.
+
+On Chowilla and Burnett, the largest predictive gains arise from the multi-fidelity LSG mapping rather than from zoning, while Carlisle begins from a stronger LF baseline and shows smaller incremental gains. The results also show that sparse-GP approximation can materially affect higher-dimensional variants and that scoring-domain choice can dominate reported extent skill. Scalar variance calibration improves probabilistic performance for Carlisle Max and Burnett H-LSG Max, while the Chowilla rescore is neutral in CRPS and adverse in active coverage.
+
+For localized EOF flood surrogates, the practical implication is to compare against a capacity-matched global basis, report the regression approximation budget, separate representation error from LF-to-HF mapping error, and evaluate uncertainty and scoring domains explicitly. Under the controls tested here, residual hierarchical zoning is better interpreted as one possible representation strategy than as an inherent source of accuracy improvement.
+
+## 7. Open Research
+
+Public multi-fidelity HF/LF cubes are available from Fraehr (2024), DOI 10.26188/24312658 (CC BY 4.0). Workflow configurations, evaluation summaries, figure exports, and code used for the analyses are archived at https://github.com/Coucou2016/lsg-flood-surrogate-benchmark. The upstream Hybrid LSG reference code is available at https://github.com/nfraehr/Hybrid_LSG_model. The Brisbane TUFLOW/URBS data used by Wang et al. (2026) are license restricted and are not redistributed with this study.
+
+## 8. Author Contributions
+
+[CRediT roles to be finalized and agreed by the author team before submission.]
+
+## 9. Conflict of Interest
+
+[Conflict-of-interest statement to be finalized by the author team before submission.]
+
+## 10. Acknowledgments
+
+[Acknowledgments and funding disclosures to be finalized by the author team before submission.]
+
+End with a one-paragraph overall verdict: is this manuscript numerically sound and ready for submission after your listed fixes?

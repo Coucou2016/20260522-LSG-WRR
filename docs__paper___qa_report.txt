@@ -1,0 +1,92 @@
+pdf_pages=23
+pdf_bytes=1852780
+html_bytes=3932413
+page_01_chars=2935
+page_02_chars=4678
+page_03_chars=3399
+page_04_chars=3514
+page_05_chars=3192
+page_06_chars=3237
+page_07_chars=1235
+page_08_chars=1404
+page_09_chars=952
+page_10_chars=598
+page_11_chars=256
+page_12_chars=2198
+page_13_chars=2151
+page_14_chars=2369
+page_15_chars=2476
+page_16_chars=2715
+page_17_chars=2532
+page_18_chars=3646
+page_19_chars=4325
+page_20_chars=4417
+page_21_chars=3556
+page_22_chars=3226
+page_23_chars=3375
+near_blank_pages=[]
+contains_dai_buchong=False
+contains_wei_yunxing=False
+contains_Abstract=True
+contains_Figure=True
+contains_O1=True
+title_ok=True
+--- page1_sample ---
+Capacity-Controlled Evaluation of Residual Hierarchical Zoning
+in Multi-Fidelity Flood Inundation Surrogates
+Authors: [Author names and affiliations to be finalized by the author team before submission] Affiliations: [To
+be finalized] Corresponding author: [To be finalized]
+Key Points
+Capacity matching shows that residual hierarchical zoning does not improve held-out flood-depth
+accuracy on two public cases.
+Oracle error budgets locate the Burnett degradation in low- to high-fidelity Gaussian-process mapping
+rather than inundation extent.
+Variance scaling improves probabilistic scores for over-dispersed posteriors, but the calibration
+response is case dependent.
+Abstract
+High-fidelity flood inundation models are too computationally expensive for many ensemble and rapid-
+prediction applicat
+--- page_mid_sample ---
+Carlisle Chowilla Burnett
+Case
+0 . 7 0
+0 . 7 5
+0 . 8 0
+0 . 8 5
+0 . 9 0
+0 . 9 5
+1 . 0 0
+CSI (−)
+(a)
+LF-only
+LSG-Max
+LSG-TS
+Carlisle Chowilla Burnett
+Case
+0 . 0
+0 . 2
+0 . 4
+0 . 6
+0 . 8
+1 . 0
+RMSE (m)
+(b)
+Cross-case skill on Fraehr wet_train (Categories wet_idx)
+Figure 5. Cross-case wet_train CSI and RMSE for LF-only and LSG-Max (H-LSG) on Grp1 folds.
+Figure 1 places the three HF domains on common easting and northing axes. Because a DEM raster is not
+included in the public geometry package used for these plots, the domains are shown from HF cell centers. The
+three cases differ substantially in size and geometry, from the compact Carlisle domain to the elongated Burnett
+river corridor.
+The extent maps in Figure 2 compare LF and LSG-Max predictions with HF at the 0.03 m threshold. Burnett
+show
+--- page_last_sample ---
+https://doi.org/10.1016/j.watres.2024.121202
+Fraehr, N., Wang, Q. J., Wu, W., & Nathan, R. (2024b). Generation and selection of training events for surrogate
+flood inundation models. Journal of Environmental Management, 373, 123570.
+https://doi.org/10.1016/j.jenvman.2024.123570
+Fraehr, N. (2024). Surrogate flood model comparison – Datasets and python code [Data set]. The University of
+Melbourne. https://doi.org/10.26188/24312658
+Gneiting, T., & Raftery, A. E. (2007). Strictly proper scoring rules, prediction, and estimation. Journal of the
+American Statistical Association, 102(477), 359–378. https://doi.org/10.1198/016214506000001437
+Kohanpur, A. H., Saksena, S., Dey, S., Johnson, J. M., Riasi, M. S., Yeghiazarian, L., & Tartakovsky, A. M.
+(2023). Urban flood modeling: Uncertainty quantifi

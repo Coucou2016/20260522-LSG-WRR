@@ -2,46 +2,7 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-outputs/*
-!outputs/figures/
-outputs/figures/*
-!outputs/figures/fig*.png
-data/synthetic/*.npz
-*.egg-info/
 .DS_Store
-
-# Local agent/CLI caches (may contain session data)
-.claude/
-_chatgpt_excerpts/
-
-# Elsevier VoR PDFs (copyright; local-only)
-Water Resources Research - *.pdf
-Water Resources Research - *.md
-
-# Temporary image-upload staging artifacts from ChatGPT figure-review rounds
-docs/paper/chatgpt_review_rounds/_stage/
-docs/paper/chatgpt_review_rounds/imgs/
-docs/paper/chatgpt_review_rounds/_*
-docs/paper/chatgpt_review_rounds/roundA_contact_sheet.png
-docs/paper/chatgpt_review_rounds/roundA_fig1to3_prompt.txt
-
-# Secrets (API tokens, credentials) — never commit
+# Secrets - never commit
 .secrets/
-**/mineru_token.txt
-
-# Elsevier VoR PDFs and their full-text MinerU extracts (copyright; local-only)
-docs/references/1-s2.0-*.pdf
-docs/references/Fraehr_2024_WaterResearch_*.md
-docs/references/Fraehr_2024_WaterResearch_*_assets/
-docs/references/Fraehr_2024_JEnvironManage_*.md
-docs/references/Fraehr_2024_JEnvironManage_*_assets/
-docs/references/*_assets/
-
-# Large binaries under data/external (keep README / CSV / YAML)
-data/external/**
-!data/external/**/
-!data/external/**/README.md
-!data/external/**/*.md
-!data/external/**/*.csv
-!data/external/**/*.yaml
-!data/external/**/*.yml
+**/*token*

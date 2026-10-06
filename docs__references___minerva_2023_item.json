@@ -1,0 +1,473 @@
+{
+  "id" : null,
+  "scope" : null,
+  "query" : "handle:11343/332952",
+  "appliedFilters" : null,
+  "sort" : null,
+  "configuration" : null,
+  "type" : "discover",
+  "_links" : {
+    "self" : {
+      "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=handle%253A11343%252F332952&dsoType=ITEM"
+    }
+  },
+  "_embedded" : {
+    "searchResult" : {
+      "_embedded" : {
+        "objects" : [ {
+          "hitHighlights" : null,
+          "type" : "discover",
+          "_links" : {
+            "indexableObject" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53"
+            }
+          },
+          "_embedded" : {
+            "indexableObject" : {
+              "id" : "5de352c2-12b0-4985-bb9a-ec7d2cbdab53",
+              "uuid" : "5de352c2-12b0-4985-bb9a-ec7d2cbdab53",
+              "name" : "Development of a Fast and Accurate Hybrid Model for Floodplain Inundation Simulations",
+              "handle" : "11343/332952",
+              "metadata" : {
+                "dc.contributor.author" : [ {
+                  "value" : "Fraehr, N",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Wang, QJ",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Wu, W",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Nathan, R",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                } ],
+                "dc.date.accessioned" : [ {
+                  "value" : "2023-06-19T00:12:59Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.available" : [ {
+                  "value" : "2023-06-19T00:12:59Z",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.date.issued" : [ {
+                  "value" : "2023-06-01",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.description.abstract" : [ {
+                  "value" : "Abstract\n\n\n                  High computational cost is often the most limiting factor when running high‐resolution hydrodynamic models to simulate spatial‐temporal flood inundation behavior. To address this issue, a recent study introduced the hybrid Low‐fidelity, Spatial analysis, and Gaussian Process learning (LSG) model. The LSG model simulates the dynamic behavior of flood inundation extent by upskilling simulations from a low‐resolution hydrodynamic model through Empirical Orthogonal Function (EOF) analysis and Sparse Gaussian Process learning. However, information on flood extent alone is often not sufficient to provide accurate flood risk assessments. In addition, the LSG model has only been tested on hydrodynamic models with structured grids, while modern hydrodynamic models tend to use unstructured grids. This study therefore further develops the LSG model to simulate water depth as well as flood extent and demonstrates its efficacy as a surrogate for a high‐resolution hydrodynamic model with an unstructured grid. The further developed LSG model is evaluated on the flat and complex Chowilla floodplain of the Murray River in Australia and accurately predicts both depth and extent of the flood inundation, while being 12 times more computationally efficient than a high‐resolution hydrodynamic model. In addition, it has been found that weighting before the EOF analysis can compensate for the varying grid cell sizes in an unstructured grid and the inundation extent should be predicted from an extent‐based LSG model rather than deriving it from water depth predictions.\n\n",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.citation" : [ {
+                  "value" : "Fraehr, N., Wang, Q. J., Wu, W.  &  Nathan, R. (2023). Development of a Fast and Accurate Hybrid Model for Floodplain Inundation Simulations. Water Resources Research, 59 (6), https://doi.org/10.1029/2022WR033836.",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.doi" : [ {
+                  "value" : "10.1029/2022WR033836",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.eissn" : [ {
+                  "value" : "1944-7973",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.issn" : [ {
+                  "value" : "0043-1397",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.identifier.uri" : [ {
+                  "value" : "https://hdl.handle.net/11343/332952",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.language" : [ {
+                  "value" : "English",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.publisher" : [ {
+                  "value" : "AMER GEOPHYSICAL UNION",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.title" : [ {
+                  "value" : "Development of a Fast and Accurate Hybrid Model for Floodplain Inundation Simulations",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "dc.type" : [ {
+                  "value" : "Journal Article",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.accessrights" : [ {
+                  "value" : "This item is currently not available from this repository",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.affiliation.department" : [ {
+                  "value" : "Minerva Elements",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.affiliation.faculty" : [ {
+                  "value" : "Collected Works",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.contributor.author" : [ {
+                  "value" : "Wang, Quan",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Nathan, Rory",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Wu, Wenyan",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Fraehr, Niels",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                } ],
+                "melbourne.elementsid" : [ {
+                  "value" : "1790640",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.identifier.arc" : [ {
+                  "value" : "DE210100117",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.identifier.fundernameid" : [ {
+                  "value" : "Australian Research Council, DE210100117",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.internal.authorids" : [ {
+                  "value" : "Wang, Quan; 8525; 0000-0002-8787-2738",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                }, {
+                  "value" : "Nathan, Rory; 4672; 0000-0001-7759-8344",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 1
+                }, {
+                  "value" : "Wu, Wenyan; 136047; 0000-0003-3907-1570",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 2
+                }, {
+                  "value" : "Fraehr, Niels; 160497; 0000-0001-5558-323X",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 3
+                } ],
+                "melbourne.source.issue" : [ {
+                  "value" : "6",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.source.title" : [ {
+                  "value" : "Water Resources Research",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "melbourne.source.volume" : [ {
+                  "value" : "59",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ],
+                "pubs.publisher-url" : [ {
+                  "value" : "https://doi.org/10.1029/2022wr033836",
+                  "language" : null,
+                  "authority" : null,
+                  "confidence" : -1,
+                  "place" : 0
+                } ]
+              },
+              "inArchive" : true,
+              "discoverable" : true,
+              "withdrawn" : false,
+              "lastModified" : "2026-07-14T02:50:11.134+00:00",
+              "entityType" : null,
+              "type" : "item",
+              "_links" : {
+                "accessStatus" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/accessStatus"
+                },
+                "bundles" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/bundles"
+                },
+                "identifiers" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/identifiers"
+                },
+                "mappedCollections" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/mappedCollections"
+                },
+                "owningCollection" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/owningCollection"
+                },
+                "relationships" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/relationships"
+                },
+                "version" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/version"
+                },
+                "templateItemOf" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/templateItemOf"
+                },
+                "thumbnail" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/thumbnail"
+                },
+                "redirect" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/redirect"
+                },
+                "citations" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/citations"
+                },
+                "self" : {
+                  "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53"
+                }
+              },
+              "_embedded" : {
+                "bundles" : {
+                  "_embedded" : {
+                    "bundles" : [ ]
+                  },
+                  "page" : {
+                    "number" : 0,
+                    "size" : 20,
+                    "totalPages" : 0,
+                    "totalElements" : 0
+                  },
+                  "_links" : {
+                    "self" : {
+                      "href" : "https://minerva-access.unimelb.edu.au/server/api/core/items/5de352c2-12b0-4985-bb9a-ec7d2cbdab53/bundles"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        } ]
+      },
+      "page" : {
+        "number" : 0,
+        "size" : 5,
+        "totalPages" : 1,
+        "totalElements" : 1
+      },
+      "_links" : {
+        "self" : {
+          "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=handle%3A11343%2F332952&dsoType=ITEM&size=5"
+        }
+      }
+    },
+    "facets" : [ {
+      "name" : "dateIssued",
+      "facetType" : "date",
+      "facetLimit" : 5,
+      "minValue" : "(16th century)",
+      "maxValue" : "Unkown",
+      "page" : {
+        "number" : 0,
+        "size" : 5
+      },
+      "_links" : {
+        "self" : {
+          "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/facets/dateIssued?query=handle%3A11343%2F332952&dsoType=ITEM&size=5"
+        }
+      },
+      "_embedded" : {
+        "values" : [ {
+          "label" : "1890 - 2027",
+          "count" : 1,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=handle%253A11343%252F332952&dsoType=ITEM&f.dateIssued=%5B1890%20TO%202027%5D,equals"
+            }
+          }
+        } ]
+      }
+    }, {
+      "name" : "author",
+      "facetType" : "text",
+      "facetLimit" : 5,
+      "minValue" : "'Aloua-Lala, Soana",
+      "maxValue" : "豊原国周",
+      "page" : {
+        "number" : 0,
+        "size" : 5
+      },
+      "_links" : {
+        "self" : {
+          "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/facets/author?query=handle%3A11343%2F332952&dsoType=ITEM&size=5"
+        }
+      },
+      "_embedded" : {
+        "values" : [ {
+          "label" : "Fraehr, Niels",
+          "count" : 1,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=handle%253A11343%252F332952&dsoType=ITEM&f.author=Fraehr,%20Niels,equals"
+            }
+          }
+        }, {
+          "label" : "Nathan, Rory",
+          "count" : 1,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=handle%253A11343%252F332952&dsoType=ITEM&f.author=Nathan,%20Rory,equals"
+            }
+          }
+        }, {
+          "label" : "Wang, Quan",
+          "count" : 1,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=handle%253A11343%252F332952&dsoType=ITEM&f.author=Wang,%20Quan,equals"
+            }
+          }
+        }, {
+          "label" : "Wu, Wenyan",
+          "count" : 1,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=handle%253A11343%252F332952&dsoType=ITEM&f.author=Wu,%20Wenyan,equals"
+            }
+          }
+        } ]
+      }
+    }, {
+      "name" : "subject",
+      "facetType" : "hierarchical",
+      "facetLimit" : 5,
+      "_links" : {
+        "self" : {
+          "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/facets/subject?query=handle%3A11343%2F332952&dsoType=ITEM"
+        }
+      },
+      "_embedded" : {
+        "values" : [ ]
+      }
+    }, {
+      "name" : "itemtype",
+      "facetType" : "text",
+      "facetLimit" : 5,
+      "page" : {
+        "number" : 0,
+        "size" : 5
+      },
+      "_links" : {
+        "self" : {
+          "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/facets/itemtype?query=handle%3A11343%2F332952&dsoType=ITEM&size=5"
+        }
+      },
+      "_embedded" : {
+        "values" : [ {
+          "label" : "Journal Article",
+          "count" : 1,
+          "authorityKey" : null,
+          "type" : "discover",
+          "_links" : {
+            "search" : {
+              "href" : "https://minerva-access.unimelb.edu.au/server/api/discover/search/objects?query=handle%253A11343%252F332952&dsoType=ITEM&f.itemtype=Journal%20Article,equals"
+            }
+          }
+        } ]
+      }
+    } ]
+  }
+}

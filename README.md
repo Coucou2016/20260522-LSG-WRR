@@ -16,7 +16,7 @@ LSG does **not** depend on HEC-RAS, TUFLOW, or any particular solver. It needs p
 | `docs/report/` | Chinese research report `report.{md,html,pdf}` |
 | `outputs/evaluation/{carlisle,chowilla,burnett}/` | Curated metric JSON summaries (source of truth for numbers) |
 | `outputs/figures/` | SciencePlots SVG/PDF + `figure_manifest.json` |
-| `data/DATA_INVENTORY.md` | What external cubes exist and how to obtain them (**cubes not shipped**) |
+| `data__DATA_INVENTORY.md` | What external cubes exist and how to obtain them (**cubes not shipped**) |
 | `requirements.txt` | Minimal deps; GPflow/TensorFlow optional |
 
 **Not in this public mirror:** `data/external/**` result cubes (multi-GB), `*.npz` model states / prediction cubes, licensed Brisbane TUFLOW dumps. Download Carlisle/Chowilla/Burnett from Figshare [10.26188/24312658](https://doi.org/10.26188/24312658).
@@ -27,14 +27,14 @@ LSG does **not** depend on HEC-RAS, TUFLOW, or any particular solver. It needs p
 
 | Case | HF / LF already computed? | Config | Size | Action |
 |------|---------------------------|--------|------|--------|
-| **Carlisle (primary)** | Yes — LISFLOOD-FP × HEC-RAS | `config/carlisle.yaml` | ~9.6 GB | Download + unzip + train |
-| **Chowilla (secondary)** | Yes — fine/coarse HEC-RAS | `config/chowilla.yaml` | ~32 GB | Same Carlisle stack; `time_reduction: max` |
-| **Burnett (tertiary)** | Yes — TUFLOW × HEC-RAS | `config/burnett.yaml` | ~32 GB | Same stack; CSV plan pairing; `time_reduction: max` |
+| **Carlisle (primary)** | Yes — LISFLOOD-FP × HEC-RAS | `config__carlisle.yaml` | ~9.6 GB | Download + unzip + train |
+| **Chowilla (secondary)** | Yes — fine/coarse HEC-RAS | `config__chowilla.yaml` | ~32 GB | Same Carlisle stack; `time_reduction: max` |
+| **Burnett (tertiary)** | Yes — TUFLOW × HEC-RAS | `config__burnett.yaml` | ~32 GB | Same stack; CSV plan pairing; `time_reduction: max` |
 | FloodCastBench | Partial (30 m; 60 m is resampled) | — | ~21.6 GB | After Carlisle |
 | Merced / Bald Eagle USACE ZIPs | **No** (terrain + hydrographs only) | kept as optional generators | — | Not required |
-| Brisbane TUFLOW | Licensed, not public | `config/brisbane.yaml` | — | Appendix only |
+| Brisbane TUFLOW | Licensed, not public | `config__brisbane.yaml` | — | Appendix only |
 
-Registry: [`config/cases.yaml`](config/cases.yaml). Inventory: [`data/DATA_INVENTORY.md`](data/DATA_INVENTORY.md).
+Registry: [`config__cases.yaml`](config/cases.yaml). Inventory: [`data__DATA_INVENTORY.md`](data/DATA_INVENTORY.md).
 
 ## Setup
 
@@ -69,7 +69,7 @@ python scripts/run_lsg_workflow.py --config config/carlisle.yaml --events E2,E3,
 ```
 
 `--events` (or `events.include` in the YAML) selects which paired events are read.
-`events.splits` in `config/carlisle.yaml` follows Fraehr's leave-one-event-out folds
+`events.splits` in `config__carlisle.yaml` follows Fraehr's leave-one-event-out folds
 (`Train_test_split_ValidateOnGrp_N`); with a subset that excludes the validation
 event the workflow falls back to the random fraction split.
 
@@ -99,23 +99,23 @@ reproduce both steps; the resulting LF pseudo-ECs match Fraehr's published
 
 Carlisle uses `wse_ext` so CSI can approach Fraehr’s published ~0.969 without treating an LF-extent post-gate as the model. Set `lsg.field: depth` for the depth-only A/B baseline.
 
-**Burnett (tertiary):** same stack under `config/burnett.yaml`. Data junctions at
+**Burnett (tertiary):** same stack under `config__burnett.yaml`. Data junctions at
 `data/external/burnett/` (TUFLOW HF × HEC-RAS LF; Figshare `BurnettRV.zip`, file id
 `44120564`). Pairing uses `BurnettRV_event_summary.csv` (plan `p12` → `E12`).
 Default `time_reduction: max` (~780k HF cells). Grp1 max summary:
-`outputs/evaluation/burnett/workflow_summary_grp1_wse_ext_hlsg_max.json`.
+`outputs__evaluation__burnett__workflow_summary_grp1_wse_ext_hlsg_max.json`.
 
 Unstructured meshes (HEC-RAS cells, LISFLOOD points) use nearest-neighbour XY interpolation (Fraehr). Structured synthetic grids still use raster upsampling.
 
 **Zonal vs global EOF:** `lsg.zoning` is `none` (global-only baseline) or H-LSG
 `residual_kmeans` / `wet_correlation`. Zones model *residuals* on top of global
-modes (`lsg/zoning.py`), not hard partitions of the water surface. Under
+modes (`lsg__zoning.py`), not hard partitions of the water surface. Under
 `wse_ext`, residual zones attach to the **WSE** branch only; binary EXT stays
 global.
 
 **Probabilistic LSG:** each EOF mode keeps GP variance; cell-wise depth variance
-is closed-form plus a residual/truncation term (`lsg/uq.py`). Enable with
-`evaluation.uq` and `evaluation.error_budget` (O1–O4 oracles in `lsg/diagnostics.py`).
+is closed-form plus a residual/truncation term (`lsg__uq.py`). Enable with
+`evaluation.uq` and `evaluation.error_budget` (O1–O4 oracles in `lsg__diagnostics.py`).
 With `lsg.field: wse_ext`, O1–O4 run synchronously on EXT and WSE, then combine
 with production gating into depth RMSE (same keys as the depth-path budget;
 O4 mirrors `predict_dual_depth`).
@@ -130,7 +130,7 @@ mean is unchanged, so CSI/RMSE stay put. Re-score saved states with:
 python scripts/rescore_uq_calibrated.py --config config/carlisle.yaml
 ```
 
-Output: `outputs/evaluation/carlisle/workflow_summary_full_Grp1_wse_ext_hlsg_sgpr_fix_uq_calibrated.json`.
+Output: `outputs__evaluation__carlisle__workflow_summary_full_Grp1_wse_ext_hlsg_sgpr_fix_uq_calibrated.json`.
 Also report `coverage_*_active` (obs or mean ≥ τ) — all-cell coverage is inflated
 by EXT-dry zeros with σ≈0.
 
@@ -219,7 +219,7 @@ TS O4 also improves (0.149 → 0.102) and CSI stays flat/slightly up. The
 pre-fix TS max-surface RMSE of 0.055 coincided with a defective residual GP
 and does **not** survive a correct SGPR (post-fix 0.099); treat that older
 number as an artifact. **Capacity-matched controls** (see
-`docs/paper/04_capacity_controls.md` and manuscript §6.8) show the O2−O1
+`docs__paper__04_capacity_controls.md` and manuscript §6.8) show the O2−O1
 shrinkage is a capacity confound: matching the global EOF budget to H-LSG’s
 GP input dimension (`force_n_modes`) reproduces or exceeds the O2−O1 reduction
 and does **not** yield a localization-driven wet-RMSE win. Prefer H-LSG as a
@@ -258,7 +258,7 @@ python scripts/run_lsg_workflow.py --config config/carlisle.yaml
 ## Chowilla status (fold: validate on E1 / Grp1)
 
 Same Carlisle-proven stack (`wse_ext`, `residual_kmeans`, SGPR floor, `crps_scale`).
-Config: `config/chowilla.yaml`. Data via junctions under `data/external/chowilla/`
+Config: `config__chowilla.yaml`. Data via junctions under `data/external/chowilla/`
 (or download `Chowilla.zip`). Default ingest uses HEC-RAS **max** surfaces
 (`ingest.time_reduction: max`) so 29 events × ~110k cells fit in RAM; full TS
 smoke: `--events E1,E2,E3 --time-reduction full`.
@@ -269,25 +269,25 @@ smoke: `--events E1,E2,E3 --time-reduction full`.
 | LSG-Max H-LSG (`wse_ext`) | 0.390 / **0.976** | 3.79 / **0.093** |
 | Fraehr published LSG (Grp1) | — / 0.982 | — / 0.108 |
 
-**Zoning:** native-capacity H-LSG vs global (`config/chowilla_global.yaml`):
+**Zoning:** native-capacity H-LSG vs global (`config__chowilla_global.yaml`):
 wet CSI 0.9756 vs 0.9744; RMSE 0.093 vs 0.088; test **O2−O1** 0.013 vs 0.057.
-**Equal-capacity control** (`config/chowilla_global_matched15.yaml`,
+**Equal-capacity control** (`config__chowilla_global_matched15.yaml`,
 `force_n_modes: 15`): matched global wet RMSE **0.085** and O2−O1 **0.002** —
 beats H-LSG; the O2−O1 shrink is capacity, not localization (see
-`docs/paper/04_capacity_controls.md`). UQ `var_scale` ≈ 0.31 H-LSG / 0.42 global
+`docs__paper__04_capacity_controls.md`). UQ `var_scale` ≈ 0.31 H-LSG / 0.42 global
 (Carlisle Max ≈ 0.42).
 **Anti-case read:** LF extent already strong (CSI ~0.93 all-cells). On Fraehr
 `wet_train`, LSG still cuts depth RMSE sharply (0.69 → 0.09) and lifts CSI
 (0.925 → 0.976). All-cells LSG CSI is low because EXT learns only on the train
 wet mask (Fraehr Categories) — score `wet_train` for protocol comparison.
-Summaries: `outputs/evaluation/chowilla/workflow_summary_grp1_wse_ext_hlsg_max.json`
+Summaries: `outputs__evaluation__chowilla__workflow_summary_grp1_wse_ext_hlsg_max.json`
 and `..._global_max.json` (+ `..._global_matched15_max.json`).
 ## Remaining gaps
 
 - Chowilla / Burnett full-TS Grp1 folds (memory); Carlisle equal-capacity control;
   zone contiguity maps; Burnett/Carlisle nested CV for CRPS *s*.
 - Chowilla Max equal-capacity, inducing, and zone sweeps: **done** (see
-  `docs/paper/04_capacity_controls.md`).
+  `docs__paper__04_capacity_controls.md`).
 - Optional `wet_correlation` polish already run; Brisbane / FloodCastBench deferred.
 - Brisbane TUFLOW/URBS remains licence-gated; ingest under `data/raw/` is unchanged.
 - Optional H-LSG A/B: `wet_correlation` zoning; further residual-mode / zone sweeps
@@ -296,6 +296,6 @@ and `..._global_max.json` (+ `..._global_matched15_max.json`).
 ## Paper drafting notes
 
 Progress review, literature gap analysis, and manuscript framework (local drafts):
-[`docs/paper/00_progress_review.md`](docs/paper/00_progress_review.md),
-[`docs/paper/01_literature_review.md`](docs/paper/01_literature_review.md),
-[`docs/paper/02_paper_framework.md`](docs/paper/02_paper_framework.md).
+[`docs__paper__00_progress_review.md`](docs/paper/00_progress_review.md),
+[`docs__paper__01_literature_review.md`](docs/paper/01_literature_review.md),
+[`docs__paper__02_paper_framework.md`](docs/paper/02_paper_framework.md).

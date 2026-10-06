@@ -1,0 +1,52 @@
+event_id,paper_id,validation_id,event_type,year,aep_1_in,storm_duration_hr,lsg_max_role,lsg_ts_role,paper_section,notes
+FE1,FE1,,synthetic,,2,12,train,,3.3 / Appendix A,
+FE2,FE2,,synthetic,,2,12,train,,3.3 / Appendix A,
+FE3,FE3,,synthetic,,2,18,train,,3.3 / Appendix A,
+FE4,FE4,,synthetic,,2,24,train,,3.3 / Appendix A,
+FE5,FE5,,synthetic,,2,48,train,,3.3 / Appendix A,
+FE6,FE6,,synthetic,,2,72,train,,3.3 / Appendix A,
+FE7,FE7,,synthetic,,2,120,train,,3.3 / Appendix A,
+FE8,FE8,,synthetic,,5,12,train,,3.3 / Appendix A,
+FE9,FE9,,synthetic,,5,24,train,,3.3 / Appendix A,
+FE10,FE10,,synthetic,,5,36,train,,3.3 / Appendix A,
+FE11,FE11,,synthetic,,5,96,train,,3.3 / Appendix A,
+FE12,FE12,,synthetic,,5,120,train,,3.3 / Appendix A,
+FE13,FE13,,synthetic,,5,168,train,,3.3 / Appendix A,
+FE14,FE14,,synthetic,,10,24,train,,3.3 / Appendix A,
+FE15,FE15,,synthetic,,10,36,train,,3.3 / Appendix A,
+FE16,FE16,,synthetic,,10,120,train,,3.3 / Appendix A,
+FE17,FE17,,synthetic,,10,168,train,,3.3 / Appendix A,
+FE18,FE18,,synthetic,,10,168,train,,3.3 / Appendix A,
+FE19,FE19,,synthetic,,20,18,train,,3.3 / Appendix A,
+FE20,FE20,,synthetic,,20,18,train,train,3.3 / Appendix A,LSG-TS 8-event set
+FE21,FE21,VE1,synthetic,,20,24,validation,validation,3.3 / Appendix A,held-out synthetic validation
+FE22,FE22,,synthetic,,20,48,train,train,3.3 / Appendix A,LSG-TS 8-event set
+FE23,FE23,,synthetic,,20,96,train,,3.3 / Appendix A,
+FE24,FE24,,synthetic,,20,120,train,,3.3 / Appendix A,
+FE25,FE25,,synthetic,,50,48,train,,3.3 / Appendix A,
+FE26,FE26,VE2,synthetic,,50,48,validation,validation,3.3 / Appendix A,held-out synthetic validation
+FE27,FE27,,synthetic,,50,48,train,train,3.3 / Appendix A,LSG-TS 8-event set
+FE28,FE28,,synthetic,,50,72,train,,3.3 / Appendix A,
+FE29,FE29,,synthetic,,50,120,train,,3.3 / Appendix A,
+FE30,FE30,,synthetic,,50,120,train,train,3.3 / Appendix A,LSG-TS 8-event set
+FE31,FE31,,synthetic,,100,12,train,,3.3 / Appendix A,
+FE32,FE32,,synthetic,,100,18,train,train,3.3 / Appendix A,LSG-TS 8-event set
+FE33,FE33,,synthetic,,100,48,train,,3.3 / Appendix A,
+FE34,FE34,,synthetic,,100,96,train,train,3.3 / Appendix A,LSG-TS 8-event set
+FE35,FE35,,synthetic,,100,120,train,,3.3 / Appendix A,
+FE36,FE36,,synthetic,,200,24,train,,3.3 / Appendix A,
+FE37,FE37,,synthetic,,200,48,train,,3.3 / Appendix A,
+FE38,FE38,,synthetic,,200,48,train,,3.3 / Appendix A,
+FE39,FE39,,synthetic,,200,96,train,,3.3 / Appendix A,
+FE40,FE40,,synthetic,,200,96,train,,3.3 / Appendix A,
+FE41,FE41,,synthetic,,200,96,train,,3.3 / Appendix A,
+FE42,FE42,,synthetic,,200,120,train,,3.3 / Appendix A,
+FE43,FE43,,synthetic,,500,24,train,,3.3 / Appendix A,
+FE44,FE44,,synthetic,,500,72,train,,3.3 / Appendix A,
+FE45,FE45,,synthetic,,500,72,train,,3.3 / Appendix A,
+FE46,FE46,,synthetic,,500,168,train,,3.3 / Appendix A,
+FE47,FE47,,synthetic,,500,168,train,,3.3 / Appendix A,
+FE48,FE48,,historical,1999,,,train,train,3.3 / Appendix A,Appendix A lists Max only; Section 3.3 includes 1999 in LSG-TS train
+FE49,FE49,,historical,2011,,,train,train,3.3 / Appendix A,Appendix A lists Max only; Section 3.3 includes 2011 in LSG-TS train
+FE50,FE50,VE3,historical,1996,,,validation,validation,3.3 / Appendix A,no Wivenhoe regulated release
+FE51,FE51,VE4,historical,2013,,,validation,validation,3.3 / Appendix A,

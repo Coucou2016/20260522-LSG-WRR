@@ -1,0 +1,29 @@
+{
+  "html_bytes": 2722821,
+  "md_bytes": 55694,
+  "figures_inlined": [
+    "fig02a",
+    "fig02b",
+    "fig02c",
+    "fig03a",
+    "fig03b",
+    "fig03c",
+    "fig04a",
+    "fig04b",
+    "fig04c",
+    "fig05",
+    "fig06",
+    "fig07",
+    "fig08",
+    "fig09"
+  ],
+  "skips": [
+    "hydrograph panels: pred_examples.npz is max-only (no per-timestep series) → 缺数据; skipped"
+  ],
+  "metrics_spotcheck": {
+    "car_max_csi": 0.9756919710408083,
+    "chow_all_csi": 0.39023876404494384,
+    "burn_wet_csi": 0.9751522776919259,
+    "var_scale_max": 0.4171616585792615
+  }
+}

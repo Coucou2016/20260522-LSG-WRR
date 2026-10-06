@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="static/style.xsl"?><OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>2026-08-16T15:19:28Z</responseDate><request verb="GetRecord" identifier="oai:minerva-access.unimelb.edu.au:11343/336999" metadataPrefix="oai_dc">https://minerva-access.unimelb.edu.au/server/oai/request</request><GetRecord><record><header><identifier>oai:jupiter.its.unimelb.edu.au:11343/336999</identifier><datestamp>2026-06-26T16:36:02Z</datestamp><setSpec>com_11343_113581</setSpec><setSpec>com_11343_163</setSpec><setSpec>com_11343_159</setSpec><setSpec>com_11343_259971</setSpec><setSpec>com_11343_164</setSpec><setSpec>com_11343_251794</setSpec><setSpec>com_11343_374</setSpec><setSpec>col_11343_113582</setSpec><setSpec>col_11343_259973</setSpec><setSpec>col_11343_251382</setSpec></header><metadata><oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doc="http://www.lyncode.com/xoai" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+   <dc:title>Knowledge about hepatitis and previous exposure to hepatitis viruses in immigrants and refugees from the Mekong region</dc:title>
+   <dc:creator>Caruana, SR</dc:creator>
+   <dc:creator>Kelly, HA</dc:creator>
+   <dc:creator>De Silva, SL</dc:creator>
+   <dc:creator>Chea, L</dc:creator>
+   <dc:creator>Nuon, S</dc:creator>
+   <dc:creator>Saykao, P</dc:creator>
+   <dc:creator>Bak, N</dc:creator>
+   <dc:creator>Biggs, BA</dc:creator>
+   <dc:description>OBJECTIVE: Infection with hepatitis B (HBV) and hepatitis C (HCV) viruses is relatively common throughout South-East Asia and chronic infection can lead to severe consequences. This study assesses knowledge about HBV and HCV and estimates the seroprevalence of markers for these viruses in immigrants from Laos and Cambodia. METHODS: Ninety-five Laotian (aged 18-82 years) and 234 Cambodian (15-92 years) immigrants participated in separate community-based surveys conducted during 1998 and 2002, respectively. Participants completed a questionnaire on health status and level of knowledge about viral hepatitis. Blood samples were collected and tested for the presence of HBV and HCV markers. RESULTS: Nine per cent of Laotian and 8% of Cambodian participants were infected with HBV. While 49% of Laotian and 64% of Cambodian participants showed evidence of previous exposure to HBV, 30% and 9%, respectively, were vulnerable to infection. The seroprevalence of antibodies to HCV was 3% in the Laotian and 8% in the Cambodian participants. Between one-fifth and one-third of the Laotians and Cambodians who had heard of HBV and HCV knew of possible transmission routes for the viruses. Most of those with HBV or HCV infection were unaware they were infected. CONCLUSIONS: These findings indicate a significant prevalence of undetected HBV and HCV infections and an urgent need for the provision of culturally relevant information about viral hepatitis in immigrants of South-East Asian origin.</dc:description>
+   <dc:date>2023-08-24T01:37:11Z</dc:date>
+   <dc:date>2023-08-24T01:37:11Z</dc:date>
+   <dc:date>2005-01-01</dc:date>
+   <dc:type>Journal Article</dc:type>
+   <dc:identifier>Caruana, S. R., Kelly, H. A., De Silva, S. L., Chea, L., Nuon, S., Saykao, P., Bak, N.  &amp;  Biggs, B. A. (2005). Knowledge about hepatitis and previous exposure to hepatitis viruses in immigrants and refugees from the Mekong region. Australian and New Zealand Journal of Public Health, 29 (1), pp.64-68. https://doi.org/10.1111/j.1467-842X.2005.tb00751.x.</dc:identifier>
+   <dc:identifier>https://hdl.handle.net/11343/336999</dc:identifier>
+   <dc:identifier>1753-6405</dc:identifier>
+   <dc:relation>issn:1326-0200</dc:relation>
+   <dc:relation>doi:10.1111/j.1467-842X.2005.tb00751.x</dc:relation>
+   <dc:language>English</dc:language>
+   <dc:publisher>WILEY</dc:publisher>
+</oai_dc:dc></metadata></record></GetRecord></OAI-PMH>

@@ -1,0 +1,354 @@
+{
+  "project_root": "I:\\Projects\\20260522-LSG-WRR",
+  "data_source": "fraehr",
+  "data_mode": "real",
+  "lsg_field": "wse_ext",
+  "lsg_zoning": "none",
+  "gpflow_enabled": true,
+  "gp_backend": "gpflow",
+  "event_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E20",
+    "E21",
+    "E22",
+    "E23",
+    "E24",
+    "E25",
+    "E26",
+    "E27",
+    "E28",
+    "E29"
+  ],
+  "real_data_available": true,
+  "resolution": {
+    "hf_cell_size_m": 5.0,
+    "hf_output_cell_size_m": null,
+    "lf_main_cell_size_m": null,
+    "lf120_m": 120,
+    "lf300_m": 300
+  },
+  "split_protocol": "splits.yaml / Wang et al. 2026",
+  "lsg_max": {
+    "pod": 0.9970000118109771,
+    "rfa": 0.000982295019882598,
+    "csi": 0.996023598820059,
+    "rmse": 0.052610751616966774,
+    "ct_hits": 84413,
+    "ct_misses": 254,
+    "ct_false_alarms": 83,
+    "ct_correct_negatives": 25164,
+    "holdout": {
+      "E1": {
+        "pod": 0.9970000118109771,
+        "rfa": 0.000982295019882598,
+        "csi": 0.996023598820059,
+        "rmse": 0.052610751616966774,
+        "ct_hits": 84413,
+        "ct_misses": 254,
+        "ct_false_alarms": 83,
+        "ct_correct_negatives": 25164,
+        "ve_label": null
+      }
+    },
+    "runtime_train_s": 38.80952960019931,
+    "runtime_predict_s": 1.247106300201267,
+    "n_train": 28,
+    "n_test": 1,
+    "capacity": {
+      "field": "wse_ext",
+      "wse": {
+        "field": "wse",
+        "zone_method": "none",
+        "n_modes_global": 15,
+        "n_zones": 0,
+        "residual_n_modes": [],
+        "n_residual_ec": 0,
+        "gp_input_dim": 15,
+        "force_n_modes": 15
+      },
+      "ext": {
+        "field": "extent",
+        "zone_method": "none",
+        "n_modes_global": 5,
+        "n_zones": 0,
+        "residual_n_modes": [],
+        "n_residual_ec": 0,
+        "gp_input_dim": 5,
+        "force_n_modes": null
+      },
+      "gp_input_dim_wse": 15,
+      "gp_input_dim_ext": 5,
+      "n_modes_global_wse": 15,
+      "n_residual_ec_wse": 0
+    },
+    "gp_backend": "gpflow",
+    "uq_calibration": {
+      "method": "crps_scale",
+      "var_scale": 0.33386236048021245,
+      "active_only": true,
+      "n_calib_cells": 2000000,
+      "n_calib_pool": 2283572,
+      "prior_var_scale": 1.0,
+      "n_calib_rows": 28
+    },
+    "uq": {
+      "crps": 0.012272809413214961,
+      "brier": 0.0030633258600754913,
+      "coverage_90": 0.9198009352766708,
+      "coverage_50": 0.8645759411903852,
+      "coverage_90_active": 0.8959882005899705,
+      "coverage_50_active": 0.8243657817109145,
+      "pit_mean_wet": 0.5107134655235123,
+      "rmse_censored_mean": 0.05261070883177657,
+      "rmse_point": 0.052610751616966774,
+      "mean_inundation_prob": 0.7687447509748876,
+      "var_scale": 0.33386236048021245,
+      "reliability": {
+        "predicted": [
+          0.0,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          0.9999977579844466
+        ],
+        "observed": [
+          0.009992918404280432,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          0.9990177049801174
+        ],
+        "count": [
+          25418,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          84496
+        ]
+      },
+      "calibration": {
+        "method": "crps_scale",
+        "var_scale": 0.33386236048021245,
+        "active_only": true,
+        "n_calib_cells": 2000000,
+        "n_calib_pool": 2283572,
+        "prior_var_scale": 1.0,
+        "n_calib_rows": 28
+      }
+    },
+    "error_budget": [
+      {
+        "split": "train",
+        "n_samples": 28,
+        "n_modes": 15,
+        "n_modes_full": 28,
+        "o1_rmse": 1.3250030985983325e-15,
+        "o2_rmse": 0.005999043038390298,
+        "o3_rmse": 0.5140614273133444,
+        "o4_rmse": 0.03518063513684455,
+        "o2_minus_o1": 0.0059990430383889725,
+        "o4_minus_o2": null,
+        "in_sample_full_rank": false,
+        "notes": "dual-path wse_ext oracle; matched EXT+WSE O1\u2013O4; metric is clipped-depth RMSE on DualLSGState.wet_idx; AF forced wet; production EXT threshold; O4 mirrors predict_dual_depth. Wang 2026 LSG-Max retained 47 ECs = 47 training events (full rank, zero in-sample truncation). O2-O1 on train \u2248 0 in that regime; O2-O1 on held-out events is out-of-subspace expressibility, not in-sample truncation."
+      },
+      {
+        "split": "test",
+        "n_samples": 1,
+        "n_modes": 15,
+        "n_modes_full": 28,
+        "o1_rmse": 0.01317240337772137,
+        "o2_rmse": 0.014308351100013331,
+        "o3_rmse": 0.44499562365133366,
+        "o4_rmse": 0.059003138440886005,
+        "o2_minus_o1": 0.0011359477222919606,
+        "o4_minus_o2": null,
+        "in_sample_full_rank": false,
+        "notes": "dual-path wse_ext oracle; matched EXT+WSE O1\u2013O4; metric is clipped-depth RMSE on DualLSGState.wet_idx; AF forced wet; production EXT threshold; O4 mirrors predict_dual_depth. Wang 2026 LSG-Max retained 47 ECs = 47 training events (full rank, zero in-sample truncation). O2-O1 on train \u2248 0 in that regime; O2-O1 on held-out events is out-of-subspace expressibility, not in-sample truncation."
+      }
+    ],
+    "error_budget_fixed_ext": [
+      {
+        "split": "train",
+        "n_samples": 28,
+        "n_modes": 15,
+        "n_modes_full": 28,
+        "o1_rmse": 0.014653862286225096,
+        "o2_rmse": 0.01510540174446743,
+        "o3_rmse": 0.4904531024579759,
+        "o4_rmse": 0.03518063513684455,
+        "o2_minus_o1": 0.00045153945824233377,
+        "o4_minus_o2": 0.02007523339237712,
+        "in_sample_full_rank": false,
+        "notes": "fixed-production-EXT oracle; EXT held at O4 (production), WSE O1\u2013O4 swept; O4\u2212O2 is pure WSE-mapping contribution under a common extent gate. dual-path wse_ext oracle; matched EXT+WSE O1\u2013O4; metric is clipped-depth RMSE on DualLSGState.wet_idx; AF forced wet; production EXT threshold; O4 mirrors predict_dual_depth. Wang 2026 LSG-Max retained 47 ECs = 47 training events (full rank, zero in-sample truncation). O2-O1 on train \u2248 0 in that regime; O2-O1 on held-out events is out-of-subspace expressibility, not in-sample truncation."
+      },
+      {
+        "split": "test",
+        "n_samples": 1,
+        "n_modes": 15,
+        "n_modes_full": 28,
+        "o1_rmse": 0.01317240337772137,
+        "o2_rmse": 0.014308351100013331,
+        "o3_rmse": 0.4316975919555606,
+        "o4_rmse": 0.059003138440886005,
+        "o2_minus_o1": 0.0011359477222919606,
+        "o4_minus_o2": 0.04469478734087268,
+        "in_sample_full_rank": false,
+        "notes": "fixed-production-EXT oracle; EXT held at O4 (production), WSE O1\u2013O4 swept; O4\u2212O2 is pure WSE-mapping contribution under a common extent gate. dual-path wse_ext oracle; matched EXT+WSE O1\u2013O4; metric is clipped-depth RMSE on DualLSGState.wet_idx; AF forced wet; production EXT threshold; O4 mirrors predict_dual_depth. Wang 2026 LSG-Max retained 47 ECs = 47 training events (full rank, zero in-sample truncation). O2-O1 on train \u2248 0 in that regime; O2-O1 on held-out events is out-of-subspace expressibility, not in-sample truncation."
+      }
+    ],
+    "split": "paper:lsg_max_train",
+    "train_ids": [
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "E6",
+      "E7",
+      "E8",
+      "E9",
+      "E10",
+      "E11",
+      "E12",
+      "E13",
+      "E14",
+      "E15",
+      "E16",
+      "E17",
+      "E18",
+      "E19",
+      "E20",
+      "E21",
+      "E22",
+      "E23",
+      "E24",
+      "E25",
+      "E26",
+      "E27",
+      "E28",
+      "E29"
+    ],
+    "test_ids": [
+      "E1"
+    ],
+    "model_path": "I:\\Projects\\20260522-LSG-WRR\\outputs\\models\\chowilla_global_matched15_inducing_m8\\lsg_max_state.npz",
+    "model_reload_ok": true
+  },
+  "resolution_comparison": {
+    "_mode": "skipped",
+    "reason": "published case has a single LF mesh; no lf120/lf300 pair"
+  },
+  "lf_only_max": {
+    "pod": 1.0,
+    "rfa": 0.06952183134966426,
+    "csi": 0.9304781686503357,
+    "rmse": 0.6900382782258797,
+    "ct_hits": 84667,
+    "ct_misses": 0,
+    "ct_false_alarms": 6326,
+    "ct_correct_negatives": 18921
+  },
+  "score_protocol": {
+    "threshold_m": 0.03,
+    "lsg_field": "wse_ext",
+    "notes": "all_cells = full HF mesh; wet_train = Fraehr Categories wet_idx (CSI unchanged vs all_cells when FAs lie inside the mask; RMSE rises). With lsg.field=wse_ext the official LSG prediction is trained EXT+WSE. lf_extent_gated remains a diagnostic only (not the model).",
+    "lf_only": {
+      "all_cells": {
+        "pod": 1.0,
+        "rfa": 0.06952183134966426,
+        "csi": 0.9304781686503357,
+        "rmse": 0.6900382782258797,
+        "ct_hits": 84667,
+        "ct_misses": 0,
+        "ct_false_alarms": 6326,
+        "ct_correct_negatives": 18921
+      },
+      "wet_train": {
+        "pod": 1.0,
+        "rfa": 0.03112591117671965,
+        "csi": 0.9688740888232803,
+        "rmse": 0.7690788260626149,
+        "ct_hits": 84667,
+        "ct_misses": 0,
+        "ct_false_alarms": 2720,
+        "ct_correct_negatives": 1
+      }
+    },
+    "lsg_max": {
+      "all_cells": {
+        "pod": 0.9970000118109771,
+        "rfa": 0.000982295019882598,
+        "csi": 0.996023598820059,
+        "rmse": 0.052610751616966774,
+        "ct_hits": 84413,
+        "ct_misses": 254,
+        "ct_false_alarms": 83,
+        "ct_correct_negatives": 25164
+      },
+      "wet_train": {
+        "pod": 0.9970000118109771,
+        "rfa": 0.000982295019882598,
+        "csi": 0.996023598820059,
+        "rmse": 0.059003138440886005,
+        "ct_hits": 84413,
+        "ct_misses": 254,
+        "ct_false_alarms": 83,
+        "ct_correct_negatives": 2638
+      },
+      "lf_extent_gated": {
+        "pod": 0.9970000118109771,
+        "rfa": 0.000982295019882598,
+        "csi": 0.996023598820059,
+        "rmse": 0.052610751616966774,
+        "ct_hits": 84413,
+        "ct_misses": 254,
+        "ct_false_alarms": 83,
+        "ct_correct_negatives": 25164
+      },
+      "lf_extent_gated_wet_train": {
+        "pod": 0.9970000118109771,
+        "rfa": 0.000982295019882598,
+        "csi": 0.996023598820059,
+        "rmse": 0.059003138440886005,
+        "ct_hits": 84413,
+        "ct_misses": 254,
+        "ct_false_alarms": 83,
+        "ct_correct_negatives": 2638
+      }
+    }
+  },
+  "pred_examples": "I:\\Projects\\20260522-LSG-WRR\\outputs\\evaluation\\chowilla\\pred_examples.npz",
+  "pred_examples_note": "left unchanged (--no-pred-examples)"
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "name": "fig01_study_domains",
+    "filename": "fig01_study_domains.jpg",
+    "keys": [
+      "__imgA_fig01_study_domains_00",
+      "__imgA_fig01_study_domains_01",
+      "__imgA_fig01_study_domains_02",
+      "__imgA_fig01_study_domains_03"
+    ],
+    "chunks": 4,
+    "sha256_b64": "25f78458e3b7fb96eefffc4adbba9de3295927999b19c67abb28082957304146",
+    "bytes": 110808
+  },
+  {
+    "name": "fig02_extent_hit_miss_carlisle_E1",
+    "filename": "fig02_extent_hit_miss_carlisle_E1.jpg",
+    "keys": [
+      "__imgA_fig02_extent_hit_miss_carlisle_E1_00",
+      "__imgA_fig02_extent_hit_miss_carlisle_E1_01",
+      "__imgA_fig02_extent_hit_miss_carlisle_E1_02",
+      "__imgA_fig02_extent_hit_miss_carlisle_E1_03"
+    ],
+    "chunks": 4,
+    "sha256_b64": "d45d321cb7be081f7856826855c47941f83e2c0363e8118442f9b7b918e84491",
+    "bytes": 111749
+  },
+  {
+    "name": "fig02_extent_hit_miss_chowilla_E1",
+    "filename": "fig02_extent_hit_miss_chowilla_E1.jpg",
+    "keys": [
+      "__imgA_fig02_extent_hit_miss_chowilla_E1_00",
+      "__imgA_fig02_extent_hit_miss_chowilla_E1_01",
+      "__imgA_fig02_extent_hit_miss_chowilla_E1_02",
+      "__imgA_fig02_extent_hit_miss_chowilla_E1_03"
+    ],
+    "chunks": 4,
+    "sha256_b64": "8952de366e82de329e629c281d1153189d51450eb996764364209dfae93cb3db",
+    "bytes": 105367
+  },
+  {
+    "name": "fig02_extent_hit_miss_burnett_E1",
+    "filename": "fig02_extent_hit_miss_burnett_E1.jpg",
+    "keys": [
+      "__imgA_fig02_extent_hit_miss_burnett_E1_00",
+      "__imgA_fig02_extent_hit_miss_burnett_E1_01",
+      "__imgA_fig02_extent_hit_miss_burnett_E1_02"
+    ],
+    "chunks": 3,
+    "sha256_b64": "8e48b49ab86a6622a237d96e8fb8246c61bb7cc4ebde1fbf645ea336e73fce91",
+    "bytes": 89596
+  },
+  {
+    "name": "fig03_peak_depth_error_carlisle_E1",
+    "filename": "fig03_peak_depth_error_carlisle_E1.jpg",
+    "keys": [
+      "__imgA_fig03_peak_depth_error_carlisle_E1_00",
+      "__imgA_fig03_peak_depth_error_carlisle_E1_01",
+      "__imgA_fig03_peak_depth_error_carlisle_E1_02",
+      "__imgA_fig03_peak_depth_error_carlisle_E1_03"
+    ],
+    "chunks": 4,
+    "sha256_b64": "bdbd3b89547267353c77619ced87ac77cce7a1773be4b6bb365211404253b967",
+    "bytes": 90933
+  },
+  {
+    "name": "fig03_peak_depth_error_chowilla_E1",
+    "filename": "fig03_peak_depth_error_chowilla_E1.jpg",
+    "keys": [
+      "__imgA_fig03_peak_depth_error_chowilla_E1_00",
+      "__imgA_fig03_peak_depth_error_chowilla_E1_01",
+      "__imgA_fig03_peak_depth_error_chowilla_E1_02"
+    ],
+    "chunks": 3,
+    "sha256_b64": "b3d5550d70cf4b24cb02e59e180ad866a52254942d28795905ae41430dd3128a",
+    "bytes": 70689
+  },
+  {
+    "name": "fig03_peak_depth_error_burnett_E1",
+    "filename": "fig03_peak_depth_error_burnett_E1.jpg",
+    "keys": [
+      "__imgA_fig03_peak_depth_error_burnett_E1_00",
+      "__imgA_fig03_peak_depth_error_burnett_E1_01",
+      "__imgA_fig03_peak_depth_error_burnett_E1_02"
+    ],
+    "chunks": 3,
+    "sha256_b64": "7392acfd6616d33465863229fe642609f2cae1b833ef82bf8ae7ab2ff311829a",
+    "bytes": 77681
+  }
+]

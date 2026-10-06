@@ -1,0 +1,16 @@
+[
+  {
+    "pdf": "docs\\references\\1-s2.0-S0043135424001027-main.pdf",
+    "md": "docs\\references\\Fraehr_2024_WaterResearch_Assessment_surrogate_LSG.md",
+    "assets": "docs\\references\\Fraehr_2024_WaterResearch_Assessment_surrogate_LSG_assets",
+    "method": "mineru",
+    "state": "done"
+  },
+  {
+    "pdf": "docs\\references\\1-s2.0-S0301479724035564-main.pdf",
+    "md": "docs\\references\\Fraehr_2024_JEnvironManage_Generation_selection_training_events.md",
+    "assets": "docs\\references\\Fraehr_2024_JEnvironManage_Generation_selection_training_events_assets",
+    "method": "mineru",
+    "state": "done"
+  }
+]

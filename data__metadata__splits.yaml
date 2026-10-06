@@ -1,0 +1,112 @@
+# Wang et al. (2026) WRR e2025WR042481 — event splits from Section 3.3 and Appendix A.
+# Historical LSG-TS training (1999, 2011) is stated in Section 3.3; Appendix A rows
+# FE48/FE49 list only "LSG-Max Training" but the text assigns them to the 8-event TS set.
+
+splits:
+  validation: [FE21, FE26, FE50, FE51]  # VE1, VE2, VE3=1996, VE4=2013
+  lsg_ts_train: [FE20, FE22, FE27, FE30, FE32, FE34, FE48, FE49]
+  lsg_ts_synthetic_train: [FE20, FE22, FE27, FE30, FE32, FE34]
+  lsg_max_train:
+    - FE1
+    - FE2
+    - FE3
+    - FE4
+    - FE5
+    - FE6
+    - FE7
+    - FE8
+    - FE9
+    - FE10
+    - FE11
+    - FE12
+    - FE13
+    - FE14
+    - FE15
+    - FE16
+    - FE17
+    - FE18
+    - FE19
+    - FE20
+    - FE22
+    - FE23
+    - FE24
+    - FE25
+    - FE27
+    - FE28
+    - FE29
+    - FE30
+    - FE31
+    - FE32
+    - FE33
+    - FE34
+    - FE35
+    - FE36
+    - FE37
+    - FE38
+    - FE39
+    - FE40
+    - FE41
+    - FE42
+    - FE43
+    - FE44
+    - FE45
+    - FE46
+    - FE47
+    - FE48
+    - FE49
+  lsg_max_synthetic_train:
+    - FE1
+    - FE2
+    - FE3
+    - FE4
+    - FE5
+    - FE6
+    - FE7
+    - FE8
+    - FE9
+    - FE10
+    - FE11
+    - FE12
+    - FE13
+    - FE14
+    - FE15
+    - FE16
+    - FE17
+    - FE18
+    - FE19
+    - FE20
+    - FE22
+    - FE23
+    - FE24
+    - FE25
+    - FE27
+    - FE28
+    - FE29
+    - FE30
+    - FE31
+    - FE32
+    - FE33
+    - FE34
+    - FE35
+    - FE36
+    - FE37
+    - FE38
+    - FE39
+    - FE40
+    - FE41
+    - FE42
+    - FE43
+    - FE44
+    - FE45
+    - FE46
+    - FE47
+
+notes:
+  lsg_ts_train_count: 8
+  lsg_max_train_count: 47
+  validation_count: 4
+  te1_te4: >
+    Figure 5 uses hydrographs for TE1–TE4. The paper does not map TE1–TE4 to FE IDs.
+  temporal_resolution_hours: 2
+  lsg_ts_eof_modes: 100
+  lsg_max_eof_modes: 47
